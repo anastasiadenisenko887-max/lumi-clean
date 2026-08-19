@@ -1,241 +1,2568 @@
-<!DOCTYPE html><html lang="fi"><head>    <meta charset="UTF-8">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Lumi Clean – ammattitaitoista siivouspalvelua Porissa ja Satakunnassa. Kotisiivous, yrityssiivous, ikkunanpesu ja muut siivouspalvelut.">
-    <title>Lumi Clean | Siivouspalvelut Porissa ja Satakunnassa</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet"></head>
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Lumi Clean tarjoaa laadukkaita ja luotettavia siivouspalveluita Porissa ja Satakunnan alueella.">
+
+    <title>Lumi Clean | Siivouspalvelut</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+<style>
+
+/* =========================================
+   LUMI CLEAN
+   GLOBAL
+========================================= */
+
+:root {
+    --white: #ffffff;
+    --light: #f3f8fa;
+    --light-blue: #e6f2f6;
+
+    --blue: #75b5ce;
+    --blue-dark: #347b9b;
+
+    --navy: #163c4e;
+
+    --text: #253b45;
+    --muted: #71818a;
+
+    --border: #dce7eb;
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: "DM Sans", sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.6;
+
+    overflow-x: hidden;
+}
+
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+button {
+    font-family: inherit;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+    width: min(1120px, calc(100% - 36px));
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 100;
+
+    padding: 22px 0;
+}
+
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: white;
+}
+
+
+.logo-circle {
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid rgba(255,255,255,.8);
+
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "Manrope";
+    font-weight: 700;
+
+    font-size: 16px;
+}
+
+
+.logo-name {
+    font-family: "Manrope";
+    font-weight: 800;
+
+    font-size: 16px;
+
+    letter-spacing: 2px;
+}
+
+
+.logo-sub {
+    display: block;
+
+    font-size: 7px;
+
+    letter-spacing: 3px;
+
+    margin-top: -1px;
+
+    opacity: .75;
+}
+
+
+/* NAV */
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+
+.nav a {
+    color: rgba(255,255,255,.92);
+
+    font-size: 12px;
+    font-weight: 500;
+
+    transition: .25s;
+}
+
+
+.nav a:hover {
+    opacity: .65;
+}
+
+
+.nav-button {
+    background: white;
+
+    color: var(--navy) !important;
+
+    padding: 11px 19px;
+
+    border-radius: 50px;
+
+    font-weight: 700 !important;
+}
+
+
+/* MOBILE MENU */
+
+.menu-button {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    border: 0;
+
+    background: white;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+}
+
+
+.menu-button span {
+    display: block;
+
+    width: 19px;
+    height: 2px;
+
+    background: var(--navy);
+
+    margin: 4px auto;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 720px;
+
+    display: flex;
+    align-items: center;
+
+    color: white;
+
+    overflow: hidden;
+}
+
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=2200&q=85");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(12,43,57,.86) 0%,
+            rgba(20,73,94,.64) 48%,
+            rgba(20,73,94,.22) 100%
+        );
+}
+
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    padding-top: 55px;
+}
+
+
+.hero-text {
+    max-width: 690px;
+}
+
+
+.hero-label {
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: rgba(255,255,255,.78);
+
+    margin-bottom: 22px;
+}
+
+
+.hero h1 {
+    font-family: "Manrope";
+
+    font-size: clamp(46px, 6vw, 76px);
+
+    line-height: 1.03;
+
+    letter-spacing: -3px;
+
+    font-weight: 700;
+
+    margin-bottom: 24px;
+}
+
+
+.hero h1 span {
+    display: block;
+
+    color: #c6e8f1;
+
+    font-weight: 500;
+}
+
+
+.hero-description {
+    max-width: 570px;
+
+    color: rgba(255,255,255,.84);
+
+    font-size: 16px;
+
+    line-height: 1.75;
+
+    margin-bottom: 32px;
+}
+
+
+/* HERO BUTTONS */
+
+.hero-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+}
+
+
+.button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    padding: 14px 22px;
+
+    border-radius: 50px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition: .3s;
+}
+
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+
+.button-white {
+    background: white;
+
+    color: var(--navy);
+}
+
+
+.button-outline {
+    color: white;
+
+    border-bottom: 1px solid rgba(255,255,255,.55);
+
+    border-radius: 0;
+
+    padding: 8px 0;
+}
+
+
+/* =========================================
+   TRUST BAR
+========================================= */
+
+.trust {
+    background: var(--navy);
+
+    color: white;
+}
+
+
+.trust-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+}
+
+
+.trust-item {
+    padding: 22px 20px;
+
+    border-right: 1px solid rgba(255,255,255,.1);
+
+    text-align: center;
+}
+
+
+.trust-item:last-child {
+    border-right: 0;
+}
+
+
+.trust-number {
+    color: #9fd2e2;
+
+    font-family: "Manrope";
+
+    font-weight: 700;
+
+    font-size: 17px;
+}
+
+
+.trust-item p {
+    color: rgba(255,255,255,.58);
+
+    font-size: 10px;
+
+    margin-top: 2px;
+}
+
+
+/* =========================================
+   GENERAL SECTION
+========================================= */
+
+.section {
+    padding: 105px 0;
+}
+
+
+.section-label {
+    color: var(--blue-dark);
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+
+.section-title {
+    font-family: "Manrope";
+
+    font-size: clamp(38px,5vw,58px);
+
+    line-height: 1.08;
+
+    letter-spacing: -2.5px;
+
+    font-weight: 600;
+}
+
+
+.section-title span {
+    color: var(--blue-dark);
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.intro {
+    background: white;
+}
+
+
+.intro-content {
+    max-width: 760px;
+
+    margin-left: auto;
+}
+
+
+.intro-text {
+    color: var(--muted);
+
+    font-size: 15px;
+
+    line-height: 1.85;
+
+    margin-top: 24px;
+
+    max-width: 650px;
+}
+
+
+.text-link {
+    display: inline-flex;
+
+    margin-top: 22px;
+
+    color: var(--blue-dark);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    border-bottom: 1px solid var(--blue);
+
+    padding-bottom: 4px;
+}
+
+
+/* =========================================
+   SERVICES
+========================================= */
+
+.services {
+    background: var(--light);
+}
+
+
+.services-header {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    margin-bottom: 45px;
+}
+
+
+.services-intro {
+    color: var(--muted);
+
+    max-width: 300px;
+
+    font-size: 13px;
+}
+
+
+/* SERVICE GRID */
+
+.services-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 14px;
+}
+
+
+.service {
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 17px;
+
+    padding: 26px;
+
+    min-height: 310px;
+
+    position: relative;
+
+    transition: .3s;
+}
+
+
+.service:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 20px 50px rgba(30,80,100,.1);
+
+    border-color: transparent;
+}
+
+
+.service-number {
+    color: #9aaab1;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+.service-icon {
+    width: 46px;
+    height: 46px;
+
+    background: var(--light-blue);
+
+    color: var(--blue-dark);
+
+    border-radius: 13px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+
+    margin-top: 55px;
+
+    margin-bottom: 17px;
+}
+
+
+.service h3 {
+    font-family: "Manrope";
+
+    font-size: 19px;
+
+    line-height: 1.25;
+
+    margin-bottom: 8px;
+}
+
+
+.service p {
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.65;
+}
+
+
+.service-link {
+    position: absolute;
+
+    bottom: 25px;
+    right: 25px;
+
+    color: var(--blue-dark);
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   WHY
+========================================= */
+
+.why {
+    background: white;
+}
+
+
+.why-grid {
+    display: grid;
+
+    grid-template-columns: .9fr 1.1fr;
+
+    gap: 80px;
+
+    align-items: center;
+}
+
+
+.why-image {
+    min-height: 560px;
+
+    border-radius: 20px;
+
+    background-image:
+        linear-gradient(
+            180deg,
+            transparent 40%,
+            rgba(10,45,60,.7)
+        ),
+        url("https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1200&q=85");
+
+    background-size: cover;
+
+    background-position: center;
+
+    position: relative;
+}
+
+
+.why-image-text {
+    position: absolute;
+
+    bottom: 25px;
+    left: 25px;
+
+    color: white;
+}
+
+
+.why-image-text small {
+    display: block;
+
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 5px;
+}
+
+
+.why-image-text strong {
+    font-family: "Manrope";
+
+    font-size: 25px;
+
+    line-height: 1.1;
+}
+
+
+.why-description {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    margin: 22px 0 30px;
+
+    max-width: 550px;
+}
+
+
+.advantages {
+    border-top: 1px solid var(--border);
+}
+
+
+.advantage {
+    display: grid;
+
+    grid-template-columns: 35px 1fr;
+
+    gap: 15px;
+
+    padding: 17px 0;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.advantage-number {
+    color: var(--blue-dark);
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+.advantage h3 {
+    font-size: 14px;
+
+    margin-bottom: 2px;
+}
+
+
+.advantage p {
+    color: var(--muted);
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   PROCESS
+========================================= */
+
+.process {
+    background: var(--light);
+}
+
+
+.process-heading {
+    text-align: center;
+
+    max-width: 650px;
+
+    margin: 0 auto 55px;
+}
+
+
+.steps {
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+}
+
+
+.step {
+    padding: 20px 35px;
+
+    border-right: 1px solid var(--border);
+}
+
+
+.step:last-child {
+    border-right: 0;
+}
+
+
+.step-number {
+    font-family: "Manrope";
+
+    font-size: 46px;
+
+    color: var(--blue);
+}
+
+
+.step-line {
+    width: 35px;
+
+    height: 2px;
+
+    background: var(--blue-dark);
+
+    margin: 18px 0;
+}
+
+
+.step h3 {
+    font-family: "Manrope";
+
+    font-size: 18px;
+
+    margin-bottom: 7px;
+}
+
+
+.step p {
+    color: var(--muted);
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   REVIEWS
+========================================= */
+
+.reviews {
+    background: white;
+}
+
+
+.reviews-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    margin-bottom: 40px;
+}
+
+
+.rating {
+    text-align: right;
+}
+
+
+.stars {
+    color: var(--blue-dark);
+
+    letter-spacing: 3px;
+
+    font-size: 12px;
+}
+
+
+.rating p {
+    color: var(--muted);
+
+    font-size: 10px;
+
+    margin-top: 3px;
+}
+
+
+.review-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 14px;
+}
+
+
+.review {
+    background: var(--light);
+
+    border-radius: 17px;
+
+    padding: 25px;
+}
+
+
+.review-text {
+    font-size: 13px;
+
+    line-height: 1.75;
+
+    min-height: 105px;
+
+    margin-top: 16px;
+}
+
+
+.review-name {
+    font-size: 12px;
+
+    font-weight: 700;
+
+    margin-top: 20px;
+}
+
+
+.review-location {
+    color: var(--muted);
+
+    font-size: 10px;
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.cta {
+    background:
+        linear-gradient(
+            120deg,
+            #205d77,
+            #70aec3
+        );
+
+    color: white;
+
+    padding: 90px 0;
+}
+
+
+.cta-inner {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 50px;
+}
+
+
+.cta-title {
+    font-family: "Manrope";
+
+    font-size: clamp(40px,5vw,64px);
+
+    line-height: 1.05;
+
+    letter-spacing: -2.5px;
+
+    max-width: 700px;
+}
+
+
+.cta-title span {
+    color: #c8eaf3;
+}
+
+
+.cta-text {
+    color: rgba(255,255,255,.78);
+
+    font-size: 13px;
+
+    max-width: 480px;
+
+    margin-top: 17px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    background: #123541;
+
+    color: white;
+
+    padding: 55px 0 22px;
+}
+
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr 1fr;
+
+    gap: 60px;
+
+    padding-bottom: 45px;
+}
+
+
+.footer-description {
+    color: rgba(255,255,255,.55);
+
+    font-size: 11px;
+
+    max-width: 300px;
+
+    margin-top: 15px;
+}
+
+
+.footer-title {
+    color: #a8d5e3;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 14px;
+}
+
+
+.footer-links {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.footer-links a,
+.footer-links span {
+    color: rgba(255,255,255,.6);
+
+    font-size: 11px;
+}
+
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.1);
+
+    padding-top: 18px;
+
+    color: rgba(255,255,255,.35);
+
+    font-size: 9px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 850px) {
+
+    .nav {
+        display: none;
+    }
+
+
+    .menu-button {
+        display: block;
+    }
+
+
+    .hero {
+        min-height: 680px;
+    }
+
+
+    .trust-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+
+    .trust-item:nth-child(2) {
+        border-right: 0;
+    }
+
+
+    .services-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+
+    .why-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+
+    .why-image {
+        min-height: 450px;
+    }
+
+
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+
+    .step {
+        border-right: 0;
+
+        border-bottom: 1px solid var(--border);
+
+        padding: 25px 0;
+    }
+
+
+    .step:last-child {
+        border-bottom: 0;
+    }
+
+
+    .review-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .review-text {
+        min-height: auto;
+    }
+
+
+    .cta-inner {
+        display: block;
+    }
+
+
+    .cta .button {
+        margin-top: 28px;
+    }
+
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 560px) {
+
+    .container {
+        width: calc(100% - 30px);
+    }
+
+
+    .header {
+        padding: 17px 0;
+    }
+
+
+    .logo-circle {
+        width: 36px;
+        height: 36px;
+    }
+
+
+    .logo-name {
+        font-size: 15px;
+    }
+
+
+    .hero {
+        min-height: 650px;
+
+        align-items: center;
+    }
+
+
+    .hero-content {
+        padding-top: 50px;
+    }
+
+
+    .hero-label {
+        font-size: 8px;
+
+        letter-spacing: 1.4px;
+
+        margin-bottom: 16px;
+    }
+
+
+    .hero h1 {
+        font-size: 46px;
+
+        letter-spacing: -2.2px;
+
+        line-height: 1.02;
+
+        margin-bottom: 20px;
+    }
+
+
+    .hero-description {
+        font-size: 14px;
+
+        line-height: 1.65;
+
+        max-width: 330px;
+
+        margin-bottom: 27px;
+    }
+
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 13px;
+    }
+
+
+    .button {
+        font-size: 11px;
+
+        padding: 13px 20px;
+    }
+
+
+    .section {
+        padding: 75px 0;
+    }
+
+
+    .section-title {
+        font-size: 39px;
+
+        letter-spacing: -1.8px;
+    }
+
+
+    .intro-content {
+        margin: 0;
+    }
+
+
+    .intro-text {
+        font-size: 13px;
+    }
+
+
+    .services-header {
+        display: block;
+
+        margin-bottom: 32px;
+    }
+
+
+    .services-intro {
+        margin-top: 17px;
+
+        font-size: 12px;
+    }
+
+
+    .services-grid {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+
+    .service {
+        min-height: 300px;
+
+        padding: 23px;
+    }
+
+
+    .service-icon {
+        margin-top: 45px;
+    }
+
+
+    .why-image {
+        min-height: 400px;
+    }
+
+
+    .why-image-text strong {
+        font-size: 22px;
+    }
+
+
+    .reviews-header {
+        display: block;
+    }
+
+
+    .rating {
+        text-align: left;
+
+        margin-top: 18px;
+    }
+
+
+    .cta {
+        padding: 70px 0;
+    }
+
+
+    .cta-title {
+        font-size: 42px;
+
+        letter-spacing: -2px;
+    }
+
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+
+    .footer-bottom {
+        flex-direction: column;
+
+        gap: 7px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
 <body>
-<header class="header" id="header">    <div class="container nav-wrap">
-        <a href="#" class="brand">            <span class="brand-mark">L</span>            <span>                <b>LUMI</b>                <small>CLEAN</small>            </span>        </a>
-        <nav class="nav" id="nav">            <a href="#palvelut">Palvelut</a>            <a href="#miksi">Miksi Lumi Clean</a>            <a href="#meista">Meistä</a>            <a href="#arvostelut">Arvostelut</a>            <a href="#yhteys">Yhteystiedot</a>
-            <a href="#tarjous" class="nav-cta">Pyydä tarjous</a>        </nav>
-        <button class="menu" id="menu" aria-label="Avaa valikko">            <span></span>            <span></span>            <span></span>        </button>
-    </div></header>
 
-<main>
-<!-- HERO -->
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header class="header">
+
+    <div class="container header-inner">
+
+
+        <a href="index.html" class="logo">
+
+            <div class="logo-circle">
+                L
+            </div>
+
+            <div>
+                <div class="logo-name">
+                    LUMI
+                </div>
+
+                <span class="logo-sub">
+                    CLEAN
+                </span>
+            </div>
+
+        </a>
+
+
+        <nav class="nav">
+
+            <a href="index.html">
+                Etusivu
+            </a>
+
+            <a href="palvelut.html">
+                Palvelut
+            </a>
+
+            <a href="meista.html">
+                Meistä
+            </a>
+
+            <a href="yhteystiedot.html">
+                Yhteystiedot
+            </a>
+
+            <a href="yhteystiedot.html"
+               class="nav-button">
+                Pyydä tarjous
+            </a>
+
+        </nav>
+
+
+        <button class="menu-button"
+                id="menuButton">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </button>
+
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
 <section class="hero">
-    <div class="hero-image"></div>
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-        <div class="hero-copy reveal">
-            <div class="eyebrow">                SIIVOUSPALVELUT · PORI · SATAKUNTA            </div>
-            <h1>                Puhtaampi tila.                <em>Parempi arki.</em>            </h1>
-            <p>                Luotettavaa, huolellista ja joustavaa                siivouspalvelua koteihin, yrityksille                ja erilaisiin tiloihin.            </p>
-            <div class="hero-actions">
-                <a href="#tarjous" class="btn btn-light">                    Pyydä tarjous                    <span>↗</span>                </a>
-                <a href="#palvelut" class="hero-link">                    Tutustu palveluihin                    <span>↓</span>                </a>
-            </div>
-        </div>
 
-        <div class="hero-note reveal">
-            <div class="check">✓</div>
-            <div>                <strong>Huolellista työnjälkeä</strong>                <span>Luotettavasti sovitun mukaan</span>            </div>
-        </div>
-    </div>
+
+    <div class="hero-background"></div>
+
+
+    <div class="hero-overlay"></div>
+
+
+    <div class="container hero-content">
+
+
+        <div class="hero-text">
+
+
+            <div class="hero-label">
+                SIIVOUSPALVELUT · PORI · SATAKUNTA
+            </div>
+
+
+            <h1>
+
+                Puhtaampi tila.
+
+                <span>
+                    Parempi arki.
+                </span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                Luotettavaa, huolellista ja joustavaa
+                siivouspalvelua koteihin, yrityksille
+                ja erilaisiin tiloihin.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+
+                <a href="yhteystiedot.html"
+                   class="button button-white">
+
+                    Pyydä tarjous
+
+                    <span>↗</span>
+
+                </a>
+
+
+                <a href="palvelut.html"
+                   class="button button-outline">
+
+                    Tutustu palveluihin
+
+                    <span>→</span>
+
+                </a>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
 </section>
 
-<!-- QUICK BENEFITS -->
-<section class="benefits">
-    <div class="container benefits-grid">
-        <div class="benefit reveal">            <span class="benefit-icon">01</span>            <div>                <strong>Täsmällinen palvelu</strong>                <p>Saavumme sovittuna aikana.</p>            </div>        </div>
-        <div class="benefit reveal">            <span class="benefit-icon">02</span>            <div>                <strong>Joustava ratkaisu</strong>                <p>Palvelu tarpeidesi mukaan.</p>            </div>        </div>
-        <div class="benefit reveal">            <span class="benefit-icon">03</span>            <div>                <strong>Satakunnan alueella</strong>                <p>Pori ja lähialueet.</p>            </div>        </div>
-        <div class="benefit reveal">            <span class="benefit-icon">04</span>            <div>                <strong>Ammattitaitoinen tiimi</strong>                <p>Huolellinen lopputulos.</p>            </div>        </div>
-    </div>
+
+
+<!-- =========================================
+     TRUST
+========================================= -->
+
+<section class="trust">
+
+    <div class="container trust-grid">
+
+
+        <div class="trust-item">
+
+            <div class="trust-number">
+                01
+            </div>
+
+            <p>
+                Huolellinen työnjälki
+            </p>
+
+        </div>
+
+
+        <div class="trust-item">
+
+            <div class="trust-number">
+                02
+            </div>
+
+            <p>
+                Joustava palvelu
+            </p>
+
+        </div>
+
+
+        <div class="trust-item">
+
+            <div class="trust-number">
+                03
+            </div>
+
+            <p>
+                Luotettava tiimi
+            </p>
+
+        </div>
+
+
+        <div class="trust-item">
+
+            <div class="trust-number">
+                04
+            </div>
+
+            <p>
+                Pori & Satakunta
+            </p>
+
+        </div>
+
+
+    </div>
+
 </section>
 
-<!-- INTRO -->
-<section class="intro section">
-    <div class="container intro-grid">
-        <div class="section-tag reveal">            <span>LUMI CLEAN</span>            <i></i>            <span>SIIVOUSTA, JOHON VOIT LUOTTAA</span>        </div>
-        <div class="intro-content reveal">
-            <div class="small-title">MONEN VUODEN KOKEMUS</div>
-            <h2>                Siivous, joka tekee                arjesta <span>helpompaa.</span>            </h2>
-            <p>                Tarjoamme monipuolisia siivouspalveluja                Porissa ja koko Satakunnan alueella.                Asiakkaidemme tyytyväisyys on meille aina                etusijalla.            </p>
-            <p>                Olipa kyseessä säännöllinen siivous tai                kertaluonteinen palvelu, hoidamme työn                huolellisesti, ammattitaitoisesti ja                ystävällisesti.            </p>
-            <a href="#meista" class="arrow-link">                Tutustu Lumi Cleaniin <span>→</span>            </a>
-        </div>
-    </div>
+
+
+<!-- =========================================
+     INTRO
+========================================= -->
+
+<section class="section intro">
+
+    <div class="container">
+
+
+        <div class="intro-content">
+
+
+            <div class="section-label">
+                LUMI CLEAN
+            </div>
+
+
+            <h2 class="section-title">
+
+                Siivous, joka tekee
+                arjesta
+                <span>helpompaa.</span>
+
+            </h2>
+
+
+            <p class="intro-text">
+
+                Lumi Clean tarjoaa monipuolisia
+                siivouspalveluita Porissa ja Satakunnan
+                alueella. Palvelumme suunnitellaan
+                asiakkaan tarpeiden mukaan – olipa kyseessä
+                säännöllinen koti- tai yrityssiivous,
+                kertaluonteinen siivous tai muu
+                puhdistuspalvelu.
+
+            </p>
+
+
+            <a href="meista.html"
+               class="text-link">
+
+                Tutustu Lumi Cleaniin
+                →
+                
+            </a>
+
+
+        </div>
+
+
+    </div>
+
 </section>
 
-<!-- SERVICES -->
-<section class="services section" id="palvelut">
-    <div class="container">
-        <div class="heading-row reveal">
-            <div>                <div class="small-title">PALVELUMME</div>
-                <h2>                    Puhtautta juuri                    <span>sinun tarpeisiisi.</span>                </h2>            </div>
-            <p>                Räätälöimme palvelun tilanteesi,                tilasi ja toiveidesi mukaan.            </p>
-        </div>
 
-        <div class="services-grid">
-            <a href="#tarjous" class="service-card featured reveal">
-                <span class="service-no">01</span>
-                <div class="service-bottom">                    <div class="service-symbol">⌂</div>
-                    <h3>Kotisiivous</h3>
-                    <p>                        Perusteellinen ja joustava siivous                        kotiisi – säännöllisesti tai kertaluonteisesti.                    </p>
-                    <span class="card-link">Pyydä tarjous →</span>                </div>
-            </a>
 
-            <a href="#tarjous" class="service-card reveal">
-                <span class="service-no">02</span>
-                <div class="service-bottom">                    <div class="service-symbol">□</div>
-                    <h3>Toimistosiivous</h3>
-                    <p>                        Siistit ja viihtyisät työtilat                        yrityksille ja toimitiloihin.                    </p>
-                    <span class="card-link">Pyydä tarjous →</span>                </div>
-            </a>
+<!-- =========================================
+     SERVICES
+========================================= -->
 
-            <a href="#tarjous" class="service-card reveal">
-                <span class="service-no">03</span>
-                <div class="service-bottom">                    <div class="service-symbol">✧</div>
-                    <h3>Ikkunoiden pesu</h3>
-                    <p>                        Kirkkaat ja puhtaat ikkunat                        kotiin tai yrityksen tiloihin.                    </p>
-                    <span class="card-link">Pyydä tarjous →</span>                </div>
-            </a>
+<section class="section services"
+         id="palvelut">
 
-            <a href="#tarjous" class="service-card reveal">
-                <span class="service-no">04</span>
-                <div class="service-bottom">                    <div class="service-symbol">○</div>
-                    <h3>Sohvien ja tekstiilien puhdistus</h3>
-                    <p>                        Tekstiilipintojen perusteellinen                        puhdistus ja raikastus.                    </p>
-                    <span class="card-link">Pyydä tarjous →</span>                </div>
-            </a>
 
-            <a href="#tarjous" class="service-card reveal">
-                <span class="service-no">05</span>
-                <div class="service-bottom">                    <div class="service-symbol">◇</div>
-                    <h3>Auton sisätilojen puhdistus</h3>
-                    <p>                        Huolellisesti puhdistetut ja                        raikkaat auton sisätilat.                    </p>
-                    <span class="card-link">Pyydä tarjous →</span>                </div>
-            </a>
+    <div class="container">
 
-            <a href="#tarjous" class="service-card reveal">
-                <span class="service-no">06</span>
-                <div class="service-bottom">                    <div class="service-symbol">+</div>
-                    <h3>Juhlan jälkeinen siivous</h3>
-                    <p>                        Kun juhlat ovat ohi, me huolehdimme                        tilan takaisin siistiksi.                    </p>
-                    <span class="card-link">Pyydä tarjous →</span>                </div>
-            </a>
-        </div>
-    </div>
+
+        <div class="services-header">
+
+
+            <div>
+
+                <div class="section-label">
+                    PALVELUMME
+                </div>
+
+                <h2 class="section-title">
+
+                    Puhtautta juuri
+                    <span>sinun tarpeisiisi.</span>
+
+                </h2>
+
+            </div>
+
+
+            <p class="services-intro">
+
+                Valitse sopiva palvelu tai ota meihin
+                yhteyttä, niin suunnitellaan yhdessä
+                juuri sinun tarpeisiisi sopiva ratkaisu.
+
+            </p>
+
+
+        </div>
+
+
+
+        <div class="services-grid">
+
+
+            <article class="service">
+
+                <div class="service-number">
+                    01
+                </div>
+
+
+                <div class="service-icon">
+                    ⌂
+                </div>
+
+
+                <h3>
+                    Kotisiivous
+                </h3>
+
+
+                <p>
+                    Raikas ja puhdas koti ilman,
+                    että sinun tarvitsee käyttää
+                    aikaasi siivoamiseen.
+                </p>
+
+
+                <a href="palvelut.html"
+                   class="service-link">
+
+                    Tutustu →
+
+                </a>
+
+            </article>
+
+
+
+            <article class="service">
+
+                <div class="service-number">
+                    02
+                </div>
+
+
+                <div class="service-icon">
+                    □
+                </div>
+
+
+                <h3>
+                    Yrityssiivous
+                </h3>
+
+
+                <p>
+                    Siistit ja viihtyisät työtilat
+                    yrityksille ja toimitiloihin.
+                </p>
+
+
+                <a href="palvelut.html"
+                   class="service-link">
+
+                    Tutustu →
+
+                </a>
+
+            </article>
+
+
+
+            <article class="service">
+
+                <div class="service-number">
+                    03
+                </div>
+
+
+                <div class="service-icon">
+                    ✧
+                </div>
+
+
+                <h3>
+                    Ikkunanpesu
+                </h3>
+
+
+                <p>
+                    Kirkkaat ja puhtaat ikkunat
+                    kotiin tai yrityksen tiloihin.
+                </p>
+
+
+                <a href="palvelut.html"
+                   class="service-link">
+
+                    Tutustu →
+
+                </a>
+
+            </article>
+
+
+
+            <article class="service">
+
+                <div class="service-number">
+                    04
+                </div>
+
+
+                <div class="service-icon">
+                    ○
+                </div>
+
+
+                <h3>
+                    Tekstiilien puhdistus
+                </h3>
+
+
+                <p>
+                    Sohvien ja muiden tekstiilipintojen
+                    perusteellinen puhdistus.
+                </p>
+
+
+                <a href="palvelut.html"
+                   class="service-link">
+
+                    Tutustu →
+
+                </a>
+
+            </article>
+
+
+
+            <article class="service">
+
+                <div class="service-number">
+                    05
+                </div>
+
+
+                <div class="service-icon">
+                    ◇
+                </div>
+
+
+                <h3>
+                    Auton sisätilat
+                </h3>
+
+
+                <p>
+                    Raikkaat ja siistit auton
+                    sisätilat huolellisen puhdistuksen jälkeen.
+                </p>
+
+
+                <a href="palvelut.html"
+                   class="service-link">
+
+                    Tutustu →
+
+                </a>
+
+            </article>
+
+
+
+            <article class="service">
+
+                <div class="service-number">
+                    06
+                </div>
+
+
+                <div class="service-icon">
+                    +
+                </div>
+
+
+                <h3>
+                    Kertaluonteinen siivous
+                </h3>
+
+
+                <p>
+                    Tarvitsetko siivousta ennen tai jälkeen
+                    tapahtuman? Autamme mielellämme.
+                </p>
+
+
+                <a href="palvelut.html"
+                   class="service-link">
+
+                    Tutustu →
+
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
 </section>
 
-<!-- WHY -->
-<section class="why section" id="miksi">
-    <div class="container why-grid">
-        <div class="why-photo reveal">            <div class="photo-caption">                <span>LUMI CLEAN</span>                <strong>Clean spaces.<br>Better days.</strong>            </div>        </div>
-        <div class="why-content reveal">
-            <div class="small-title">MIKSI VALITA MEIDÄT</div>
-            <h2>                Puhdas tila                alkaa <span>hyvistä yksityiskohdista.</span>            </h2>
-            <p class="lead">                Meille hyvä siivous tarkoittaa enemmän                kuin puhdasta pintaa. Se tarkoittaa                huolellista työtä, luotettavuutta ja                asiakkaan toiveiden kuuntelemista.            </p>
 
-            <div class="why-list">
-                <div class="why-item">                    <b>01</b>                    <div>                        <h3>Täsmällisyys</h3>                        <p>                            Saavumme sovittuna aikana ja                            pidämme kiinni sovituista asioista.                        </p>                    </div>                </div>
-                <div class="why-item">                    <b>02</b>                    <div>                        <h3>Joustavuus</h3>                        <p>                            Palvelu suunnitellaan asiakkaan                            tarpeiden ja aikataulun mukaan.                        </p>                    </div>                </div>
-                <div class="why-item">                    <b>03</b>                    <div>                        <h3>Huolellinen työnjälki</h3>                        <p>                            Kiinnitämme huomiota myös                            pieniin yksityiskohtiin.                        </p>                    </div>                </div>
-                <div class="why-item">                    <b>04</b>                    <div>                        <h3>Satakunnan alueella</h3>                        <p>                            Palvelemme Porissa ja                            muualla Satakunnan alueella.                        </p>                    </div>                </div>
-            </div>
-        </div>
-    </div>
+
+<!-- =========================================
+     WHY LUMI CLEAN
+========================================= -->
+
+<section class="section why">
+
+
+    <div class="container why-grid">
+
+
+        <div class="why-image">
+
+            <div class="why-image-text">
+
+                <small>
+                    LUMI CLEAN
+                </small>
+
+                <strong>
+                    Puhtaus näkyy.<br>
+                    Hyvä olo tuntuu.
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <div>
+
+
+            <div class="section-label">
+                MIKSI LUMI CLEAN?
+            </div>
+
+
+            <h2 class="section-title">
+
+                Puhdas tila alkaa
+                <span>hyvistä yksityiskohdista.</span>
+
+            </h2>
+
+
+            <p class="why-description">
+
+                Meille hyvä siivous tarkoittaa enemmän
+                kuin puhdasta pintaa. Se tarkoittaa
+                luotettavaa palvelua, huolellista työnjälkeä
+                ja asiakkaan toiveiden kuuntelemista.
+
+            </p>
+
+
+
+            <div class="advantages">
+
+
+                <div class="advantage">
+
+                    <div class="advantage-number">
+                        01
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Huolellisuus
+                        </h3>
+
+                        <p>
+                            Kiinnitämme huomiota myös
+                            pieniin yksityiskohtiin.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="advantage">
+
+                    <div class="advantage-number">
+                        02
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Luotettavuus
+                        </h3>
+
+                        <p>
+                            Pidämme kiinni sovituista
+                            asioista ja aikatauluista.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="advantage">
+
+                    <div class="advantage-number">
+                        03
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Joustavuus
+                        </h3>
+
+                        <p>
+                            Palvelu voidaan suunnitella
+                            juuri sinun tarpeidesi mukaan.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="advantage">
+
+                    <div class="advantage-number">
+                        04
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Paikallinen palvelu
+                        </h3>
+
+                        <p>
+                            Palvelemme Porissa ja
+                            Satakunnan alueella.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
 </section>
 
-<!-- PROCESS -->
-<section class="process section">
-    <div class="container">
-        <div class="center-heading reveal">            <div class="small-title">NÄIN SE TOIMII</div>
-            <h2>                Helppo tapa saada                <span>puhtaampi tila.</span>            </h2>        </div>
 
-        <div class="steps">
-            <div class="step reveal">                <div class="step-number">01</div>                <div class="step-line"></div>                <h3>Ota yhteyttä</h3>                <p>                    Kerro meille, millaista                    siivouspalvelua tarvitset.                </p>            </div>
-            <div class="step reveal">                <div class="step-number">02</div>                <div class="step-line"></div>                <h3>Sovitaan yksityiskohdat</h3>                <p>                    Käymme läpi palvelun sisällön,                    ajankohdan ja muut toiveesi.                </p>            </div>
-            <div class="step reveal">                <div class="step-number">03</div>                <div class="step-line"></div>                <h3>Me hoidamme loput</h3>                <p>                    Sinä voit käyttää aikasi                    tärkeämpiin asioihin.                </p>            </div>
-        </div>
-    </div>
+
+<!-- =========================================
+     PROCESS
+========================================= -->
+
+<section class="section process">
+
+
+    <div class="container">
+
+
+        <div class="process-heading">
+
+            <div class="section-label">
+                NÄIN SE TOIMII
+            </div>
+
+            <h2 class="section-title">
+
+                Helppo tapa saada
+                <span>puhtaampi tila.</span>
+
+            </h2>
+
+        </div>
+
+
+
+        <div class="steps">
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <div class="step-line"></div>
+
+                <h3>
+                    Ota yhteyttä
+                </h3>
+
+                <p>
+                    Kerro meille, millaista
+                    siivouspalvelua tarvitset.
+                </p>
+
+            </div>
+
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <div class="step-line"></div>
+
+                <h3>
+                    Sovitaan yksityiskohdat
+                </h3>
+
+                <p>
+                    Käymme yhdessä läpi palvelun,
+                    aikataulun ja toiveesi.
+                </p>
+
+            </div>
+
+
+
+            <div class="step">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <div class="step-line"></div>
+
+                <h3>
+                    Me hoidamme loput
+                </h3>
+
+                <p>
+                    Sinä voit käyttää aikasi
+                    tärkeämpiin asioihin.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
 </section>
 
-<!-- ABOUT -->
-<section class="about section" id="meista">
-    <div class="container about-grid">
-        <div class="about-content reveal">
-            <div class="small-title">MEISTÄ</div>
-            <h2>                Laadukas siivous.                <span>Tyytyväiset asiakkaat.</span>            </h2>
-            <p>                Lumi Clean on siivouspalvelu,                joka keskittyy laadukkaaseen,                nopeaan ja luotettavaan palveluun.            </p>
-            <p>                Toimimme Porissa ja Satakunnan alueella                ja tarjoamme ratkaisuja sekä koteihin                että yrityksille.            </p>
-            <a href="tel:+358466322804" class="btn btn-blue">                Soita meille                <span>↗</span>            </a>
-        </div>
 
-        <div class="about-box reveal">
-            <div class="about-logo">                <span>L</span>            </div>
-            <div>                <strong>LUMI CLEAN</strong>                <p>                    Siisti tila.<br>                    Parempi arki.                </p>            </div>
-        </div>
-    </div>
+
+<!-- =========================================
+     REVIEWS
+========================================= -->
+
+<section class="section reviews">
+
+
+    <div class="container">
+
+
+        <div class="reviews-header">
+
+
+            <div>
+
+                <div class="section-label">
+                    ASIAKKAIDEN PALAUTTEET
+                </div>
+
+                <h2 class="section-title">
+
+                    Asiakkaidemme
+                    <span>kokemuksia.</span>
+
+                </h2>
+
+            </div>
+
+
+            <div class="rating">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p>
+                    Luotettavaa palvelua
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="review-grid">
+
+
+            <article class="review">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p class="review-text">
+
+                    “Tiimi tuli juuri sovittuna aikana
+                    ja teki työn nopeasti. Koti jäi
+                    ihanan raikkaaksi ja siistiksi.”
+
+                </p>
+
+                <div class="review-name">
+                    Tony Rikkinen
+                </div>
+
+                <div class="review-location">
+                    Pori
+                </div>
+
+            </article>
+
+
+
+            <article class="review">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p class="review-text">
+
+                    “Palvelu oli ystävällistä ja joustavaa.
+                    Kaikki tehtiin huolellisesti.”
+
+                </p>
+
+                <div class="review-name">
+                    Julia Kongratas
+                </div>
+
+                <div class="review-location">
+                    Nakkila
+                </div>
+
+            </article>
+
+
+
+            <article class="review">
+
+                <div class="stars">
+                    ★★★★★
+                </div>
+
+                <p class="review-text">
+
+                    “Aivan loistava tiimi! Kaikki jäljet
+                    ja sotkut hävisivät.”
+
+                </p>
+
+                <div class="review-name">
+                    John Borg
+                </div>
+
+                <div class="review-location">
+                    Harjunpää
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
 </section>
 
-<!-- REVIEWS -->
-<section class="reviews section" id="arvostelut">
-    <div class="container">
-        <div class="heading-row review-heading reveal">
-            <div>                <div class="small-title">ASIAKKAIDEN PALAUTTEET</div>                <h2>                    Asiakkaidemme                    <span>kokemuksia.</span>                </h2>            </div>
-            <div class="rating">                <strong>★★★★★</strong>                <span>Asiakkaidemme suosittelema palvelu</span>            </div>
-        </div>
 
-        <div class="reviews-grid">
-            <article class="review reveal">                <div class="stars">★★★★★</div>                <p>                    “Tiimi tuli juuri sovittuna aikana ja                    teki työn nopeasti. Koti jäi ihanan                    raikkaaksi ja siistiksi.”                </p>                <strong>Tony Rikkinen</strong>                <span>Pori</span>            </article>
 
-            <article class="review reveal">                <div class="stars">★★★★★</div>                <p>                    “Palvelu oli ystävällistä ja joustavaa.                    Kaikki tehtiin huolellisesti.”                </p>                <strong>Julia Kongratas</strong>                <span>Nakkila</span>            </article>
+<!-- =========================================
+     CTA
+========================================= -->
 
-            <article class="review reveal">                <div class="stars">★★★★★</div>                <p>                    “Aivan loistava tiimi! Kaikki jäljet                    ja sotkut hävisivät.”                </p>                <strong>John Borg</strong>                <span>Harjunpää</span>            </article>
-        </div>
-    </div>
+<section class="cta">
+
+
+    <div class="container cta-inner">
+
+
+        <div>
+
+            <div class="section-label"
+                 style="color:#c6e8f1;">
+
+                PYYDÄ TARJOUS
+
+            </div>
+
+
+            <h2 class="cta-title">
+
+                Anna meidän huolehtia
+                <span>puhtaudesta.</span>
+
+            </h2>
+
+
+            <p class="cta-text">
+
+                Kerro meille tarpeistasi.
+                Suunnitellaan yhdessä sopiva
+                siivouspalvelu.
+
+            </p>
+
+        </div>
+
+
+        <a href="yhteystiedot.html"
+           class="button button-white">
+
+            Pyydä tarjous
+
+            <span>↗</span>
+
+        </a>
+
+
+    </div>
+
 </section>
 
-<!-- CTA -->
-<section class="cta" id="tarjous">
-    <div class="container cta-inner reveal">
-        <div>            <div class="small-title light">PYYDÄ TARJOUS</div>
-            <h2>                Anna meidän                huolehtia <span>puhtaudesta.</span>            </h2>
-            <p>                Kerro meille, mitä tarvitset.                Suunnitellaan sinulle sopiva                siivouspalvelu.            </p>        </div>
-        <a href="mailto:lumiclean.siivous@gmail.com" class="btn btn-white">            Lähetä tarjouspyyntö            <span>↗</span>        </a>
-    </div>
-</section>
 
-<!-- CONTACT -->
-<section class="contact section" id="yhteys">
-    <div class="container contact-grid">
-        <div class="contact-title reveal">            <div class="small-title">YHTEYSTIEDOT</div>
-            <h2>                Ota                <span>yhteyttä.</span>            </h2>
-            <p>                Kysy palveluistamme tai pyydä tarjous.                Vastaamme mielellämme.            </p>        </div>
 
-        <div class="contact-details reveal">
-            <a href="tel:+358466322804" class="contact-row">                <span>Puhelin</span>                <strong>+358 46 632 2804</strong>            </a>
-            <a href="mailto:lumiclean.siivous@gmail.com" class="contact-row">                <span>Sähköposti</span>                <strong>lumiclean.siivous@gmail.com</strong>            </a>
-            <div class="contact-row">                <span>Palvelualue</span>                <strong>Pori & Satakunta</strong>            </div>
-        </div>
-    </div>
-</section>
-</main>
+<!-- =========================================
+     FOOTER
+========================================= -->
 
 <footer class="footer">
-    <div class="container footer-main">
-        <div class="footer-brand">
-            <a href="#" class="brand footer-logo">                <span class="brand-mark">L</span>                <span>                    <b>LUMI</b>                    <small>CLEAN</small>                </span>            </a>
-            <p>                Luotettavaa ja ammattitaitoista                siivouspalvelua Porissa ja Satakunnassa.            </p>
-        </div>
 
-        <div class="footer-nav">
-            <strong>Linkit</strong>
-            <a href="#palvelut">Palvelut</a>            <a href="#miksi">Miksi Lumi Clean</a>            <a href="#meista">Meistä</a>            <a href="#yhteys">Yhteystiedot</a>
-        </div>
 
-        <div class="footer-nav">
-            <strong>Yhteys</strong>
-            <a href="tel:+358466322804">                +358 46 632 2804            </a>
-            <a href="mailto:lumiclean.siivous@gmail.com">                lumiclean.siivous@gmail.com            </a>
-            <span>Pori · Satakunta</span>
-        </div>
-    </div>
+    <div class="container footer-grid">
 
-    <div class="container footer-bottom">        <span>© 2026 Lumi Clean</span>        <span>Siivouspalvelut Porissa ja Satakunnassa</span>    </div>
+
+        <div>
+
+            <a href="index.html"
+               class="logo">
+
+                <div class="logo-circle">
+                    L
+                </div>
+
+                <div>
+
+                    <div class="logo-name">
+                        LUMI
+                    </div>
+
+                    <span class="logo-sub">
+                        CLEAN
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <p class="footer-description">
+
+                Luotettavaa ja ammattitaitoista
+                siivouspalvelua Porissa ja
+                Satakunnan alueella.
+
+            </p>
+
+        </div>
+
+
+
+        <div>
+
+            <div class="footer-title">
+                SIVUSTO
+            </div>
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    Etusivu
+                </a>
+
+                <a href="palvelut.html">
+                    Palvelut
+                </a>
+
+                <a href="meista.html">
+                    Meistä
+                </a>
+
+                <a href="yhteystiedot.html">
+                    Yhteystiedot
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div>
+
+            <div class="footer-title">
+                YHTEYS
+            </div>
+
+            <div class="footer-links">
+
+                <a href="tel:+358466322804">
+                    +358 46 632 2804
+                </a>
+
+                <a href="mailto:lumiclean.siivous@gmail.com">
+                    lumiclean.siivous@gmail.com
+                </a>
+
+                <span>
+                    Pori · Satakunta
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="container footer-bottom">
+
+        <span>
+            © 2026 Lumi Clean
+        </span>
+
+        <span>
+            Siivouspalvelut Porissa ja Satakunnassa
+        </span>
+
+    </div>
+
+
 </footer>
 
-<script src="script.js"></script>
-</body></html>
+
+
+<script>
+
+/* =========================================
+   MOBILE MENU
+========================================= */
+
+const menuButton =
+    document.getElementById("menuButton");
+
+const nav =
+    document.querySelector(".nav");
+
+
+menuButton.addEventListener("click", function () {
+
+    if (nav.style.display === "flex") {
+
+        nav.style.display = "none";
+
+    } else {
+
+        nav.style.display = "flex";
+
+        nav.style.position = "absolute";
+
+        nav.style.top = "70px";
+
+        nav.style.left = "15px";
+
+        nav.style.right = "15px";
+
+        nav.style.background = "white";
+
+        nav.style.padding = "20px";
+
+        nav.style.borderRadius = "16px";
+
+        nav.style.flexDirection = "column";
+
+        nav.style.alignItems = "stretch";
+
+        nav.style.gap = "15px";
+
+        nav.style.boxShadow =
+            "0 20px 50px rgba(20,60,75,.15)";
+
+    }
+
+});
+
+
+/* CLOSE MENU AFTER CLICK */
+
+document.querySelectorAll(".nav a").forEach(link => {
+
+    link.addEventListener("click", function () {
+
+        if (window.innerWidth <= 850) {
+
+            nav.style.display = "none";
+
+        }
+
+    });
+
+});
+
+</script>
+
+
+</body>
+</html>
