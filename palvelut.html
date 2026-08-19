@@ -1,0 +1,325 @@
+<!DOCTYPE html><html lang="fi"><head>
+<meta charset="UTF-8">
+<meta name="viewport"      content="width=device-width, initial-scale=1.0">
+<meta name="description"      content="Lumi Cleanin siivouspalvelut Porissa ja Satakunnan alueella.">
+<title>Palvelut | Lumi Clean</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"      rel="stylesheet">
+
+<style>
+/* =========================================   GLOBAL========================================= */
+:root {    --white:#ffffff;    --light:#f3f8fa;    --light-blue:#e6f2f6;    --blue:#75b5ce;    --blue-dark:#347b9b;    --navy:#163c4e;    --text:#253b45;    --muted:#71818a;    --border:#dce7eb;}
+* {    box-sizing:border-box;    margin:0;    padding:0;}
+html {    scroll-behavior:smooth;}
+body {    font-family:"DM Sans",sans-serif;    color:var(--text);    background:white;    line-height:1.6;    overflow-x:hidden;}
+a {    color:inherit;    text-decoration:none;}
+.container {    width:min(1120px,calc(100% - 36px));    margin:auto;}
+
+/* =========================================   HEADER========================================= */
+.header {    position:absolute;    top:0;    left:0;    width:100%;    z-index:20;    padding:22px 0;}
+.header-inner {    display:flex;    align-items:center;    justify-content:space-between;}
+.logo {    display:flex;    align-items:center;    gap:10px;    color:white;}
+.logo-circle {    width:40px;    height:40px;    border:1px solid rgba(255,255,255,.8);    border-radius:50%;    display:flex;    align-items:center;    justify-content:center;    font-family:"Manrope";    font-weight:700;}
+.logo-name {    font-family:"Manrope";    font-size:16px;    font-weight:800;    letter-spacing:2px;}
+.logo-sub {    display:block;    font-size:7px;    letter-spacing:3px;    opacity:.75;    margin-top:-2px;}
+.nav {    display:flex;    align-items:center;    gap:28px;}
+.nav a {    color:rgba(255,255,255,.92);    font-size:12px;    font-weight:500;}
+.nav a:hover {    opacity:.65;}
+.nav-button {    background:white;    color:var(--navy)!important;    padding:11px 19px;    border-radius:50px;    font-weight:700!important;}
+
+/* =========================================   HERO========================================= */
+.page-hero {    position:relative;    min-height:520px;    display:flex;    align-items:center;    color:white;    overflow:hidden;}
+.page-hero-bg {    position:absolute;    inset:0;
+    background-image:        url("https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=2200&q=85");
+    background-size:cover;    background-position:center;}
+.page-hero-overlay {    position:absolute;    inset:0;
+    background:        linear-gradient(            90deg,            rgba(12,43,57,.9),            rgba(20,73,94,.55)        );}
+.page-hero-content {    position:relative;    z-index:2;    padding-top:55px;}
+.hero-label {    font-size:9px;    font-weight:700;    letter-spacing:2px;    color:rgba(255,255,255,.75);    margin-bottom:18px;}
+.page-hero h1 {    font-family:"Manrope";    font-size:clamp(46px,7vw,76px);    line-height:1;    letter-spacing:-3px;    max-width:750px;}
+.page-hero h1 span {    color:#c6e8f1;}
+.page-hero p {    max-width:560px;    color:rgba(255,255,255,.78);    font-size:15px;    line-height:1.7;    margin-top:24px;}
+
+/* =========================================   SERVICES========================================= */
+.services-section {    padding:100px 0;    background:var(--light);}
+.section-heading {    max-width:700px;    margin-bottom:55px;}
+.section-label {    color:var(--blue-dark);    font-size:9px;    font-weight:700;    letter-spacing:2px;    margin-bottom:15px;}
+.section-title {    font-family:"Manrope";    font-size:clamp(38px,5vw,58px);    line-height:1.08;    letter-spacing:-2.5px;    font-weight:600;}
+.section-title span {    color:var(--blue-dark);}
+.section-description {    color:var(--muted);    font-size:14px;    line-height:1.8;    margin-top:20px;    max-width:650px;}
+
+/* SERVICE LIST */
+.service-list {    display:grid;    grid-template-columns:1fr 1fr;    gap:16px;}
+.service-card {    background:white;    border:1px solid var(--border);    border-radius:18px;    padding:32px;    min-height:330px;    position:relative;    transition:.3s;}
+.service-card:hover {    transform:translateY(-5px);    box-shadow:0 20px 50px rgba(30,80,100,.1);    border-color:transparent;}
+.service-number {    color:#a3b0b5;    font-size:10px;    font-weight:700;}
+.service-icon {    width:50px;    height:50px;    background:var(--light-blue);    color:var(--blue-dark);    border-radius:14px;
+    display:flex;    align-items:center;    justify-content:center;
+    font-size:21px;
+    margin-top:40px;    margin-bottom:20px;}
+.service-card h2 {    font-family:"Manrope";    font-size:23px;    margin-bottom:10px;}
+.service-card p {    color:var(--muted);    font-size:13px;    line-height:1.75;    max-width:430px;}
+.service-bottom {    position:absolute;    bottom:27px;    left:32px;    right:32px;
+    padding-top:15px;
+    border-top:1px solid var(--border);
+    color:var(--blue-dark);    font-size:11px;    font-weight:700;}
+
+/* =========================================   CUSTOM SERVICE========================================= */
+.custom {    padding:100px 0;    background:white;}
+.custom-box {    background:var(--navy);    color:white;    border-radius:22px;    padding:55px;
+    display:grid;    grid-template-columns:1fr auto;    align-items:center;    gap:50px;}
+.custom-box h2 {    font-family:"Manrope";    font-size:clamp(32px,4vw,48px);    line-height:1.1;    letter-spacing:-2px;}
+.custom-box h2 span {    color:#a9d9e7;}
+.custom-box p {    color:rgba(255,255,255,.65);    font-size:13px;    max-width:580px;    margin-top:15px;}
+.button {    display:inline-flex;    align-items:center;    justify-content:center;    gap:17px;
+    padding:14px 22px;
+    border-radius:50px;
+    font-size:12px;    font-weight:700;
+    white-space:nowrap;}
+.button-white {    background:white;    color:var(--navy);}
+
+/* =========================================   FOOTER========================================= */
+.footer {    background:#123541;    color:white;    padding:55px 0 22px;}
+.footer-grid {    display:grid;    grid-template-columns:1.5fr 1fr 1fr;    gap:60px;    padding-bottom:45px;}
+.footer-description {    color:rgba(255,255,255,.55);    font-size:11px;    max-width:300px;    margin-top:15px;}
+.footer-title {    color:#a8d5e3;    font-size:9px;    font-weight:700;    letter-spacing:2px;    margin-bottom:14px;}
+.footer-links {    display:flex;    flex-direction:column;    gap:8px;}
+.footer-links a,.footer-links span {    color:rgba(255,255,255,.6);    font-size:11px;}
+.footer-bottom {    border-top:1px solid rgba(255,255,255,.1);    padding-top:18px;
+    color:rgba(255,255,255,.35);
+    font-size:9px;
+    display:flex;    justify-content:space-between;}
+
+/* =========================================   MOBILE========================================= */
+@media(max-width:850px) {
+    .nav {        display:none;    }
+    .service-list {        grid-template-columns:1fr;    }
+    .custom-box {        grid-template-columns:1fr;        gap:25px;    }
+    .footer-grid {        grid-template-columns:1fr 1fr;    }}
+
+@media(max-width:560px) {
+    .container {        width:calc(100% - 30px);    }
+    .header {        padding:17px 0;    }
+    .nav {        display:none;    }
+    .page-hero {        min-height:580px;    }
+    .page-hero-content {        padding-top:50px;    }
+    .page-hero h1 {        font-size:46px;        letter-spacing:-2px;    }
+    .page-hero p {        font-size:13px;    }
+    .services-section {        padding:75px 0;    }
+    .section-title {        font-size:39px;        letter-spacing:-1.8px;    }
+    .service-card {        min-height:320px;        padding:24px;    }
+    .service-bottom {        left:24px;        right:24px;    }
+    .custom {        padding:70px 0;    }
+    .custom-box {        padding:32px 24px;    }
+    .custom-box h2 {        font-size:36px;    }
+    .footer-grid {        grid-template-columns:1fr;        gap:35px;    }
+    .footer-bottom {        flex-direction:column;        gap:7px;    }}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+<div class="container header-inner">
+<a href="index.html" class="logo">
+<div class="logo-circle">L</div>
+<div>
+<div class="logo-name">LUMI</div>
+<span class="logo-sub">CLEAN</span>
+</div>
+</a>
+
+<nav class="nav">
+<a href="index.html">Etusivu</a>
+<a href="palvelut.html">Palvelut</a>
+<a href="meista.html">Meistä</a>
+<a href="yhteystiedot.html">Yhteystiedot</a>
+<a href="yhteystiedot.html"   class="nav-button">
+Pyydä tarjous
+</a>
+</nav>
+</div>
+</header>
+
+
+<!-- HERO -->
+<section class="page-hero">
+<div class="page-hero-bg"></div>
+<div class="page-hero-overlay"></div>
+<div class="container page-hero-content">
+<div class="hero-label">LUMI CLEAN · PALVELUT</div>
+<h1>
+Palvelut, jotka tekevät<span>arjesta helpompaa.</span>
+</h1>
+<p>
+Tarjoamme luotettavia ja joustaviasiivouspalveluita koteihin, yrityksilleja erilaisiin tiloihin Porissa jaSatakunnan alueella.
+</p>
+</div>
+</section>
+
+
+<!-- SERVICES -->
+<section class="services-section">
+<div class="container">
+
+<div class="section-heading">
+<div class="section-label">PALVELUMME</div>
+<h2 class="section-title">
+Valitse palvelu<span>tarpeesi mukaan.</span>
+</h2>
+<p class="section-description">
+Jokainen tila ja asiakas on erilainen.Siksi suunnittelemme palvelun ainatarpeidesi mukaan.
+</p>
+</div>
+
+
+<div class="service-list">
+
+<!-- 01 -->
+<article class="service-card">
+<div class="service-number">01</div>
+<div class="service-icon">⌂</div>
+<h2>Kotisiivous</h2>
+<p>
+Säännöllinen tai kertaluonteinenkotisiivous, joka tuo kotiinpuhtautta ja helpottaa arkea.
+</p>
+<div class="service-bottom">Koti · Asunnot · Muuttosiivous</div>
+</article>
+
+
+<!-- 02 -->
+<article class="service-card">
+<div class="service-number">02</div>
+<div class="service-icon">□</div>
+<h2>Yrityssiivous</h2>
+<p>
+Pidämme toimistot, liiketilat jamuut työympäristöt siisteinäja viihtyisinä.
+</p>
+<div class="service-bottom">Toimistot · Yritykset · Toimitilat</div>
+</article>
+
+
+<!-- 03 -->
+<article class="service-card">
+<div class="service-number">03</div>
+<div class="service-icon">✧</div>
+<h2>Ikkunanpesu</h2>
+<p>
+Puhtaat ikkunat tuovat tilaanenemmän valoa. Hoidammeikkunoiden pesun huolellisesti.
+</p>
+<div class="service-bottom">Kodit · Yritykset · Tilat</div>
+</article>
+
+
+<!-- 04 -->
+<article class="service-card">
+<div class="service-number">04</div>
+<div class="service-icon">○</div>
+<h2>Tekstiilien puhdistus</h2>
+<p>
+Sohvien ja muiden tekstiilipintojenperusteellinen puhdistus auttaapitämään tilat raikkaina.
+</p>
+<div class="service-bottom">Sohvat · Tuolit · Tekstiilipinnat</div>
+</article>
+
+
+<!-- 05 -->
+<article class="service-card">
+<div class="service-number">05</div>
+<div class="service-icon">◇</div>
+<h2>Auton sisätilojen puhdistus</h2>
+<p>
+Huolellinen sisätilojen puhdistusauttaa palauttamaan autonraikkaan ja siistin ilmeen.
+</p>
+<div class="service-bottom">Autot · Sisätilat · Puhdistus</div>
+</article>
+
+
+<!-- 06 -->
+<article class="service-card">
+<div class="service-number">06</div>
+<div class="service-icon">+</div>
+<h2>Kertaluonteinen siivous</h2>
+<p>
+Tarvitsetko apua esimerkiksimuuton, tapahtuman tai muunerityisen tilanteen yhteydessä?
+</p>
+<div class="service-bottom">Joustava palvelu · Sovitaan tarpeen mukaan</div>
+</article>
+
+</div>
+</div>
+</section>
+
+
+<!-- CUSTOM SERVICE -->
+<section class="custom">
+<div class="container">
+<div class="custom-box">
+<div>
+<h2>
+Tarvitsetko<span>jotain muuta?</span>
+</h2>
+<p>
+Ota rohkeasti yhteyttä. Kerro meille,mitä tarvitset, niin mietitään yhdessäsinulle sopiva ratkaisu.
+</p>
+</div>
+
+<a href="yhteystiedot.html"   class="button button-white">
+Pyydä tarjous
+<span>↗</span>
+</a>
+</div>
+</div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="footer">
+<div class="container footer-grid">
+
+<div>
+<a href="index.html"   class="logo">
+<div class="logo-circle">L</div>
+<div>
+<div class="logo-name">LUMI</div>
+<span class="logo-sub">CLEAN</span>
+</div>
+</a>
+
+<p class="footer-description">
+Luotettavaa ja ammattitaitoistasiivouspalvelua Porissa jaSatakunnan alueella.
+</p>
+</div>
+
+
+<div>
+<div class="footer-title">SIVUSTO</div>
+<div class="footer-links">
+<a href="index.html">Etusivu</a>
+<a href="palvelut.html">Palvelut</a>
+<a href="meista.html">Meistä</a>
+<a href="yhteystiedot.html">Yhteystiedot</a>
+</div>
+</div>
+
+
+<div>
+<div class="footer-title">YHTEYS</div>
+<div class="footer-links">
+<a href="tel:+358466322804">+358 46 632 2804</a>
+<a href="mailto:lumiclean.siivous@gmail.com">lumiclean.siivous@gmail.com</a>
+<span>Pori · Satakunta</span>
+</div>
+</div>
+
+</div>
+
+
+<div class="container footer-bottom">
+<span>© 2026 Lumi Clean</span>
+<span>Siivouspalvelut Porissa ja Satakunnassa</span>
+</div>
+</footer>
+
+</body></html>Отправлено 
