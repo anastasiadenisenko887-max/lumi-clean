@@ -7,31 +7,21 @@
 
 <title>Palvelut | Lumi Clean</title>
 
+<meta name="description"
+content="Lumi Clean tarjoaa laadukkaita ja joustavia siivouspalveluja Porissa ja Satakunnan alueella.">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+rel="stylesheet">
+
 
 <style>
 
 /* =====================================================
-   LUMI CLEAN — PALVELUT
+   RESET
 ===================================================== */
-
-:root {
-    --lc-white: #ffffff;
-    --lc-bg: #f5f9fa;
-    --lc-blue-light: #e7f3f7;
-    --lc-blue: #75b5ce;
-    --lc-blue-dark: #347b9b;
-    --lc-navy: #163c4e;
-    --lc-text: #263d47;
-    --lc-muted: #71828a;
-    --lc-line: #dce7eb;
-}
-
-
-/* RESET */
 
 * {
     margin: 0;
@@ -45,9 +35,9 @@ html {
 
 body {
     font-family: "DM Sans", sans-serif;
-    color: var(--lc-text);
-    background: var(--lc-white);
-    overflow-x: hidden;
+    color: #243b45;
+    background: #ffffff;
+    line-height: 1.6;
 }
 
 a {
@@ -55,12 +45,8 @@ a {
     color: inherit;
 }
 
-button {
-    font-family: inherit;
-}
-
-.lc-container {
-    width: min(1120px, calc(100% - 36px));
+.lumi-container {
+    width: min(1160px, calc(100% - 40px));
     margin: 0 auto;
 }
 
@@ -69,16 +55,17 @@ button {
    HEADER
 ===================================================== */
 
-.lc-header {
+.lumi-header {
     position: absolute;
+    width: 100%;
     top: 0;
     left: 0;
-    width: 100%;
-    z-index: 50;
-    padding: 22px 0;
+    z-index: 20;
+
+    padding: 25px 0;
 }
 
-.lc-header-inner {
+.lumi-header-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -87,72 +74,74 @@ button {
 
 /* LOGO */
 
-.lc-logo {
+.lumi-logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 11px;
     color: white;
 }
 
-.lc-logo-mark {
-    width: 40px;
-    height: 40px;
+.lumi-logo-icon {
+    width: 42px;
+    height: 42px;
 
     border: 1px solid rgba(255,255,255,.75);
     border-radius: 50%;
 
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
     font-family: "Manrope";
     font-size: 15px;
     font-weight: 800;
 }
 
-.lc-logo-name {
+.lumi-logo-name {
     font-family: "Manrope";
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 800;
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
 }
 
-.lc-logo-sub {
+.lumi-logo-small {
     display: block;
-    margin-top: -2px;
 
     font-size: 7px;
     letter-spacing: 3px;
 
     opacity: .7;
+    margin-top: -3px;
 }
 
 
-/* NAVIGATION */
+/* NAV */
 
-.lc-nav {
+.lumi-nav {
     display: flex;
     align-items: center;
-    gap: 29px;
+    gap: 30px;
 }
 
-.lc-nav a {
+.lumi-nav a {
     color: rgba(255,255,255,.9);
+
     font-size: 12px;
     font-weight: 500;
 
     transition: .25s;
 }
 
-.lc-nav a:hover {
+.lumi-nav a:hover {
     opacity: .6;
 }
 
-.lc-nav-cta {
+.lumi-nav-button {
     background: white;
-    color: var(--lc-navy) !important;
+    color: #163c4e !important;
 
-    padding: 11px 19px;
+    padding: 12px 20px;
+
     border-radius: 50px;
 
     font-weight: 700 !important;
@@ -163,10 +152,11 @@ button {
    HERO
 ===================================================== */
 
-.lc-services-hero {
-    min-height: 570px;
+.lumi-services-hero {
 
     position: relative;
+
+    min-height: 570px;
 
     display: flex;
     align-items: center;
@@ -177,66 +167,68 @@ button {
 
     background:
         linear-gradient(
-            135deg,
-            #173f51 0%,
-            #285e73 58%,
-            #579bb3 100%
+            120deg,
+            #123a4b 0%,
+            #20556b 55%,
+            #65a9c0 100%
         );
 }
 
 
-/* Decorative circles */
+/* DECORATION */
 
-.lc-hero-circle-one {
+.lumi-hero-ring {
     position: absolute;
 
-    width: 480px;
-    height: 480px;
+    width: 650px;
+    height: 650px;
 
     border: 1px solid rgba(255,255,255,.08);
 
     border-radius: 50%;
 
-    right: -120px;
-    top: -120px;
+    right: -220px;
+    top: -220px;
 }
 
-.lc-hero-circle-two {
+.lumi-hero-ring-small {
     position: absolute;
 
-    width: 260px;
-    height: 260px;
+    width: 300px;
+    height: 300px;
 
     border: 1px solid rgba(255,255,255,.08);
 
     border-radius: 50%;
 
-    right: 70px;
-    bottom: -120px;
+    right: 130px;
+    bottom: -190px;
 }
 
 
-.lc-services-hero-content {
+.lumi-hero-content {
     position: relative;
     z-index: 2;
 
-    padding-top: 50px;
+    padding-top: 55px;
 }
 
 
-.lc-eyebrow {
+.lumi-eyebrow {
+
     font-size: 9px;
     font-weight: 700;
 
-    letter-spacing: 2.2px;
+    letter-spacing: 2.5px;
 
     color: rgba(255,255,255,.65);
 
-    margin-bottom: 19px;
+    margin-bottom: 20px;
 }
 
 
-.lc-services-hero h1 {
+.lumi-hero-title {
+
     font-family: "Manrope";
 
     font-size: clamp(48px, 7vw, 78px);
@@ -245,25 +237,28 @@ button {
 
     letter-spacing: -3.5px;
 
-    max-width: 780px;
+    font-weight: 600;
+
+    max-width: 800px;
 }
 
 
-.lc-services-hero h1 span {
-    color: #c6e8f1;
+.lumi-hero-title span {
+    color: #c8e9f1;
 }
 
 
-.lc-hero-description {
-    max-width: 560px;
+.lumi-hero-text {
 
-    margin-top: 25px;
+    max-width: 580px;
 
-    color: rgba(255,255,255,.75);
+    margin-top: 26px;
+
+    color: rgba(255,255,255,.74);
 
     font-size: 15px;
 
-    line-height: 1.75;
+    line-height: 1.8;
 }
 
 
@@ -271,34 +266,43 @@ button {
    INTRO
 ===================================================== */
 
-.lc-intro {
-    padding: 100px 0 70px;
+.lumi-intro {
+
+    padding: 105px 0 70px;
 
     background: white;
 }
 
-.lc-intro-grid {
+
+.lumi-intro-grid {
+
     display: grid;
 
-    grid-template-columns: .55fr 1fr;
+    grid-template-columns: .5fr 1fr;
 
-    gap: 80px;
+    gap: 100px;
+
+    align-items: start;
 }
 
-.lc-small-title {
-    color: var(--lc-blue-dark);
+
+.lumi-label {
+
+    color: #347b9b;
 
     font-size: 9px;
 
     font-weight: 700;
 
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
 }
 
-.lc-intro h2 {
+
+.lumi-intro-title {
+
     font-family: "Manrope";
 
-    font-size: clamp(35px, 5vw, 55px);
+    font-size: clamp(36px, 5vw, 58px);
 
     line-height: 1.08;
 
@@ -307,18 +311,21 @@ button {
     font-weight: 600;
 }
 
-.lc-intro h2 span {
-    color: var(--lc-blue-dark);
+
+.lumi-intro-title span {
+    color: #347b9b;
 }
 
-.lc-intro-text {
-    color: var(--lc-muted);
+
+.lumi-intro-text {
+
+    max-width: 680px;
+
+    color: #71828a;
 
     font-size: 14px;
 
-    line-height: 1.85;
-
-    max-width: 670px;
+    line-height: 1.9;
 }
 
 
@@ -326,41 +333,41 @@ button {
    SERVICES
 ===================================================== */
 
-.lc-services {
-    padding: 40px 0 110px;
+.lumi-services {
+
+    padding: 35px 0 110px;
 
     background: white;
 }
 
 
-/* GRID */
+.lumi-services-grid {
 
-.lc-services-grid {
     display: grid;
 
     grid-template-columns: repeat(2, 1fr);
 
-    gap: 16px;
+    gap: 18px;
 }
 
 
 /* =====================================================
-   SERVICE CARD
+   CARD
 ===================================================== */
 
-.lc-service-card {
+.lumi-card {
 
     position: relative;
 
-    min-height: 350px;
+    min-height: 365px;
 
-    padding: 31px;
+    padding: 34px;
 
-    background: var(--lc-bg);
+    background: #f5f9fa;
 
-    border: 1px solid var(--lc-line);
+    border: 1px solid #dce7eb;
 
-    border-radius: 20px;
+    border-radius: 22px;
 
     overflow: hidden;
 
@@ -368,32 +375,28 @@ button {
         transform .35s ease,
         box-shadow .35s ease,
         background .35s ease;
-
 }
 
 
-/* Hover */
-
-.lc-service-card:hover {
+.lumi-card:hover {
 
     transform: translateY(-7px);
 
-    background: white;
+    background: #ffffff;
 
     box-shadow:
-        0 25px 60px rgba(25,75,95,.11);
-
+        0 25px 65px rgba(30,75,95,.11);
 }
 
 
 /* NUMBER */
 
-.lc-card-number {
+.lumi-card-number {
 
     position: absolute;
 
-    top: 28px;
-    right: 30px;
+    top: 32px;
+    right: 34px;
 
     font-family: "Manrope";
 
@@ -401,7 +404,7 @@ button {
 
     font-weight: 700;
 
-    color: #a8b6bb;
+    color: #a9b7bc;
 
     letter-spacing: 1px;
 }
@@ -409,115 +412,113 @@ button {
 
 /* ICON */
 
-.lc-card-icon {
+.lumi-card-icon {
 
-    width: 54px;
-    height: 54px;
+    width: 58px;
+    height: 58px;
 
-    border-radius: 16px;
+    border-radius: 17px;
 
-    background: var(--lc-blue-light);
+    background: #e5f2f6;
 
-    color: var(--lc-blue-dark);
+    color: #347b9b;
 
     display: flex;
-
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
-    font-size: 21px;
+    font-size: 22px;
 
-    margin-bottom: 32px;
+    margin-bottom: 35px;
 
     transition: .35s;
-
 }
 
 
-.lc-service-card:hover .lc-card-icon {
+.lumi-card:hover .lumi-card-icon {
 
-    background: var(--lc-blue-dark);
+    background: #347b9b;
 
     color: white;
-
 }
 
 
 /* TITLE */
 
-.lc-service-card h3 {
+.lumi-card h2 {
 
     font-family: "Manrope";
 
-    font-size: 24px;
+    font-size: 25px;
 
     line-height: 1.2;
 
-    letter-spacing: -.6px;
+    letter-spacing: -.7px;
 
-    margin-bottom: 12px;
-
+    margin-bottom: 14px;
 }
 
 
 /* DESCRIPTION */
 
-.lc-service-card p {
+.lumi-card-description {
 
-    max-width: 460px;
-
-    color: var(--lc-muted);
+    color: #71828a;
 
     font-size: 13px;
 
-    line-height: 1.75;
+    line-height: 1.8;
 
+    max-width: 500px;
 }
 
 
 /* BOTTOM */
 
-.lc-card-bottom {
+.lumi-card-bottom {
 
     position: absolute;
 
-    left: 31px;
-    right: 31px;
-    bottom: 28px;
+    left: 34px;
+    right: 34px;
+    bottom: 29px;
 
-    padding-top: 15px;
+    padding-top: 16px;
 
-    border-top: 1px solid var(--lc-line);
+    border-top: 1px solid #dce7eb;
 
     display: flex;
 
-    align-items: center;
-
     justify-content: space-between;
 
-    color: var(--lc-blue-dark);
+    align-items: center;
+}
+
+
+.lumi-card-price {
 
     font-size: 10px;
 
     font-weight: 700;
 
-    letter-spacing: .4px;
+    letter-spacing: .5px;
+
+    color: #347b9b;
 }
 
 
-.lc-arrow {
+.lumi-card-arrow {
 
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
 
-    border: 1px solid var(--lc-line);
+    border: 1px solid #dce7eb;
 
     border-radius: 50%;
 
     display: flex;
-
-    align-items: center;
     justify-content: center;
+    align-items: center;
 
     font-size: 13px;
 
@@ -525,44 +526,142 @@ button {
 }
 
 
-.lc-service-card:hover .lc-arrow {
+.lumi-card:hover .lumi-card-arrow {
 
-    background: var(--lc-blue-dark);
+    background: #347b9b;
+
+    border-color: #347b9b;
 
     color: white;
 
-    border-color: var(--lc-blue-dark);
-
     transform: rotate(-45deg);
-
 }
 
 
 /* =====================================================
-   BOTTOM CTA
+   WHY US
 ===================================================== */
 
-.lc-cta {
+.lumi-why {
 
-    padding: 90px 0;
+    padding: 105px 0;
 
-    background: var(--lc-bg);
+    background: #f5f9fa;
 }
 
 
-.lc-cta-box {
+.lumi-why-heading {
+
+    max-width: 700px;
+
+    margin-bottom: 55px;
+}
+
+
+.lumi-why-title {
+
+    font-family: "Manrope";
+
+    font-size: clamp(37px, 5vw, 57px);
+
+    line-height: 1.08;
+
+    letter-spacing: -2.5px;
+
+    font-weight: 600;
+
+    margin-top: 14px;
+}
+
+
+.lumi-why-title span {
+    color: #347b9b;
+}
+
+
+.lumi-features {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 16px;
+}
+
+
+.lumi-feature {
+
+    background: white;
+
+    border: 1px solid #dce7eb;
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+    min-height: 190px;
+}
+
+
+.lumi-feature-number {
+
+    font-family: "Manrope";
+
+    color: #347b9b;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    margin-bottom: 25px;
+}
+
+
+.lumi-feature h3 {
+
+    font-family: "Manrope";
+
+    font-size: 18px;
+
+    margin-bottom: 8px;
+}
+
+
+.lumi-feature p {
+
+    color: #71828a;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.lumi-cta {
+
+    padding: 95px 0;
+
+    background: white;
+}
+
+
+.lumi-cta-box {
 
     position: relative;
 
     overflow: hidden;
 
-    background: var(--lc-navy);
-
-    color: white;
+    padding: 60px;
 
     border-radius: 24px;
 
-    padding: 58px;
+    background: #163c4e;
+
+    color: white;
 
     display: flex;
 
@@ -570,36 +669,33 @@ button {
 
     justify-content: space-between;
 
-    gap: 40px;
+    gap: 45px;
 }
 
 
-.lc-cta-box::after {
-
-    content: "";
+.lumi-cta-circle {
 
     position: absolute;
 
-    width: 320px;
-    height: 320px;
+    width: 360px;
+    height: 360px;
 
     border: 1px solid rgba(255,255,255,.08);
 
     border-radius: 50%;
 
-    right: -110px;
-    top: -100px;
-
+    right: -130px;
+    top: -130px;
 }
 
 
-.lc-cta-content {
+.lumi-cta-content {
     position: relative;
     z-index: 2;
 }
 
 
-.lc-cta-label {
+.lumi-cta-label {
 
     color: #a9d9e7;
 
@@ -607,46 +703,44 @@ button {
 
     font-weight: 700;
 
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
 
     margin-bottom: 14px;
 }
 
 
-.lc-cta-box h2 {
+.lumi-cta h2 {
 
     font-family: "Manrope";
 
     font-size: clamp(34px, 4vw, 52px);
 
-    line-height: 1.05;
+    line-height: 1.08;
 
     letter-spacing: -2px;
 
-    max-width: 620px;
+    max-width: 650px;
 }
 
 
-.lc-cta-box h2 span {
+.lumi-cta h2 span {
     color: #a9d9e7;
 }
 
 
-.lc-cta-box p {
+.lumi-cta p {
 
     color: rgba(255,255,255,.6);
 
     font-size: 13px;
 
-    max-width: 550px;
+    margin-top: 15px;
 
-    margin-top: 16px;
+    max-width: 550px;
 }
 
 
-/* BUTTON */
-
-.lc-button {
+.lumi-button {
 
     position: relative;
 
@@ -656,13 +750,13 @@ button {
 
     align-items: center;
 
-    gap: 15px;
-
-    padding: 15px 22px;
+    gap: 14px;
 
     background: white;
 
-    color: var(--lc-navy);
+    color: #163c4e;
+
+    padding: 15px 22px;
 
     border-radius: 50px;
 
@@ -676,7 +770,7 @@ button {
 }
 
 
-.lc-button:hover {
+.lumi-button:hover {
     transform: translateY(-3px);
 }
 
@@ -685,17 +779,17 @@ button {
    FOOTER
 ===================================================== */
 
-.lc-footer {
-
-    padding: 55px 0 22px;
+.lumi-footer {
 
     background: #123541;
 
     color: white;
+
+    padding: 55px 0 22px;
 }
 
 
-.lc-footer-grid {
+.lumi-footer-grid {
 
     display: grid;
 
@@ -707,21 +801,21 @@ button {
 }
 
 
-.lc-footer-description {
+.lumi-footer-description {
 
-    color: rgba(255,255,255,.52);
+    max-width: 310px;
+
+    margin-top: 15px;
+
+    color: rgba(255,255,255,.5);
 
     font-size: 11px;
 
     line-height: 1.7;
-
-    max-width: 300px;
-
-    margin-top: 15px;
 }
 
 
-.lc-footer-title {
+.lumi-footer-title {
 
     color: #a8d5e3;
 
@@ -735,7 +829,7 @@ button {
 }
 
 
-.lc-footer-links {
+.lumi-footer-links {
 
     display: flex;
 
@@ -745,8 +839,8 @@ button {
 }
 
 
-.lc-footer-links a,
-.lc-footer-links span {
+.lumi-footer-links a,
+.lumi-footer-links span {
 
     color: rgba(255,255,255,.58);
 
@@ -756,26 +850,26 @@ button {
 }
 
 
-.lc-footer-links a:hover {
+.lumi-footer-links a:hover {
     color: white;
 }
 
 
-.lc-footer-bottom {
-
-    padding-top: 18px;
+.lumi-footer-bottom {
 
     border-top: 1px solid rgba(255,255,255,.1);
 
-    color: rgba(255,255,255,.3);
-
-    font-size: 9px;
+    padding-top: 18px;
 
     display: flex;
 
     justify-content: space-between;
 
-    gap: 15px;
+    gap: 20px;
+
+    color: rgba(255,255,255,.3);
+
+    font-size: 9px;
 }
 
 
@@ -783,127 +877,114 @@ button {
    MOBILE
 ===================================================== */
 
-@media (max-width: 800px) {
+@media(max-width:850px) {
 
-    .lc-nav {
+    .lumi-nav {
         display: none;
     }
 
-    .lc-intro-grid {
+    .lumi-intro-grid {
         grid-template-columns: 1fr;
-
         gap: 25px;
     }
 
-    .lc-services-grid {
+    .lumi-services-grid {
         grid-template-columns: 1fr;
     }
 
-    .lc-cta-box {
-        flex-direction: column;
-
-        align-items: flex-start;
-    }
-
-    .lc-footer-grid {
+    .lumi-features {
         grid-template-columns: 1fr 1fr;
     }
 
+    .lumi-cta-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .lumi-footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 
-@media (max-width: 560px) {
+@media(max-width:560px) {
 
-    .lc-container {
+    .lumi-container {
         width: calc(100% - 30px);
     }
 
-    .lc-header {
-        padding: 17px 0;
+    .lumi-header {
+        padding: 18px 0;
     }
 
-    .lc-logo-mark {
-        width: 36px;
-        height: 36px;
-    }
-
-    .lc-logo-name {
-        font-size: 15px;
-    }
-
-    .lc-services-hero {
+    .lumi-services-hero {
         min-height: 590px;
     }
 
-    .lc-services-hero-content {
-        padding-top: 45px;
+    .lumi-hero-title {
+        font-size: 46px;
+        letter-spacing: -2.4px;
     }
 
-    .lc-services-hero h1 {
-        font-size: 45px;
-        letter-spacing: -2.2px;
-    }
-
-    .lc-hero-description {
+    .lumi-hero-text {
         font-size: 13px;
     }
 
-    .lc-intro {
+    .lumi-intro {
         padding: 75px 0 45px;
     }
 
-    .lc-intro h2 {
-        font-size: 39px;
+    .lumi-intro-title {
+        font-size: 40px;
         letter-spacing: -1.8px;
     }
 
-    .lc-intro-text {
-        font-size: 13px;
-    }
-
-    .lc-services {
+    .lumi-services {
         padding: 30px 0 75px;
     }
 
-    .lc-service-card {
-        min-height: 330px;
-
-        padding: 24px;
+    .lumi-card {
+        min-height: 350px;
+        padding: 25px;
     }
 
-    .lc-card-number {
-        top: 24px;
-        right: 24px;
+    .lumi-card-number {
+        top: 25px;
+        right: 25px;
     }
 
-    .lc-card-bottom {
-        left: 24px;
-        right: 24px;
-        bottom: 24px;
+    .lumi-card-bottom {
+        left: 25px;
+        right: 25px;
+        bottom: 25px;
     }
 
-    .lc-service-card h3 {
-        font-size: 22px;
+    .lumi-why {
+        padding: 75px 0;
     }
 
-    .lc-cta {
+    .lumi-features {
+        grid-template-columns: 1fr;
+    }
+
+    .lumi-cta {
         padding: 70px 0;
     }
 
-    .lc-cta-box {
-        padding: 34px 24px;
+    .lumi-cta-box {
+        padding: 35px 25px;
     }
 
-    .lc-cta-box h2 {
-        font-size: 36px;
+    .lumi-cta h2 {
+        font-size: 37px;
     }
 
-    .lc-footer-grid {
+    .lumi-footer-grid {
         grid-template-columns: 1fr;
         gap: 35px;
     }
 
-    .lc-footer-bottom {
+    .lumi-footer-bottom {
         flex-direction: column;
     }
 
@@ -921,24 +1002,24 @@ button {
      HEADER
 ===================================================== -->
 
-<header class="lc-header">
+<header class="lumi-header">
 
-<div class="lc-container lc-header-inner">
+<div class="lumi-container lumi-header-inner">
 
 
-<a href="index.html" class="lc-logo">
+<a href="index.html" class="lumi-logo">
 
-<div class="lc-logo-mark">
+<div class="lumi-logo-icon">
 L
 </div>
 
 <div>
 
-<div class="lc-logo-name">
+<div class="lumi-logo-name">
 LUMI
 </div>
 
-<span class="lc-logo-sub">
+<span class="lumi-logo-small">
 CLEAN
 </span>
 
@@ -947,7 +1028,7 @@ CLEAN
 </a>
 
 
-<nav class="lc-nav">
+<nav class="lumi-nav">
 
 <a href="index.html">
 Etusivu
@@ -966,14 +1047,11 @@ Yhteystiedot
 </a>
 
 <a href="yhteystiedot.html"
-   class="lc-nav-cta">
-
+class="lumi-nav-button">
 Pyydä tarjous
-
 </a>
 
 </nav>
-
 
 </div>
 
@@ -985,38 +1063,37 @@ Pyydä tarjous
      HERO
 ===================================================== -->
 
-<section class="lc-services-hero">
+<section class="lumi-services-hero">
 
 
-<div class="lc-hero-circle-one"></div>
+<div class="lumi-hero-ring"></div>
 
-<div class="lc-hero-circle-two"></div>
-
-
-<div class="lc-container lc-services-hero-content">
+<div class="lumi-hero-ring-small"></div>
 
 
-<div class="lc-eyebrow">
+<div class="lumi-container lumi-hero-content">
 
+
+<div class="lumi-eyebrow">
 LUMI CLEAN · PALVELUT
-
 </div>
 
 
-<h1>
+<h1 class="lumi-hero-title">
 
-Siivouspalvelut,
+Puhtautta,
 <br>
 
-<span>jotka sopivat arkeesi.</span>
+<span>joka sopii arkeesi.</span>
 
 </h1>
 
 
-<p class="lc-hero-description">
+<p class="lumi-hero-text">
 
-Luotettavaa ja huolellista siivouspalvelua
-koteihin, yrityksille ja erilaisiin tiloihin
+Tarjoamme monipuolisia, joustavia ja
+ammattitaitoisia siivouspalveluja koteihin,
+yrityksille ja erilaisiin tiloihin
 Porissa ja Satakunnan alueella.
 
 </p>
@@ -1032,14 +1109,14 @@ Porissa ja Satakunnan alueella.
      INTRO
 ===================================================== -->
 
-<section class="lc-intro">
+<section class="lumi-intro">
 
-<div class="lc-container lc-intro-grid">
+<div class="lumi-container lumi-intro-grid">
 
 
 <div>
 
-<div class="lc-small-title">
+<div class="lumi-label">
 PALVELUMME
 </div>
 
@@ -1048,21 +1125,24 @@ PALVELUMME
 
 <div>
 
-<h2>
+<h2 class="lumi-intro-title">
 
-Puhtautta
-<span>ilman turhaa vaivaa.</span>
+Sinä päätät.
+<br>
+
+<span>Me hoidamme loput.</span>
 
 </h2>
 
 
-<p class="lc-intro-text">
+<p class="lumi-intro-text">
 
-Lumi Clean tarjoaa siivouspalveluita,
-jotka suunnitellaan asiakkaan tarpeiden
-mukaan. Voit valita säännöllisen palvelun
-tai pyytää meidät avuksi silloin, kun
-siivoukselle on erityinen tarve.
+Palvelumme ovat joustavia ja
+räätälöitävissä asiakkaan tarpeiden
+mukaan. Olipa kyseessä säännöllinen
+siivous tai kertaluonteinen apu,
+huolehdimme työstä nopeasti,
+tarkasti ja ammattitaitoisesti.
 
 </p>
 
@@ -1079,46 +1159,47 @@ siivoukselle on erityinen tarve.
      SERVICE CARDS
 ===================================================== -->
 
-<section class="lc-services">
+<section class="lumi-services">
 
-<div class="lc-container">
-
-
-<div class="lc-services-grid">
+<div class="lumi-container">
 
 
-<!-- CARD 01 -->
+<div class="lumi-services-grid">
 
-<article class="lc-service-card">
 
-<div class="lc-card-number">
+<!-- 01 -->
+
+<article class="lumi-card">
+
+<div class="lumi-card-number">
 01
 </div>
 
-<div class="lc-card-icon">
+<div class="lumi-card-icon">
 ⌂
 </div>
 
-<h3>
-Kotisiivous
-</h3>
+<h2>
+Koti siivous
+</h2>
 
-<p>
+<p class="lumi-card-description">
 
-Pidä kotisi puhtaana ja viihtyisänä
-ilman, että sinun tarvitsee käyttää
-vapaa-aikaasi siivoamiseen.
+Tarjoamme perusteellista kotisiivousta,
+joka tekee kodistasi puhtaan, raikkaan
+ja viihtyisän. Voimme siivota koko kodin
+tai vain valitut tilat tarpeidesi mukaan.
 
 </p>
 
 
-<div class="lc-card-bottom">
+<div class="lumi-card-bottom">
 
-<span>
-KODIT · ASUNNOT
+<span class="lumi-card-price">
+RÄÄTÄLÖITÄVISSÄ TARPEEN MUKAAN
 </span>
 
-<span class="lc-arrow">
+<span class="lumi-card-arrow">
 ↗
 </span>
 
@@ -1128,38 +1209,39 @@ KODIT · ASUNNOT
 
 
 
-<!-- CARD 02 -->
+<!-- 02 -->
 
-<article class="lc-service-card">
+<article class="lumi-card">
 
-<div class="lc-card-number">
+<div class="lumi-card-number">
 02
 </div>
 
-<div class="lc-card-icon">
+<div class="lumi-card-icon">
 □
 </div>
 
-<h3>
-Yrityssiivous
-</h3>
+<h2>
+Toimiston siivous
+</h2>
 
-<p>
+<p class="lumi-card-description">
 
-Siistit ja viihtyisät työympäristöt
-toimistoille, liiketiloille ja
-muille yrityksille.
+Pidämme toimistosi siistinä ja
+ammattimaisena. Sopii niin pienille
+toimistoille kuin suuremmille
+liiketiloille.
 
 </p>
 
 
-<div class="lc-card-bottom">
+<div class="lumi-card-bottom">
 
-<span>
-YRITYKSET · TOIMITILAT
+<span class="lumi-card-price">
+JOUSTAVAT AIKATAULUT
 </span>
 
-<span class="lc-arrow">
+<span class="lumi-card-arrow">
 ↗
 </span>
 
@@ -1169,38 +1251,39 @@ YRITYKSET · TOIMITILAT
 
 
 
-<!-- CARD 03 -->
+<!-- 03 -->
 
-<article class="lc-service-card">
+<article class="lumi-card">
 
-<div class="lc-card-number">
+<div class="lumi-card-number">
 03
 </div>
 
-<div class="lc-card-icon">
+<div class="lumi-card-icon">
 ✧
 </div>
 
-<h3>
-Ikkunanpesu
-</h3>
+<h2>
+Ikkunoiden pesu
+</h2>
 
-<p>
+<p class="lumi-card-description">
 
-Puhtaat ikkunat tuovat tilaan
-enemmän valoa ja raikkaamman
-yleisilmeen.
+Pesemme niin tavalliset kuin suuremmat
+ikkunat nopeasti ja tehokkaasti.
+Ammattitaitoinen lopputulos tuo tilaan
+enemmän valoa ja raikkautta.
 
 </p>
 
 
-<div class="lc-card-bottom">
+<div class="lumi-card-bottom">
 
-<span>
-KODIT · YRITYKSET
+<span class="lumi-card-price">
+HINTA MÄÄRÄYTYY KOON MUKAAN
 </span>
 
-<span class="lc-arrow">
+<span class="lumi-card-arrow">
 ↗
 </span>
 
@@ -1210,38 +1293,39 @@ KODIT · YRITYKSET
 
 
 
-<!-- CARD 04 -->
+<!-- 04 -->
 
-<article class="lc-service-card">
+<article class="lumi-card">
 
-<div class="lc-card-number">
+<div class="lumi-card-number">
 04
 </div>
 
-<div class="lc-card-icon">
+<div class="lumi-card-icon">
 ◇
 </div>
 
-<h3>
-Muuttosiivous
-</h3>
+<h2>
+Sohvien ja tekstiilien siivous
+</h2>
 
-<p>
+<p class="lumi-card-description">
 
-Huolellinen siivous ennen muuttoa
-tai uuden kodin vastaanottamista.
-Sovitaan tarpeen mukaan.
+Huolellinen puhdistus sohville ja
+muille tekstiilipinnoille. Raikastaa
+tilan ja auttaa pitämään kalusteet
+siisteinä.
 
 </p>
 
 
-<div class="lc-card-bottom">
+<div class="lumi-card-bottom">
 
-<span>
-MUUTOT · ASUNNOT
+<span class="lumi-card-price">
+PYYDÄ TARJOUS
 </span>
 
-<span class="lc-arrow">
+<span class="lumi-card-arrow">
 ↗
 </span>
 
@@ -1251,38 +1335,39 @@ MUUTOT · ASUNNOT
 
 
 
-<!-- CARD 05 -->
+<!-- 05 -->
 
-<article class="lc-service-card">
+<article class="lumi-card">
 
-<div class="lc-card-number">
+<div class="lumi-card-number">
 05
 </div>
 
-<div class="lc-card-icon">
+<div class="lumi-card-icon">
 ○
 </div>
 
-<h3>
-Tekstiilien puhdistus
-</h3>
+<h2>
+Auton sisätilojen siivous
+</h2>
 
-<p>
+<p class="lumi-card-description">
 
-Sohvien, tuolien ja muiden
-tekstiilipintojen perusteellinen
-puhdistus.
+Puhdistamme auton sisätilat
+huolellisesti ja nopeasti, jotta
+autosi näyttää jälleen raikkaalta
+ja siistiltä.
 
 </p>
 
 
-<div class="lc-card-bottom">
+<div class="lumi-card-bottom">
 
-<span>
-SOHVAT · TEKSTIILIT
+<span class="lumi-card-price">
+PYYDÄ TARJOUS
 </span>
 
-<span class="lc-arrow">
+<span class="lumi-card-arrow">
 ↗
 </span>
 
@@ -1292,38 +1377,39 @@ SOHVAT · TEKSTIILIT
 
 
 
-<!-- CARD 06 -->
+<!-- 06 -->
 
-<article class="lc-service-card">
+<article class="lumi-card">
 
-<div class="lc-card-number">
+<div class="lumi-card-number">
 06
 </div>
 
-<div class="lc-card-icon">
-+
+<div class="lumi-card-icon">
+✦
 </div>
 
-<h3>
-Kertaluonteinen siivous
-</h3>
+<h2>
+Juhlan jälkeinen siivous
+</h2>
 
-<p>
+<p class="lumi-card-description">
 
-Tarvitsetko apua erityiseen
-tilanteeseen? Kerro meille tarpeesi
-ja suunnitellaan sopiva palvelu.
+Kun juhlat ovat ohi, me hoidamme
+siivouksen. Nopea ja joustava ratkaisu
+tilanteisiin, joissa tarvitset apua
+lyhyelläkin varoitusajalla.
 
 </p>
 
 
-<div class="lc-card-bottom">
+<div class="lumi-card-bottom">
 
-<span>
-JOUSTAVA PALVELU
+<span class="lumi-card-price">
+NOPEA JA JOUSTAVA PALVELU
 </span>
 
-<span class="lc-arrow">
+<span class="lumi-card-arrow">
 ↗
 </span>
 
@@ -1341,49 +1427,192 @@ JOUSTAVA PALVELU
 
 
 <!-- =====================================================
-     CTA
+     WHY US
 ===================================================== -->
 
-<section class="lc-cta">
+<section class="lumi-why">
 
-<div class="lc-container">
-
-
-<div class="lc-cta-box">
+<div class="lumi-container">
 
 
-<div class="lc-cta-content">
+<div class="lumi-why-heading">
 
-
-<div class="lc-cta-label">
-PYYDÄ TARJOUS
+<div class="lumi-label">
+MIKSI LUMI CLEAN?
 </div>
 
+<h2 class="lumi-why-title">
 
-<h2>
-
-Etkö löydä
-<span>tarvitsemaasi palvelua?</span>
+Palvelua,
+<span>johon voit luottaa.</span>
 
 </h2>
 
+</div>
+
+
+<div class="lumi-features">
+
+
+<div class="lumi-feature">
+
+<div class="lumi-feature-number">
+01
+</div>
+
+<h3>
+Täsmällisyys
+</h3>
+
+<p>
+Saavumme sovittuna aikana ja hoidamme
+työn tehokkaasti ilman turhia viivästyksiä.
+</p>
+
+</div>
+
+
+<div class="lumi-feature">
+
+<div class="lumi-feature-number">
+02
+</div>
+
+<h3>
+Yhteys 24/7
+</h3>
+
+<p>
+Olemme tavoitettavissa aina, kun tarvitset
+apua tai haluat varata siivouksen.
+</p>
+
+</div>
+
+
+<div class="lumi-feature">
+
+<div class="lumi-feature-number">
+03
+</div>
+
+<h3>
+Palvelemme koko Satakunnassa
+</h3>
+
+<p>
+Saavumme asiakkaiden luokse kaikkialla
+Satakunnan alueella.
+</p>
+
+</div>
+
+
+<div class="lumi-feature">
+
+<div class="lumi-feature-number">
+04
+</div>
+
+<h3>
+Pikasiivous
+</h3>
+
+<p>
+Tarjoamme nopeaa ja joustavaa siivousta
+myös kiireellisiin tilanteisiin.
+</p>
+
+</div>
+
+
+<div class="lumi-feature">
+
+<div class="lumi-feature-number">
+05
+</div>
+
+<h3>
+Nykyaikaiset menetelmät
+</h3>
+
+<p>
+Käytämme moderneja siivousmenetelmiä
+puhtaan ja raikkaan lopputuloksen saavuttamiseksi.
+</p>
+
+</div>
+
+
+<div class="lumi-feature">
+
+<div class="lumi-feature-number">
+06
+</div>
+
+<h3>
+Ammattitaitoinen henkilökunta
+</h3>
+
+<p>
+Kokenut ja ystävällinen tiimi huolehtii
+tiloistasi tarkasti ja ammattimaisesti.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="lumi-cta">
+
+<div class="lumi-container">
+
+
+<div class="lumi-cta-box">
+
+
+<div class="lumi-cta-circle"></div>
+
+
+<div class="lumi-cta-content">
+
+<div class="lumi-cta-label">
+PYYDÄ TARJOUS
+</div>
+
+<h2>
+
+Tarvitsetko
+<span>siivousapua?</span>
+
+</h2>
 
 <p>
 
 Kerro meille tarpeistasi.
 Suunnitellaan yhdessä juuri sinulle
-sopiva ratkaisu.
+sopiva siivouspalvelu.
 
 </p>
-
 
 </div>
 
 
 <a href="yhteystiedot.html"
-   class="lc-button">
+class="lumi-button">
 
-Pyydä tarjous
+Ota yhteyttä
 
 <span>↗</span>
 
@@ -1402,28 +1631,26 @@ Pyydä tarjous
      FOOTER
 ===================================================== -->
 
-<footer class="lc-footer">
+<footer class="lumi-footer">
 
-
-<div class="lc-container lc-footer-grid">
+<div class="lumi-container lumi-footer-grid">
 
 
 <div>
 
-<a href="index.html"
-   class="lc-logo">
+<a href="index.html" class="lumi-logo">
 
-<div class="lc-logo-mark">
+<div class="lumi-logo-icon">
 L
 </div>
 
 <div>
 
-<div class="lc-logo-name">
+<div class="lumi-logo-name">
 LUMI
 </div>
 
-<span class="lc-logo-sub">
+<span class="lumi-logo-small">
 CLEAN
 </span>
 
@@ -1432,9 +1659,9 @@ CLEAN
 </a>
 
 
-<p class="lc-footer-description">
+<p class="lumi-footer-description">
 
-Luotettavaa ja ammattitaitoista
+Laadukasta, luotettavaa ja joustavaa
 siivouspalvelua Porissa ja
 Satakunnan alueella.
 
@@ -1446,12 +1673,11 @@ Satakunnan alueella.
 
 <div>
 
-<div class="lc-footer-title">
+<div class="lumi-footer-title">
 SIVUSTO
 </div>
 
-
-<div class="lc-footer-links">
+<div class="lumi-footer-links">
 
 <a href="index.html">
 Etusivu
@@ -1477,12 +1703,11 @@ Yhteystiedot
 
 <div>
 
-<div class="lc-footer-title">
+<div class="lumi-footer-title">
 YHTEYS
 </div>
 
-
-<div class="lc-footer-links">
+<div class="lumi-footer-links">
 
 <a href="tel:+358466322804">
 +358 46 632 2804
@@ -1505,7 +1730,7 @@ Pori · Satakunta
 
 
 
-<div class="lc-container lc-footer-bottom">
+<div class="lumi-container lumi-footer-bottom">
 
 <span>
 © 2026 Lumi Clean
@@ -1516,7 +1741,6 @@ Siivouspalvelut Porissa ja Satakunnassa
 </span>
 
 </div>
-
 
 </footer>
 
