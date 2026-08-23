@@ -1,0 +1,1786 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Meistä | Lumi Clean</title>
+
+<meta name="description" content="Tutustu Lumi Cleaniin – luotettava, huolellinen ja joustava siivouspalvelu Porissa ja Satakunnan alueella.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    color: #193d4d;
+    background: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1160px, calc(100% - 40px));
+    margin: auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+    padding: 24px 0;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: #ffffff;
+    font-family: "Manrope", sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.logo small {
+    display: block;
+    margin-top: -5px;
+    font-size: 7px;
+    letter-spacing: 4px;
+    opacity: .7;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    color: rgba(255,255,255,.82);
+    font-size: 12px;
+    transition: .25s;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+.nav-button {
+    padding: 12px 20px;
+    border-radius: 50px;
+    background: #ffffff;
+    color: #173d4f !important;
+    font-weight: 700;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 600px;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    color: #ffffff;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(133,209,225,.32),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #123847 0%,
+            #1d5268 55%,
+            #5b9eb1 100%
+        );
+}
+
+
+/* animated circles */
+
+.hero-circle {
+    position: absolute;
+
+    border: 1px solid rgba(255,255,255,.11);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+.circle-one {
+    width: 600px;
+    height: 600px;
+
+    right: -260px;
+    top: -250px;
+
+    animation: floatCircle 12s ease-in-out infinite;
+}
+
+.circle-two {
+    width: 350px;
+    height: 350px;
+
+    right: 80px;
+    bottom: -260px;
+
+    animation: floatCircleTwo 10s ease-in-out infinite;
+}
+
+.circle-three {
+    width: 180px;
+    height: 180px;
+
+    left: 7%;
+    bottom: -100px;
+
+    border-color: rgba(255,255,255,.06);
+
+    animation: floatSmall 8s ease-in-out infinite;
+}
+
+@keyframes floatCircle {
+
+    0%,100% {
+        transform: translate(0,0);
+    }
+
+    50% {
+        transform: translate(-20px,25px);
+    }
+
+}
+
+@keyframes floatCircleTwo {
+
+    0%,100% {
+        transform: translate(0,0);
+    }
+
+    50% {
+        transform: translate(20px,-20px);
+    }
+
+}
+
+@keyframes floatSmall {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-25px);
+    }
+
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+
+    max-width: 800px;
+
+    padding-top: 55px;
+}
+
+
+/* hero animation */
+
+.hero-content > * {
+    opacity: 0;
+    transform: translateY(25px);
+
+    animation: heroAppear .9s ease forwards;
+}
+
+.hero-content .eyebrow {
+    animation-delay: .1s;
+}
+
+.hero-content h1 {
+    animation-delay: .25s;
+}
+
+.hero-content .hero-text {
+    animation-delay: .4s;
+}
+
+.hero-content .hero-button {
+    animation-delay: .55s;
+}
+
+@keyframes heroAppear {
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+.eyebrow {
+    margin-bottom: 20px;
+
+    color: #b7dfe8;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 2.7px;
+}
+
+.hero h1 {
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(48px, 7vw, 80px);
+
+    line-height: .96;
+
+    letter-spacing: -4px;
+
+    font-weight: 600;
+}
+
+.hero h1 span {
+    color: #bce7ef;
+}
+
+.hero-text {
+    max-width: 600px;
+
+    margin-top: 27px;
+
+    color: rgba(255,255,255,.68);
+
+    font-size: 14px;
+
+    line-height: 1.85;
+}
+
+.hero-button {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 14px 24px;
+
+    border-radius: 50px;
+
+    background: #ffffff;
+
+    color: #173d4f;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    transition: .3s;
+}
+
+.hero-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 30px rgba(0,0,0,.12);
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    padding: 120px 0;
+}
+
+.intro-grid {
+    display: grid;
+
+    grid-template-columns: .9fr 1.1fr;
+
+    gap: 90px;
+
+    align-items: center;
+}
+
+.label {
+    color: #3d88a2;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+}
+
+.intro h2 {
+    margin-top: 13px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(40px, 5vw, 62px);
+
+    line-height: 1.02;
+
+    letter-spacing: -3.5px;
+}
+
+.intro h2 span {
+    color: #438da5;
+}
+
+.intro-text p {
+    margin-bottom: 18px;
+
+    color: #71838b;
+
+    font-size: 13px;
+
+    line-height: 1.9;
+}
+
+.intro-text p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 10px;
+
+    margin-top: 40px;
+}
+
+.stat {
+    padding: 21px;
+
+    border: 1px solid #dce9ed;
+
+    border-radius: 17px;
+
+    background: #f5fafb;
+
+    transition: .3s;
+}
+
+.stat:hover {
+    transform: translateY(-5px);
+
+    background: #eef8fa;
+}
+
+.stat-number {
+    color: #357d98;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 27px;
+
+    font-weight: 700;
+}
+
+.stat-text {
+    margin-top: 2px;
+
+    color: #75868d;
+
+    font-size: 8px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   OUR APPROACH
+========================= */
+
+.approach {
+    padding: 110px 0;
+
+    background: #f6fafb;
+}
+
+.approach-heading {
+    max-width: 700px;
+
+    margin-bottom: 50px;
+}
+
+.approach-heading h2 {
+    margin-top: 12px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(40px,5vw,60px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+}
+
+.approach-heading h2 span {
+    color: #438da5;
+}
+
+.approach-heading p {
+    margin-top: 17px;
+
+    color: #71838b;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   APPROACH CARDS
+========================= */
+
+.approach-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 14px;
+}
+
+.approach-card {
+    position: relative;
+
+    min-height: 320px;
+
+    padding: 30px;
+
+    border-radius: 22px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce8ec;
+
+    overflow: hidden;
+
+    transition:
+        transform .4s ease,
+        box-shadow .4s ease,
+        border-color .4s ease;
+}
+
+.approach-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    right: -50px;
+    top: -50px;
+
+    border-radius: 50%;
+
+    background: #e5f4f7;
+
+    transition: .4s;
+}
+
+.approach-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #c8e1e7;
+
+    box-shadow:
+        0 25px 55px rgba(27,76,91,.10);
+}
+
+.approach-card:hover::before {
+    transform: scale(1.5);
+}
+
+.approach-icon {
+    position: relative;
+    z-index: 2;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #e5f4f7;
+
+    color: #337d98;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 16px;
+
+    font-weight: 800;
+}
+
+.approach-card h3 {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 55px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 21px;
+}
+
+.approach-card p {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 9px;
+
+    color: #71838b;
+
+    font-size: 11px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   PROMISE
+========================= */
+
+.promise {
+    padding: 120px 0;
+}
+
+.promise-box {
+    position: relative;
+
+    padding: 75px;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    background:
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(112,192,210,.32),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #153c4e,
+            #285f74
+        );
+
+    color: white;
+}
+
+.promise-box::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: -260px;
+    top: -250px;
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    border-radius: 50%;
+
+    animation: slowRotate 15s linear infinite;
+}
+
+@keyframes slowRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+.promise-label {
+    color: #9ed4df;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+}
+
+.promise-box h2 {
+    position: relative;
+
+    max-width: 800px;
+
+    margin-top: 15px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(40px,5vw,65px);
+
+    line-height: 1;
+
+    letter-spacing: -3.5px;
+}
+
+.promise-box h2 span {
+    color: #bde6ef;
+}
+
+.promise-box > p {
+    position: relative;
+
+    max-width: 650px;
+
+    margin-top: 22px;
+
+    color: rgba(255,255,255,.63);
+
+    font-size: 13px;
+
+    line-height: 1.85;
+}
+
+.promise-points {
+    position: relative;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 35px;
+}
+
+.promise-point {
+    padding: 10px 15px;
+
+    border: 1px solid rgba(255,255,255,.16);
+
+    border-radius: 50px;
+
+    color: rgba(255,255,255,.75);
+
+    font-size: 9px;
+
+    letter-spacing: .5px;
+
+    background: rgba(255,255,255,.04);
+
+    transition: .3s;
+}
+
+.promise-point:hover {
+    background: rgba(255,255,255,.1);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   QUOTE
+========================= */
+
+.quote {
+    padding: 105px 0;
+
+    text-align: center;
+}
+
+.quote-mark {
+    color: #b8dfe7;
+
+    font-family: Georgia,serif;
+
+    font-size: 75px;
+
+    line-height: .5;
+}
+
+.quote h2 {
+    max-width: 900px;
+
+    margin: 25px auto 0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(36px,5vw,58px);
+
+    line-height: 1.06;
+
+    letter-spacing: -3px;
+}
+
+.quote h2 span {
+    color: #438da5;
+}
+
+.quote p {
+    margin-top: 17px;
+
+    color: #84949a;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+    padding-bottom: 105px;
+}
+
+.cta-box {
+    padding: 68px 40px;
+
+    border-radius: 27px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #173d4f,
+            #2a687e
+        );
+
+    color: white;
+
+    text-align: center;
+}
+
+.cta-box h2 {
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(36px,5vw,58px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+}
+
+.cta-box h2 span {
+    color: #bce6ef;
+}
+
+.cta-box p {
+    max-width: 560px;
+
+    margin: 18px auto 28px;
+
+    color: rgba(255,255,255,.63);
+
+    font-size: 13px;
+}
+
+.cta-button {
+    display: inline-block;
+
+    padding: 14px 26px;
+
+    border-radius: 50px;
+
+    background: white;
+
+    color: #173d4f;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    transition: .3s;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 12px 30px rgba(0,0,0,.15);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 50px 0 20px;
+
+    background: #123541;
+
+    color: white;
+}
+
+.footer-grid {
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr 1fr;
+
+    gap: 50px;
+
+    padding-bottom: 40px;
+}
+
+.footer-logo {
+    font-family: "Manrope", sans-serif;
+
+    font-size: 20px;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+.footer-logo small {
+    display: block;
+
+    font-size: 7px;
+
+    letter-spacing: 4px;
+
+    opacity: .6;
+}
+
+.footer-text {
+    max-width: 310px;
+
+    margin-top: 14px;
+
+    color: rgba(255,255,255,.5);
+
+    font-size: 11px;
+}
+
+.footer-title {
+    margin-bottom: 14px;
+
+    color: #a9d9e5;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.footer-links {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.footer-links a,
+.footer-links span {
+    color: rgba(255,255,255,.55);
+
+    font-size: 11px;
+}
+
+.footer-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(255,255,255,.1);
+
+    color: rgba(255,255,255,.3);
+
+    font-size: 9px;
+}
+
+
+/* =========================
+   SCROLL ANIMATION
+========================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(35px);
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width: 900px) {
+
+    nav {
+        display: none;
+    }
+
+    .intro-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .approach-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .approach-card {
+        min-height: 260px;
+    }
+
+    .promise-box {
+        padding: 50px 40px;
+    }
+
+}
+
+
+@media(max-width: 560px) {
+
+    .container {
+        width: calc(100% - 30px);
+    }
+
+    .hero {
+        min-height: 560px;
+    }
+
+    .hero h1 {
+        font-size: 49px;
+
+        letter-spacing: -2.5px;
+    }
+
+    .intro {
+        padding: 80px 0;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .approach {
+        padding: 80px 0;
+    }
+
+    .promise {
+        padding: 80px 0;
+    }
+
+    .promise-box {
+        padding: 40px 25px;
+    }
+
+    .promise-points {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .quote {
+        padding: 80px 0;
+    }
+
+    .cta-box {
+        padding: 48px 24px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+<div class="container header-inner">
+
+<a href="index.html" class="logo">
+
+LUMI
+
+<small>CLEAN</small>
+
+</a>
+
+
+<nav>
+
+<a href="index.html">
+Etusivu
+</a>
+
+<a href="palvelut.html">
+Palvelut
+</a>
+
+<a href="meista.html">
+Meistä
+</a>
+
+<a href="yhteystiedot.html">
+Yhteystiedot
+</a>
+
+<a
+href="yhteystiedot.html"
+class="nav-button"
+>
+Pyydä tarjous
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-circle circle-one"></div>
+
+<div class="hero-circle circle-two"></div>
+
+<div class="hero-circle circle-three"></div>
+
+
+<div class="container hero-content">
+
+<div class="eyebrow">
+LUMI CLEAN · MEISTÄ
+</div>
+
+
+<h1>
+
+Puhtaampi tila.
+<br>
+
+<span>Rauhallisempi arki.</span>
+
+</h1>
+
+
+<p class="hero-text">
+
+Lumi Clean tarjoaa luotettavaa,
+huolellista ja joustavaa siivouspalvelua
+koteihin, yrityksille ja erilaisiin tiloihin
+Porissa ja Satakunnan alueella.
+
+</p>
+
+
+<a
+href="yhteystiedot.html"
+class="hero-button"
+>
+Ota yhteyttä
+</a>
+
+</div>
+
+</section>
+
+
+
+<!-- INTRO -->
+
+<section class="intro">
+
+<div class="container intro-grid">
+
+
+<div class="reveal">
+
+<div class="label">
+MEISTÄ
+</div>
+
+
+<h2>
+
+Siivous,
+<br>
+
+joka tekee
+<span>arjesta helpompaa.</span>
+
+</h2>
+
+
+<div class="stats">
+
+<div class="stat">
+
+<div class="stat-number counter" data-target="30">
+0€
+</div>
+
+<div class="stat-text">
+Hinnat alkaen
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<div class="stat-number">
+6+
+</div>
+
+<div class="stat-text">
+Palvelua
+</div>
+
+</div>
+
+
+<div class="stat">
+
+<div class="stat-number">
+Pori
+</div>
+
+<div class="stat-text">
+& Satakunta
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="intro-text reveal">
+
+<p>
+
+Lumi Clean syntyi ajatuksesta, että siivouspalvelun
+pitäisi olla helppo, luotettava ja aidosti asiakkaan
+tarpeisiin sopiva.
+
+</p>
+
+
+<p>
+
+Jokainen koti, toimisto ja tila on erilainen.
+Siksi emme ajattele siivousta vain yhtenä
+valmiina palveluna.
+
+</p>
+
+
+<p>
+
+Kuuntelemme, mitä tarvitset, suunnittelemme
+työn sen mukaan ja huolehdimme siitä,
+että lopputulos tuntuu hyvältä.
+
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- APPROACH -->
+
+<section class="approach">
+
+<div class="container">
+
+
+<div class="approach-heading reveal">
+
+<div class="label">
+MEIDÄN TAPAMME
+</div>
+
+
+<h2>
+
+Kolme asiaa,
+<br>
+
+<span>joihin uskomme.</span>
+
+</h2>
+
+
+<p>
+
+Hyvä siivous alkaa asiakkaan tarpeiden
+ymmärtämisestä ja päättyy siihen,
+että tila tuntuu jälleen omalta.
+
+</p>
+
+</div>
+
+
+
+<div class="approach-grid">
+
+
+<div class="approach-card reveal">
+
+<div class="approach-icon">
+♡
+</div>
+
+
+<h3>
+Sinun tarpeesi
+</h3>
+
+
+<p>
+
+Jokainen tila ja jokainen asiakas
+on erilainen. Kuuntelemme ja
+mukautamme palvelun tilanteesi mukaan.
+
+</p>
+
+</div>
+
+
+
+<div class="approach-card reveal">
+
+<div class="approach-icon">
+✦
+</div>
+
+
+<h3>
+Meidän työmme
+</h3>
+
+
+<p>
+
+Teemme työn huolellisesti,
+tehokkaasti ja sovitulla tavalla.
+Yksityiskohdatkin merkitsevät.
+
+</p>
+
+</div>
+
+
+
+<div class="approach-card reveal">
+
+<div class="approach-icon">
+✓
+</div>
+
+
+<h3>
+Lopputulos
+</h3>
+
+
+<p>
+
+Puhdas, raikas ja viihtyisä tila,
+jossa on mukava olla – ilman
+turhaa vaivaa sinulle.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- PROMISE -->
+
+<section class="promise">
+
+<div class="container">
+
+<div class="promise-box reveal">
+
+
+<div class="promise-label">
+LUMI CLEAN · MEIDÄN LUPAUKSEMME
+</div>
+
+
+<h2>
+
+Emme siivoa vain tilaa.
+<br>
+
+<span>Teemme tilaa hyvälle arjelle.</span>
+
+</h2>
+
+
+<p>
+
+Haluamme, että siivouksen jälkeen huomaat
+eron heti – mutta ennen kaikkea tunnet sen.
+Vähemmän tekemistä. Enemmän aikaa itsellesi.
+
+</p>
+
+
+<div class="promise-points">
+
+<div class="promise-point">
+Luotettava palvelu
+</div>
+
+<div class="promise-point">
+Huolellinen lopputulos
+</div>
+
+<div class="promise-point">
+Joustavat ratkaisut
+</div>
+
+<div class="promise-point">
+Kilpailukykyiset hinnat
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- QUOTE -->
+
+<section class="quote">
+
+<div class="container reveal">
+
+<div class="quote-mark">
+“
+</div>
+
+
+<h2>
+
+Kun tila on puhdas,
+<br>
+
+<span>mieli saa hengittää.</span>
+
+</h2>
+
+
+<p>
+LUMI CLEAN · PORI & SATakunta
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+<div class="container">
+
+<div class="cta-box reveal">
+
+<h2>
+
+Tehdäänkö tilaa
+<span>hyvälle arjelle?</span>
+
+</h2>
+
+
+<p>
+
+Tutustu palveluihimme tai ota yhteyttä
+ja pyydä tarjous juuri sinun tarpeisiisi.
+
+</p>
+
+
+<a
+href="yhteystiedot.html"
+class="cta-button"
+>
+Pyydä tarjous
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container footer-grid">
+
+
+<div>
+
+<div class="footer-logo">
+
+LUMI
+
+<small>CLEAN</small>
+
+</div>
+
+
+<p class="footer-text">
+
+Luotettavaa, huolellista ja joustavaa
+siivouspalvelua Porissa ja Satakunnan alueella.
+
+</p>
+
+</div>
+
+
+<div>
+
+<div class="footer-title">
+SIVUSTO
+</div>
+
+
+<div class="footer-links">
+
+<a href="index.html">
+Etusivu
+</a>
+
+<a href="palvelut.html">
+Palvelut
+</a>
+
+<a href="meista.html">
+Meistä
+</a>
+
+<a href="yhteystiedot.html">
+Yhteystiedot
+</a>
+
+</div>
+
+</div>
+
+
+<div>
+
+<div class="footer-title">
+YHTEYS
+</div>
+
+
+<div class="footer-links">
+
+<a href="tel:+358466322804">
++358 46 632 2804
+</a>
+
+<a href="mailto:lumiclean.siivous@gmail.com">
+lumiclean.siivous@gmail.com
+</a>
+
+<span>
+Pori · Satakunta
+</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="container footer-bottom">
+
+<span>
+© 2026 Lumi Clean
+</span>
+
+<span>
+Siivouspalvelut Porissa ja Satakunnassa
+</span>
+
+</div>
+
+</footer>
+
+
+
+<!-- ANIMATIONS -->
+
+<script>
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+const revealElements =
+document.querySelectorAll(".reveal");
+
+
+const observer =
+new IntersectionObserver(
+
+(entries) => {
+
+entries.forEach((entry) => {
+
+if (entry.isIntersecting) {
+
+entry.target.classList.add("visible");
+
+observer.unobserve(entry.target);
+
+}
+
+});
+
+},
+
+{
+threshold: 0.15
+}
+
+);
+
+
+revealElements.forEach((element) => {
+
+observer.observe(element);
+
+});
+
+
+
+/* =========================
+   COUNTER
+========================= */
+
+const counter =
+document.querySelector(".counter");
+
+
+let counterStarted = false;
+
+
+function startCounter() {
+
+if (counterStarted) return;
+
+counterStarted = true;
+
+const target =
+Number(counter.dataset.target);
+
+let current = 0;
+
+const duration = 1100;
+
+const startTime = performance.now();
+
+
+function update(time) {
+
+const progress =
+Math.min(
+(time - startTime) / duration,
+1
+);
+
+
+current =
+Math.floor(
+progress * target
+);
+
+
+counter.textContent =
+current + "€";
+
+
+if (progress < 1) {
+
+requestAnimationFrame(update);
+
+} else {
+
+counter.textContent =
+target + "€";
+
+}
+
+}
+
+
+requestAnimationFrame(update);
+
+}
+
+
+const counterObserver =
+new IntersectionObserver(
+
+(entries) => {
+
+if (entries[0].isIntersecting) {
+
+startCounter();
+
+counterObserver.disconnect();
+
+}
+
+},
+
+{
+threshold: .5
+}
+
+);
+
+
+counterObserver.observe(counter);
+
+</script>
+
+
+</body>
+
+</html>
