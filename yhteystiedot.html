@@ -1,714 +1,1296 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Yhteystiedot | Lumi Clean</title>
+<title>Palvelut | Lumi Clean</title>
 
-<meta name="description" content="Ota yhteyttä Lumi Cleaniin ja pyydä tarjous siivouspalveluista Porissa ja Satakunnan alueella.">
+<meta name="description" content="Lumi Clean tarjoaa laadukkaita, joustavia ja edullisia siivouspalveluja Porissa ja koko Satakunnan alueella.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
 
 <style>
 
+/* ==============================
+ RESET
+============================== */
+
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+ scroll-behavior: smooth;
 }
 
 body {
-    font-family: "DM Sans", sans-serif;
-    color: #193b4a;
-    background: #ffffff;
+ font-family: "DM Sans", sans-serif;
+ color: #243b45;
+ background: #ffffff;
+ line-height: 1.6;
+ overflow-x: hidden;
 }
 
 a {
-    text-decoration: none;
-    color: inherit;
+ text-decoration: none;
+ color: inherit;
+}
+
+img {
+ max-width: 100%;
+ display: block;
 }
 
 .container {
-    width: min(1160px, calc(100% - 40px));
-    margin: auto;
+ width: min(1160px, calc(100% - 40px));
+ margin: auto;
 }
 
 
-/* =========================
-   HEADER
-========================= */
+/* ==============================
+ ANIMATIONS
+============================== */
 
-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 20;
-    padding: 24px 0;
+@keyframes heroText {
+
+ 0% {
+  opacity: 0;
+  transform: translateY(35px);
+ }
+
+ 100% {
+  opacity: 1;
+  transform: translateY(0);
+ }
+
+}
+
+
+@keyframes heroFade {
+
+ 0% {
+  opacity: 0;
+ }
+
+ 100% {
+  opacity: 1;
+ }
+
+}
+
+
+@keyframes circleMove {
+
+ 0%, 100% {
+  transform: translate(0, 0) rotate(0deg);
+ }
+
+ 50% {
+  transform: translate(-20px, 18px) rotate(5deg);
+ }
+
+}
+
+
+@keyframes circleMoveSmall {
+
+ 0%, 100% {
+  transform: translate(0, 0);
+ }
+
+ 50% {
+  transform: translate(15px, -15px);
+ }
+
+}
+
+
+/* ELEMENTS THAT APPEAR ON SCROLL */
+
+.reveal {
+ opacity: 0;
+ transform: translateY(35px);
+ transition:
+  opacity .8s ease,
+  transform .8s ease;
+}
+
+.reveal.visible {
+ opacity: 1;
+ transform: translateY(0);
+}
+
+
+/* ==============================
+ HEADER
+============================== */
+
+.header {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ z-index: 50;
+ padding: 24px 0;
+
+ animation: heroFade 1s ease forwards;
 }
 
 .header-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
 }
 
 .logo {
-    color: #ffffff;
-    font-family: "Manrope", sans-serif;
-    font-size: 22px;
-    font-weight: 800;
-    letter-spacing: 3px;
+ color: white;
+ font-family: "Manrope", sans-serif;
+ font-size: 19px;
+ font-weight: 800;
+ letter-spacing: 3px;
 }
 
-.logo small {
-    display: block;
-    margin-top: -4px;
-    font-size: 7px;
-    letter-spacing: 4px;
-    opacity: .7;
+.logo span {
+ display: block;
+ font-size: 7px;
+ letter-spacing: 4px;
+ opacity: .7;
+ margin-top: -3px;
 }
 
-nav {
-    display: flex;
-    align-items: center;
-    gap: 30px;
+.nav {
+ display: flex;
+ align-items: center;
+ gap: 30px;
 }
 
-nav a {
-    color: rgba(255,255,255,.85);
-    font-size: 12px;
-    font-weight: 500;
+.nav a {
+ color: rgba(255,255,255,.9);
+ font-size: 12px;
+ font-weight: 500;
+ transition: .25s;
 }
 
-nav a:hover {
-    color: #ffffff;
+.nav a:hover {
+ opacity: .6;
 }
 
-.nav-cta {
-    padding: 12px 20px;
-    border-radius: 50px;
-    background: #ffffff;
-    color: #173d4f !important;
-    font-weight: 700 !important;
+.nav .nav-button {
+ color: #173d4f;
+ background: white;
+ padding: 12px 20px;
+ border-radius: 50px;
+ font-weight: 700;
 }
 
 
-/* =========================
-   HERO
-========================= */
+/* ==============================
+ HERO
+============================== */
 
 .hero {
-    position: relative;
-    min-height: 500px;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
+ position: relative;
+ min-height: 560px;
 
-    background:
-        radial-gradient(
-            circle at 85% 30%,
-            rgba(146,211,226,.35),
-            transparent 32%
-        ),
-        linear-gradient(
-            135deg,
-            #123847,
-            #1d5368 58%,
-            #579aae
-        );
+ display: flex;
+ align-items: center;
 
-    color: white;
+ overflow: hidden;
+
+ color: white;
+
+ background:
+ linear-gradient(
+ 125deg,
+ #12394a 0%,
+ #21586d 55%,
+ #6baec2 100%
+ );
 }
 
 .hero::before {
-    content: "";
-    position: absolute;
-    width: 520px;
-    height: 520px;
-    border: 1px solid rgba(255,255,255,.1);
-    border-radius: 50%;
-    right: -180px;
-    top: -150px;
+ content: "";
+ position: absolute;
+
+ width: 620px;
+ height: 620px;
+
+ border: 1px solid rgba(255,255,255,.09);
+
+ border-radius: 50%;
+
+ right: -210px;
+ top: -210px;
+
+ animation: circleMove 8s ease-in-out infinite;
+}
+
+.hero::after {
+ content: "";
+ position: absolute;
+
+ width: 290px;
+ height: 290px;
+
+ border: 1px solid rgba(255,255,255,.08);
+
+ border-radius: 50%;
+
+ right: 90px;
+ bottom: -180px;
+
+ animation: circleMoveSmall 7s ease-in-out infinite;
 }
 
 .hero-content {
-    position: relative;
-    z-index: 2;
-    padding-top: 50px;
-    max-width: 720px;
+ position: relative;
+ z-index: 2;
+
+ padding-top: 50px;
 }
 
 .eyebrow {
-    margin-bottom: 18px;
-    color: #b7dfe9;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 2.5px;
+ font-size: 9px;
+ font-weight: 700;
+ letter-spacing: 2.5px;
+ color: rgba(255,255,255,.65);
+
+ margin-bottom: 20px;
+
+ opacity: 0;
+ animation: heroText .8s ease .15s forwards;
 }
 
 .hero h1 {
-    font-family: "Manrope", sans-serif;
-    font-size: clamp(48px, 7vw, 78px);
-    line-height: .98;
-    letter-spacing: -4px;
-    font-weight: 600;
+ font-family: "Manrope", sans-serif;
+
+ font-size: clamp(48px, 7vw, 78px);
+
+ line-height: 1.02;
+ letter-spacing: -3.5px;
+
+ font-weight: 600;
+
+ max-width: 850px;
+
+ opacity: 0;
+ animation: heroText .9s ease .3s forwards;
 }
 
 .hero h1 span {
-    color: #bde7f0;
+ color: #c8e9f1;
 }
 
-.hero p {
-    max-width: 590px;
-    margin-top: 25px;
-    color: rgba(255,255,255,.7);
-    font-size: 14px;
-    line-height: 1.8;
-}
+.hero-text {
+ max-width: 590px;
 
+ margin-top: 25px;
 
-/* =========================
-   CONTACT SECTION
-========================= */
+ color: rgba(255,255,255,.75);
 
-.contacts {
-    padding: 100px 0;
-}
+ font-size: 15px;
 
-.contact-grid {
-    display: grid;
-    grid-template-columns: .9fr 1.1fr;
-    gap: 70px;
-    align-items: start;
-}
+ line-height: 1.8;
 
-.label {
-    color: #3d88a2;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 2.5px;
-}
-
-.contact-info h2 {
-    margin-top: 12px;
-    font-family: "Manrope", sans-serif;
-    color: #193d4d;
-    font-size: clamp(38px, 5vw, 58px);
-    line-height: 1.02;
-    letter-spacing: -3px;
-}
-
-.contact-info h2 span {
-    color: #438da5;
-}
-
-.contact-info > p {
-    max-width: 480px;
-    margin-top: 20px;
-    color: #71838b;
-    font-size: 13px;
-    line-height: 1.8;
-}
-
-.contact-cards {
-    display: grid;
-    gap: 12px;
-    margin-top: 35px;
-}
-
-.contact-card {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 17px;
-    border: 1px solid #dce9ed;
-    border-radius: 16px;
-    background: #f7fafb;
-    transition: .25s;
-}
-
-.contact-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(30,80,95,.08);
-}
-
-.contact-icon {
-    width: 44px;
-    height: 44px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 13px;
-    background: #e3f2f6;
-    color: #347b9b;
-    font-size: 17px;
-    font-weight: 700;
-}
-
-.contact-card small {
-    display: block;
-    color: #8a999f;
-    font-size: 8px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-}
-
-.contact-card strong {
-    display: block;
-    margin-top: 2px;
-    color: #193d4d;
-    font-size: 13px;
+ opacity: 0;
+ animation: heroText .9s ease .5s forwards;
 }
 
 
-/* =========================
-   FORM
-========================= */
+/* ==============================
+ INTRO
+============================== */
 
-.form-box {
-    padding: 38px;
-    border: 1px solid #dce8ec;
-    border-radius: 24px;
-    background: #f7fafb;
+.intro {
+ padding: 100px 0 65px;
 }
 
-.form-box h3 {
-    font-family: "Manrope", sans-serif;
-    font-size: 27px;
-    color: #193d4d;
+.intro-grid {
+ display: grid;
+
+ grid-template-columns: .5fr 1fr;
+
+ gap: 100px;
 }
 
-.form-box > p {
-    margin-top: 7px;
-    margin-bottom: 27px;
-    color: #7a8b92;
-    font-size: 11px;
+.section-label {
+ color: #347b9b;
+
+ font-size: 9px;
+ font-weight: 700;
+
+ letter-spacing: 2.5px;
 }
 
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 13px;
+.intro h2 {
+ font-family: "Manrope", sans-serif;
+
+ font-size: clamp(36px, 5vw, 58px);
+
+ line-height: 1.08;
+
+ letter-spacing: -2.5px;
+
+ font-weight: 600;
+
+ max-width: 700px;
 }
 
-.field {
-    margin-bottom: 15px;
+.intro h2 span {
+ color: #347b9b;
 }
 
-.field label {
-    display: block;
-    margin-bottom: 6px;
-    color: #61747d;
-    font-size: 9px;
-    font-weight: 700;
-}
+.intro p {
+ max-width: 690px;
 
-.field input,
-.field select,
-.field textarea {
-    width: 100%;
-    border: 1px solid #d6e3e7;
-    border-radius: 11px;
-    padding: 13px 14px;
-    background: white;
-    color: #193d4d;
-    font-family: "DM Sans", sans-serif;
-    font-size: 12px;
-    outline: none;
-}
+ margin-top: 20px;
 
-.field input:focus,
-.field select:focus,
-.field textarea:focus {
-    border-color: #5d9eb3;
-}
+ color: #71828a;
 
-.field textarea {
-    min-height: 115px;
-    resize: vertical;
-}
+ font-size: 14px;
 
-.submit {
-    width: 100%;
-    margin-top: 3px;
-    border: none;
-    border-radius: 50px;
-    padding: 15px;
-    background: #173d4f;
-    color: white;
-    font-family: "DM Sans", sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: .25s;
-}
-
-.submit:hover {
-    background: #286178;
-    transform: translateY(-2px);
+ line-height: 1.9;
 }
 
 
-/* =========================
-   BEFORE / AFTER
-========================= */
+/* ==============================
+ PRICE MESSAGE
+============================== */
 
-.before-after-section {
-    padding: 20px 0 110px;
+.price-message {
+ padding: 0 0 55px;
 }
 
-.before-heading {
-    max-width: 650px;
-    margin: 0 auto 38px;
-    text-align: center;
+.price-message-box {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+
+ gap: 30px;
+
+ padding: 27px 32px;
+
+ background: #eef7f9;
+
+ border: 1px solid #d9ebef;
+
+ border-radius: 18px;
+
+ transition: transform .35s ease, box-shadow .35s ease;
 }
 
-.before-heading h2 {
-    margin-top: 12px;
-    font-family: "Manrope", sans-serif;
-    color: #193d4d;
-    font-size: clamp(38px, 5vw, 58px);
-    line-height: 1;
-    letter-spacing: -3px;
+.price-message-box:hover {
+ transform: translateY(-4px);
+
+ box-shadow: 0 15px 40px rgba(30,80,100,.08);
 }
 
-.before-heading h2 span {
-    color: #438da5;
+.price-message-left {
+ display: flex;
+ align-items: center;
+ gap: 17px;
 }
 
-.before-heading p {
-    margin-top: 15px;
-    color: #71838b;
-    font-size: 13px;
-    line-height: 1.8;
+.price-message-icon {
+ width: 45px;
+ height: 45px;
+
+ flex-shrink: 0;
+
+ display: flex;
+ align-items: center;
+ justify-content: center;
+
+ background: #347b9b;
+
+ color: white;
+
+ border-radius: 13px;
+
+ font-size: 18px;
 }
 
+.price-message h3 {
+ font-family: "Manrope", sans-serif;
 
-/* IMAGE AREA */
+ font-size: 17px;
 
-.before-after {
-    position: relative;
-    width: 100%;
-    max-width: 1000px;
-    height: 560px;
-    margin: auto;
-    overflow: hidden;
-    border-radius: 25px;
-    background: #dce7ea;
-    box-shadow: 0 25px 70px rgba(24,64,78,.14);
-    touch-action: none;
-    user-select: none;
+ margin-bottom: 2px;
 }
 
-.before-after img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    pointer-events: none;
+.price-message p {
+ color: #71828a;
+
+ font-size: 12px;
 }
 
-.before-photo {
-    z-index: 1;
-}
+.price-message-badge {
+ color: #347b9b;
 
-.after-photo {
-    z-index: 2;
-    clip-path: inset(0 0 0 50%);
-}
+ font-size: 10px;
 
+ font-weight: 700;
 
-/* LABELS */
+ letter-spacing: 1px;
 
-.photo-label {
-    position: absolute;
-    top: 20px;
-    z-index: 8;
-    padding: 8px 14px;
-    border-radius: 50px;
-    background: rgba(18,48,59,.82);
-    color: white;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-}
-
-.before-label {
-    left: 20px;
-}
-
-.after-label {
-    right: 20px;
+ white-space: nowrap;
 }
 
 
-/* LINE */
+/* ==============================
+ SERVICES
+============================== */
 
-.slider-line {
-    position: absolute;
-    z-index: 10;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 3px;
-    background: white;
-    transform: translateX(-50%);
-    box-shadow: 0 0 10px rgba(0,0,0,.2);
+.services {
+ padding: 15px 0 105px;
+}
+
+.services-grid {
+ display: grid;
+
+ grid-template-columns: repeat(2, 1fr);
+
+ gap: 18px;
 }
 
 
-/* HANDLE */
+/* ==============================
+ CARD
+============================== */
 
-.slider-handle {
-    position: absolute;
-    z-index: 12;
-    top: 50%;
-    left: 50%;
-    width: 58px;
-    height: 58px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background: white;
-    color: #347b9b;
-    font-size: 19px;
-    font-weight: 700;
-    box-shadow: 0 6px 25px rgba(0,0,0,.2);
-    cursor: ew-resize;
+.card {
+ position: relative;
+
+ min-height: 440px;
+
+ padding: 32px;
+
+ background: #f7fafb;
+
+ border: 1px solid #dce7eb;
+
+ border-radius: 22px;
+
+ transition:
+ transform .3s ease,
+ box-shadow .3s ease,
+ background .3s ease;
+}
+
+.card:hover {
+ transform: translateY(-6px);
+
+ background: white;
+
+ box-shadow:
+ 0 25px 65px rgba(24,70,90,.10);
+}
+
+.card-number {
+ position: absolute;
+
+ top: 30px;
+ right: 32px;
+
+ font-family: "Manrope";
+
+ color: #a7b5ba;
+
+ font-size: 11px;
+
+ font-weight: 700;
+
+ letter-spacing: 1px;
 }
 
 
-/* =========================
-   CTA
-========================= */
+/* ICON */
+
+.card-icon {
+ width: 57px;
+ height: 57px;
+
+ display: flex;
+ align-items: center;
+ justify-content: center;
+
+ margin-bottom: 30px;
+
+ border-radius: 16px;
+
+ background: #e4f2f6;
+
+ color: #347b9b;
+
+ font-size: 21px;
+
+ transition:
+ transform .35s ease,
+ background .35s ease;
+}
+
+.card:hover .card-icon {
+ transform: rotate(5deg) scale(1.06);
+}
+
+
+/* TITLE */
+
+.card h3 {
+ font-family: "Manrope", sans-serif;
+
+ font-size: 24px;
+
+ line-height: 1.2;
+
+ letter-spacing: -.6px;
+
+ max-width: 450px;
+
+ margin-bottom: 14px;
+}
+
+
+/* DESCRIPTION */
+
+.card-description {
+ color: #71828a;
+
+ font-size: 13px;
+
+ line-height: 1.8;
+
+ max-width: 510px;
+}
+
+
+/* PRICE AREA */
+
+.price-area {
+
+ position: absolute;
+
+ left: 32px;
+ right: 32px;
+ bottom: 30px;
+
+ padding-top: 20px;
+
+ border-top: 1px solid #dce7eb;
+}
+
+.price-label {
+
+ color: #87979e;
+
+ font-size: 9px;
+
+ font-weight: 700;
+
+ letter-spacing: 1.5px;
+
+ margin-bottom: 8px;
+}
+
+.price-main {
+
+ display: flex;
+
+ align-items: baseline;
+
+ gap: 5px;
+
+ color: #173d4f;
+
+ font-family: "Manrope", sans-serif;
+
+ font-size: 27px;
+
+ font-weight: 700;
+}
+
+.price-main small {
+
+ color: #71828a;
+
+ font-family: "DM Sans", sans-serif;
+
+ font-size: 11px;
+
+ font-weight: 500;
+}
+
+
+/* MULTIPLE PRICES */
+
+.price-list {
+ display: flex;
+ flex-direction: column;
+
+ gap: 7px;
+}
+
+.price-row {
+ display: flex;
+
+ justify-content: space-between;
+ align-items: center;
+
+ max-width: 360px;
+}
+
+.price-row span:first-child {
+ color: #64767e;
+
+ font-size: 11px;
+}
+
+.price-row strong {
+ color: #173d4f;
+
+ font-family: "Manrope", sans-serif;
+
+ font-size: 14px;
+}
+
+.price-note {
+ color: #8a999f;
+
+ font-size: 9px;
+
+ margin-top: 8px;
+}
+
+
+/* ==============================
+ REGULAR CLEANING DISCOUNT
+============================== */
+
+.discount-section {
+ padding: 0 0 80px;
+}
+
+.discount-box {
+
+ width: min(1160px, calc(100% - 40px));
+ margin: 0 auto;
+
+ display: flex;
+ align-items: center;
+
+ gap: 24px;
+
+ padding: 30px 34px;
+
+ background: linear-gradient(135deg, #fff1f3, #ffe4e8);
+
+ border: 1px solid #f5cbd2;
+
+ border-radius: 22px;
+
+ box-shadow: 0 12px 35px rgba(180,70,90,0.07);
+
+ transition:
+ transform .35s ease,
+ box-shadow .35s ease;
+}
+
+.discount-box:hover {
+ transform: translateY(-5px);
+
+ box-shadow: 0 20px 45px rgba(180,70,90,0.11);
+}
+
+.discount-icon {
+
+ width: 58px;
+ height: 58px;
+
+ min-width: 58px;
+
+ display: flex;
+ align-items: center;
+ justify-content: center;
+
+ border-radius: 18px;
+
+ background: #c95768;
+
+ color: white;
+
+ font-family: "Manrope", sans-serif;
+
+ font-size: 23px;
+
+ font-weight: 700;
+
+ transition: transform .35s ease;
+}
+
+.discount-box:hover .discount-icon {
+ transform: rotate(-8deg) scale(1.08);
+}
+
+.discount-label {
+
+ color: #b94b5d;
+
+ font-size: 8px;
+
+ font-weight: 700;
+
+ letter-spacing: 2px;
+
+ margin-bottom: 5px;
+}
+
+.discount-box h2 {
+
+ margin: 0 0 7px;
+
+ color: #3d2730;
+
+ font-family: "Manrope", sans-serif;
+
+ font-size: 22px;
+
+ line-height: 1.2;
+
+ font-weight: 700;
+}
+
+.discount-box p {
+
+ margin: 0;
+
+ color: #765d64;
+
+ font-family: "DM Sans", sans-serif;
+
+ font-size: 12px;
+
+ line-height: 1.7;
+}
+
+.discount-box p strong {
+ color: #b94b5d;
+}
+
+
+/* ==============================
+ BENEFITS
+============================== */
+
+.benefits {
+ padding: 100px 0;
+
+ background: #f5f9fa;
+}
+
+.benefits-heading {
+ max-width: 700px;
+
+ margin-bottom: 50px;
+}
+
+.benefits-heading h2 {
+ font-family: "Manrope", sans-serif;
+
+ font-size: clamp(36px, 5vw, 56px);
+
+ line-height: 1.08;
+
+ letter-spacing: -2.5px;
+
+ font-weight: 600;
+
+ margin-top: 13px;
+}
+
+.benefits-heading h2 span {
+ color: #347b9b;
+}
+
+.benefits-grid {
+ display: grid;
+
+ grid-template-columns: repeat(3, 1fr);
+
+ gap: 16px;
+}
+
+.benefit {
+ padding: 28px;
+
+ min-height: 190px;
+
+ background: white;
+
+ border: 1px solid #dce7eb;
+
+ border-radius: 18px;
+
+ transition:
+ transform .35s ease,
+ box-shadow .35s ease;
+}
+
+.benefit:hover {
+ transform: translateY(-5px);
+
+ box-shadow: 0 18px 45px rgba(30,80,100,.08);
+}
+
+.benefit-number {
+ color: #347b9b;
+
+ font-family: "Manrope";
+
+ font-size: 10px;
+
+ font-weight: 700;
+
+ margin-bottom: 25px;
+}
+
+.benefit h3 {
+ font-family: "Manrope";
+
+ font-size: 18px;
+
+ margin-bottom: 7px;
+}
+
+.benefit p {
+ color: #71828a;
+
+ font-size: 12px;
+
+ line-height: 1.7;
+}
+
+
+/* ==============================
+ CTA
+============================== */
 
 .cta {
-    padding-bottom: 100px;
+ padding: 95px 0;
 }
 
 .cta-box {
-    padding: 65px 40px;
-    border-radius: 25px;
-    background: linear-gradient(135deg,#173d4f,#285f74);
-    color: white;
-    text-align: center;
+ position: relative;
+
+ overflow: hidden;
+
+ padding: 60px;
+
+ background: #163c4e;
+
+ color: white;
+
+ border-radius: 24px;
+
+ display: flex;
+
+ align-items: center;
+
+ justify-content: space-between;
+
+ gap: 40px;
 }
 
-.cta-box h2 {
-    font-family: "Manrope", sans-serif;
-    font-size: clamp(35px,5vw,55px);
-    line-height: 1;
-    letter-spacing: -3px;
+.cta-box::after {
+ content: "";
+
+ position: absolute;
+
+ width: 360px;
+ height: 360px;
+
+ border: 1px solid rgba(255,255,255,.08);
+
+ border-radius: 50%;
+
+ right: -130px;
+ top: -130px;
+
+ animation: circleMove 8s ease-in-out infinite;
 }
 
-.cta-box h2 span {
-    color: #bce6ef;
+.cta-content {
+ position: relative;
+ z-index: 2;
 }
 
-.cta-box p {
-    max-width: 570px;
-    margin: 17px auto 27px;
-    color: rgba(255,255,255,.65);
-    font-size: 13px;
+.cta-label {
+ color: #a9d9e7;
+
+ font-size: 9px;
+
+ font-weight: 700;
+
+ letter-spacing: 2.5px;
+
+ margin-bottom: 14px;
+}
+
+.cta h2 {
+ font-family: "Manrope";
+
+ font-size: clamp(34px, 4vw, 52px);
+
+ line-height: 1.08;
+
+ letter-spacing: -2px;
+
+ max-width: 650px;
+}
+
+.cta h2 span {
+ color: #a9d9e7;
+}
+
+.cta p {
+ color: rgba(255,255,255,.62);
+
+ font-size: 13px;
+
+ max-width: 550px;
+
+ margin-top: 15px;
 }
 
 .cta-button {
-    display: inline-block;
-    padding: 14px 25px;
-    border-radius: 50px;
-    background: white;
-    color: #173d4f;
-    font-size: 11px;
-    font-weight: 700;
+ position: relative;
+ z-index: 3;
+
+ display: inline-flex;
+
+ align-items: center;
+ justify-content: center;
+
+ background: white;
+
+ color: #163c4e;
+
+ padding: 15px 23px;
+
+ border-radius: 50px;
+
+ font-size: 12px;
+
+ font-weight: 700;
+
+ white-space: nowrap;
+
+ transition: .3s;
+}
+
+.cta-button:hover {
+ transform: translateY(-3px);
+ box-shadow: 0 12px 25px rgba(0,0,0,.12);
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+/* ==============================
+ FOOTER
+============================== */
 
-footer {
-    padding: 50px 0 20px;
-    background: #123541;
-    color: white;
+.footer {
+ background: #123541;
+
+ color: white;
+
+ padding: 55px 0 22px;
 }
 
 .footer-grid {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
-    gap: 50px;
-    padding-bottom: 40px;
+ display: grid;
+
+ grid-template-columns: 1.5fr 1fr 1fr;
+
+ gap: 60px;
+
+ padding-bottom: 45px;
 }
 
 .footer-logo {
-    font-family: "Manrope";
-    font-size: 20px;
-    font-weight: 800;
-    letter-spacing: 3px;
+ font-family: "Manrope";
+
+ font-size: 19px;
+
+ font-weight: 800;
+
+ letter-spacing: 3px;
 }
 
-.footer-logo small {
-    display: block;
-    font-size: 7px;
-    letter-spacing: 4px;
-    opacity: .6;
+.footer-logo span {
+ display: block;
+
+ font-size: 7px;
+
+ letter-spacing: 4px;
+
+ opacity: .7;
 }
 
-.footer-text {
-    max-width: 310px;
-    margin-top: 14px;
-    color: rgba(255,255,255,.5);
-    font-size: 11px;
+.footer-description {
+ max-width: 310px;
+
+ margin-top: 15px;
+
+ color: rgba(255,255,255,.5);
+
+ font-size: 11px;
+
+ line-height: 1.7;
 }
 
 .footer-title {
-    margin-bottom: 14px;
-    color: #a9d9e5;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 2px;
+ color: #a8d5e3;
+
+ font-size: 9px;
+
+ font-weight: 700;
+
+ letter-spacing: 2px;
+
+ margin-bottom: 15px;
 }
 
 .footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+ display: flex;
+
+ flex-direction: column;
+
+ gap: 8px;
 }
 
 .footer-links a,
 .footer-links span {
-    color: rgba(255,255,255,.55);
-    font-size: 11px;
+ color: rgba(255,255,255,.58);
+
+ font-size: 11px;
+
+ transition: .2s;
+}
+
+.footer-links a:hover {
+ color: white;
 }
 
 .footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 18px;
-    border-top: 1px solid rgba(255,255,255,.1);
-    color: rgba(255,255,255,.3);
-    font-size: 9px;
+ border-top: 1px solid rgba(255,255,255,.1);
+
+ padding-top: 18px;
+
+ display: flex;
+
+ justify-content: space-between;
+
+ gap: 20px;
+
+ color: rgba(255,255,255,.3);
+
+ font-size: 9px;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* ==============================
+ MOBILE
+============================== */
 
-@media(max-width: 800px) {
+@media(max-width: 850px) {
 
-    nav {
-        display: none;
-    }
+ .nav {
+ display: none;
+ }
 
-    .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 45px;
-    }
+ .intro-grid {
+ grid-template-columns: 1fr;
+ gap: 25px;
+ }
 
-    .before-after {
-        height: 450px;
-    }
+ .services-grid {
+ grid-template-columns: 1fr;
+ }
 
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
-    }
+ .benefits-grid {
+ grid-template-columns: 1fr 1fr;
+ }
+
+ .cta-box {
+ flex-direction: column;
+ align-items: flex-start;
+ }
+
+ .footer-grid {
+ grid-template-columns: 1fr 1fr;
+ }
+
 }
 
 
 @media(max-width: 560px) {
 
-    .container {
-        width: calc(100% - 30px);
-    }
+ .container {
+ width: calc(100% - 30px);
+ }
 
-    .hero {
-        min-height: 520px;
-    }
+ .header {
+ padding: 18px 0;
+ }
 
-    .hero h1 {
-        font-size: 48px;
-    }
+ .hero {
+ min-height: 590px;
+ }
 
-    .contacts {
-        padding: 75px 0;
-    }
+ .hero h1 {
+ font-size: 46px;
+ letter-spacing: -2.5px;
+ }
 
-    .form-box {
-        padding: 25px;
-    }
+ .hero-text {
+ font-size: 13px;
+ }
 
-    .form-row {
-        grid-template-columns: 1fr;
-    }
+ .intro {
+ padding: 75px 0 50px;
+ }
 
-    .before-after {
-        height: 340px;
-        border-radius: 18px;
-    }
+ .intro h2 {
+ font-size: 40px;
+ letter-spacing: -1.8px;
+ }
 
-    .slider-handle {
-        width: 48px;
-        height: 48px;
-    }
+ .price-message {
+ padding-bottom: 35px;
+ }
 
-    .photo-label {
-        top: 12px;
-    }
+ .price-message-box {
+ flex-direction: column;
+ align-items: flex-start;
+ }
 
-    .before-label {
-        left: 12px;
-    }
+ .price-message-badge {
+ white-space: normal;
+ }
 
-    .after-label {
-        right: 12px;
-    }
+ .services {
+ padding-bottom: 75px;
+ }
 
-    .cta-box {
-        padding: 45px 23px;
-    }
+ .card {
+ min-height: 465px;
+ padding: 25px;
+ }
 
-    .footer-grid {
-        grid-template-columns: 1fr;
-    }
+ .card-number {
+ top: 25px;
+ right: 25px;
+ }
 
-    .footer-bottom {
-        flex-direction: column;
-        gap: 8px;
-    }
+ .price-area {
+ left: 25px;
+ right: 25px;
+ bottom: 25px;
+ }
+
+ .discount-section {
+ padding-bottom: 55px;
+ }
+
+ .discount-box {
+ width: calc(100% - 30px);
+ padding: 25px;
+ flex-direction: column;
+ align-items: flex-start;
+ }
+
+ .discount-box h2 {
+ font-size: 20px;
+ }
+
+ .benefits {
+ padding: 75px 0;
+ }
+
+ .benefits-grid {
+ grid-template-columns: 1fr;
+ }
+
+ .cta {
+ padding: 70px 0;
+ }
+
+ .cta-box {
+ padding: 35px 25px;
+ }
+
+ .cta h2 {
+ font-size: 37px;
+ }
+
+ .footer-grid {
+ grid-template-columns: 1fr;
+ gap: 35px;
+ }
+
+ .footer-bottom {
+ flex-direction: column;
+ }
+
+}
+
+
+/* ==============================
+ REDUCED MOTION
+============================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+ *,
+ *::before,
+ *::after {
+  animation-duration: .01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: .01ms !important;
+  scroll-behavior: auto !important;
+ }
+
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- HEADER -->
+<!-- ==============================
+ HEADER
+============================== -->
 
-<header>
+<header class="header">
 
 <div class="container header-inner">
 
 <a href="index.html" class="logo">
 LUMI
-<small>CLEAN</small>
+<span>CLEAN</span>
 </a>
 
-<nav>
+<nav class="nav">
 
 <a href="index.html">Etusivu</a>
 
@@ -718,7 +1300,7 @@ LUMI
 
 <a href="yhteystiedot.html">Yhteystiedot</a>
 
-<a href="#contact-form" class="nav-cta">
+<a href="yhteystiedot.html" class="nav-button">
 Pyydä tarjous
 </a>
 
@@ -729,26 +1311,29 @@ Pyydä tarjous
 </header>
 
 
-<!-- HERO -->
+
+<!-- ==============================
+ HERO
+============================== -->
 
 <section class="hero">
 
 <div class="container hero-content">
 
 <div class="eyebrow">
-LUMI CLEAN · YHTEYSTIEDOT
+LUMI CLEAN · PALVELUT
 </div>
 
 <h1>
-Ota yhteyttä.
+Puhtautta,
 <br>
-<span>Tehdään arjestasi puhtaampi.</span>
+<span>joka sopii arkeesi.</span>
 </h1>
 
-<p>
-Tarvitsetko kotisiivousta, toimiston siivousta tai
-perusteellisempaa puhdistusta? Ota yhteyttä ja
-pyydä tarjous helposti ilman sitoumuksia.
+<p class="hero-text">
+Laadukasta, joustavaa ja ammattitaitoista
+siivouspalvelua koteihin, yrityksille ja
+erilaisiin tiloihin Porissa ja koko Satakunnan alueella.
 </p>
 
 </div>
@@ -756,198 +1341,37 @@ pyydä tarjous helposti ilman sitoumuksia.
 </section>
 
 
-<!-- CONTACTS -->
 
-<section class="contacts" id="contact-form">
+<!-- ==============================
+ INTRO
+============================== -->
 
-<div class="container contact-grid">
+<section class="intro reveal">
 
+<div class="container intro-grid">
 
-<div class="contact-info">
+<div>
 
-<div class="label">
-YHTEYSTIEDOT
+<div class="section-label">
+PALVELUMME
 </div>
 
+</div>
+
+<div>
+
 <h2>
-Olemme täällä
-<span>sinua varten.</span>
+Ammattitaitoista siivousta
+<span>kohtuulliseen hintaan.</span>
 </h2>
 
 <p>
-Palvelemme Porissa ja Satakunnan alueella.
-Ota yhteyttä ja kerro meille, millaista
-siivouspalvelua tarvitset.
+Palvelumme ovat joustavia ja räätälöitävissä
+asiakkaan tarpeiden mukaan. Olipa kyseessä
+säännöllinen siivous, kertaluonteinen palvelu
+tai kiireellinen siivoustarve, hoidamme työn
+huolellisesti ja ammattitaitoisesti.
 </p>
-
-
-<div class="contact-cards">
-
-
-<a class="contact-card" href="tel:+358466322804">
-
-<div class="contact-icon">
-☎
-</div>
-
-<div>
-
-<small>PUHELIN</small>
-
-<strong>
-+358 46 632 2804
-</strong>
-
-</div>
-
-</a>
-
-
-<a class="contact-card" href="mailto:lumiclean.siivous@gmail.com">
-
-<div class="contact-icon">
-@
-</div>
-
-<div>
-
-<small>SÄHKÖPOSTI</small>
-
-<strong>
-lumiclean.siivous@gmail.com
-</strong>
-
-</div>
-
-</a>
-
-
-<div class="contact-card">
-
-<div class="contact-icon">
-⌖
-</div>
-
-<div>
-
-<small>ALUE</small>
-
-<strong>
-Pori · Satakunta
-</strong>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-
-<!-- FORM -->
-
-<div class="form-box">
-
-<h3>
-Pyydä tarjous
-</h3>
-
-<p>
-Kerro meille hieman tarpeistasi, niin voimme
-arvioida sopivan palvelun.
-</p>
-
-
-<form action="mailto:lumiclean.siivous@gmail.com" method="post" enctype="text/plain">
-
-
-<div class="form-row">
-
-<div class="field">
-
-<label>NIMI</label>
-
-<input
-type="text"
-name="Nimi"
-placeholder="Nimesi"
-required
->
-
-</div>
-
-
-<div class="field">
-
-<label>PUHELIN</label>
-
-<input
-type="tel"
-name="Puhelin"
-placeholder="+358..."
->
-
-</div>
-
-</div>
-
-
-<div class="field">
-
-<label>SÄHKÖPOSTI</label>
-
-<input
-type="email"
-name="Sähköposti"
-placeholder="sahkoposti@email.com"
-required
->
-
-</div>
-
-
-<div class="field">
-
-<label>PALVELU</label>
-
-<select name="Palvelu">
-
-<option value="">
-Valitse palvelu
-</option>
-
-<option>Kotisiivous</option>
-<option>Toimiston siivous</option>
-<option>Ikkunoiden pesu</option>
-<option>Sohvien ja mattojen siivous</option>
-<option>Auton sisätilojen siivous</option>
-<option>Muutto- ja perusteellinen siivous</option>
-<option>Muu</option>
-
-</select>
-
-</div>
-
-
-<div class="field">
-
-<label>VIESTI</label>
-
-<textarea
-name="Viesti"
-placeholder="Kerro esimerkiksi tilan koko, siivouksen tarve ja toivottu ajankohta..."
-></textarea>
-
-</div>
-
-
-<button class="submit" type="submit">
-LÄHETÄ TARJOUSPYYNTÖ
-</button>
-
-</form>
 
 </div>
 
@@ -956,66 +1380,517 @@ LÄHETÄ TARJOUSPYYNTÖ
 </section>
 
 
-<!-- BEFORE / AFTER -->
 
-<section class="before-after-section">
+<!-- ==============================
+ PRICE MESSAGE
+============================== -->
+
+<section class="price-message reveal">
 
 <div class="container">
 
+<div class="price-message-box">
 
-<div class="before-heading">
+<div class="price-message-left">
 
-<div class="label">
-PUHTAUS NÄKYY
+<div class="price-message-icon">
+€
+</div>
+
+<div>
+
+<h3>
+Edulliset ja kilpailukykyiset hinnat
+</h3>
+
+<p>
+Selkeä hinnoittelu ja laadukas palvelu ilman turhaa ylimääräistä.
+</p>
+
+</div>
+
+</div>
+
+<div class="price-message-badge">
+LAATUA · JOUSTAVUUTTA · EDULLISUUTTA
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ==============================
+ SERVICES
+============================== -->
+
+<section class="services">
+
+<div class="container">
+
+<div class="services-grid">
+
+
+<!-- 01 -->
+
+<article class="card reveal">
+
+<div class="card-number">
+01
+</div>
+
+<div class="card-icon">
+⌂
+</div>
+
+<h3>
+Kotisiivous
+</h3>
+
+<p class="card-description">
+Tarjoamme perusteellista kotisiivousta,
+joka tekee kodistasi puhtaan, raikkaan
+ja viihtyisän. Palvelu on joustava ja
+räätälöitävissä tarpeidesi mukaan –
+voimme siivota koko kodin tai vain
+valitut tilat. Ammattitaitoinen tiimimme
+käyttää tehokkaita ja turvallisia
+siivousmenetelmiä.
+</p>
+
+<div class="price-area">
+
+<div class="price-label">
+HINTA ALKAEN
+</div>
+
+<div class="price-main">
+30 €
+<small>/ h</small>
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- 02 -->
+
+<article class="card reveal">
+
+<div class="card-number">
+02
+</div>
+
+<div class="card-icon">
+□
+</div>
+
+<h3>
+Toimiston siivous
+</h3>
+
+<p class="card-description">
+Pidämme toimistosi siistinä ja
+ammattimaisena. Olipa kyseessä pieni
+toimisto tai suurempi liiketila,
+tiimimme huolehtii, että työympäristösi
+on puhdas, järjestetty ja viihtyisä.
+Joustavat aikataulumme varmistavat,
+että siivous ei häiritse työpäivääsi.
+</p>
+
+<div class="price-area">
+
+<div class="price-label">
+HINTA ALKAEN
+</div>
+
+<div class="price-main">
+30 €
+<small>/ h</small>
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- 03 -->
+
+<article class="card reveal">
+
+<div class="card-number">
+03
+</div>
+
+<div class="card-icon">
+✧
+</div>
+
+<h3>
+Ikkunoiden pesu
+</h3>
+
+<p class="card-description">
+Tarjoamme ikkunoiden puhdistusta
+nopeasti ja tehokkaasti. Pesemme niin
+tavalliset kuin suuremmat ikkunat.
+Ammattitaitoinen tiimimme varmistaa
+kirkkaan ja raikkaan lopputuloksen,
+joka antaa kodille tai toimistolle
+uuden ilmeen.
+</p>
+
+<div class="price-area">
+
+<div class="price-label">
+HINTA
+</div>
+
+<div class="price-list">
+
+<div class="price-row">
+<span>Tavallinen · 0–2 m²</span>
+<strong>10 €</strong>
+</div>
+
+<div class="price-row">
+<span>Suuri · yli 2 m²</span>
+<strong>20 €</strong>
+</div>
+
+</div>
+
+<div class="price-note">
+Hinta määräytyy ikkunan koon mukaan.
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- 04 -->
+
+<article class="card reveal">
+
+<div class="card-number">
+04
+</div>
+
+<div class="card-icon">
+◇
+</div>
+
+<h3>
+Sohvien, mattojen ja tekstiilien siivous
+</h3>
+
+<p class="card-description">
+Erikoispuhdistuksemme kattaa sohvat,
+matot ja muut tekstiilit. Käytämme
+turvallisia ja tehokkaita menetelmiä,
+jotka auttavat poistamaan lian, pölyn
+ja tahrat. Lopputuloksena tekstiilit
+ovat raikkaat ja hyvin hoidetut.
+</p>
+
+<div class="price-area">
+
+<div class="price-label">
+HINTA
+</div>
+
+<div class="price-list">
+
+<div class="price-row">
+<span>Sohvat</span>
+<strong>40–90 €</strong>
+</div>
+
+<div class="price-row">
+<span>Matot</span>
+<strong>20–40 €</strong>
+</div>
+
+</div>
+
+<div class="price-note">
+Hinta määräytyy koon ja kunnon mukaan.
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- 05 -->
+
+<article class="card reveal">
+
+<div class="card-number">
+05
+</div>
+
+<div class="card-icon">
+○
+</div>
+
+<h3>
+Auton sisätilojen siivous
+</h3>
+
+<p class="card-description">
+Siivoamme auton sisätilat perusteellisesti
+riippumatta auton koosta tai kunnosta.
+Poistamme lian, pölyn ja tahrat ja
+jätämme auton sisätilat raikkaiksi
+ja miellyttäviksi. Hinta määräytyy
+auton koon ja likaisuuden mukaan.
+</p>
+
+<div class="price-area">
+
+<div class="price-label">
+HINTA
+</div>
+
+<div class="price-main">
+20–120 €
+</div>
+
+<div class="price-note">
+Hinta riippuu auton koosta ja kunnosta.
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- 06 -->
+
+<article class="card reveal">
+
+<div class="card-number">
+06
+</div>
+
+<div class="card-icon">
+✦
+</div>
+
+<h3>
+Muuttosiivous, juhlan jälkeinen ja perusteellinen siivous
+</h3>
+
+<p class="card-description">
+Tarjoamme kattavaa siivousta
+muuttotilanteisiin, juhlan jälkeiseen
+siivoukseen ja perusteelliseen
+siivoukseen. Palvelu on joustava
+ja räätälöitävissä tarpeidesi mukaan.
+</p>
+
+<div class="price-area">
+
+<div class="price-label">
+HINTA ALKAEN
+</div>
+
+<div class="price-main">
+30 €
+<small>/ h</small>
+</div>
+
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ==============================
+ DISCOUNT
+============================== -->
+
+<section class="discount-section reveal">
+
+<div class="discount-box">
+
+<div class="discount-icon">
+%
+</div>
+
+<div>
+
+<div class="discount-label">
+ERIKOSETU
 </div>
 
 <h2>
-Näe ero <span>itse.</span>
+Säästä säännöllisillä siivouksilla
 </h2>
 
 <p>
-Siirrä palkkia ja näe esimerkki siitä,
-miten siisti ja raikas tila voi näyttää.
+Kun tilaat siivouksen vähintään 3 kertaa
+pitkäaikaisella sopimuksella, saat
+<strong>alennusta siivouspalveluista.</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ==============================
+ BENEFITS
+============================== -->
+
+<section class="benefits">
+
+<div class="container">
+
+<div class="benefits-heading reveal">
+
+<div class="section-label">
+MIKSI LUMI CLEAN?
+</div>
+
+<h2>
+Hyvä palvelu näkyy
+<span>lopputuloksessa.</span>
+</h2>
+
+</div>
+
+
+<div class="benefits-grid">
+
+
+<div class="benefit reveal">
+
+<div class="benefit-number">
+01
+</div>
+
+<h3>
+Täsmällisyys
+</h3>
+
+<p>
+Saavumme sovittuna aikana ja hoidamme
+työn tehokkaasti ilman turhia viivästyksiä.
 </p>
 
 </div>
 
 
-<div class="before-after" id="beforeAfter">
+<div class="benefit reveal">
 
-
-<!-- PHOTO 1 -->
-
-<img
-class="before-photo"
-src="before.jpg"
-alt="Siivous ennen"
->
-
-
-<!-- PHOTO 2 -->
-
-<img
-class="after-photo"
-id="afterPhoto"
-src="after.PNG"
-alt="Siivottu koti"
->
-
-
-<div class="photo-label before-label">
-ENNEN
+<div class="benefit-number">
+02
 </div>
 
-<div class="photo-label after-label">
-JÄLKEEN
+<h3>
+Yhteys 24/7
+</h3>
+
+<p>
+Olemme tavoitettavissa, kun tarvitset
+apua tai haluat varata siivouksen.
+</p>
+
 </div>
 
 
-<div class="slider-line" id="sliderLine"></div>
+<div class="benefit reveal">
 
-<div class="slider-handle" id="sliderHandle">
-↔
+<div class="benefit-number">
+03
+</div>
+
+<h3>
+Koko Satakunta
+</h3>
+
+<p>
+Palvelemme asiakkaita kaikkialla
+Satakunnan alueella.
+</p>
+
+</div>
+
+
+<div class="benefit reveal">
+
+<div class="benefit-number">
+04
+</div>
+
+<h3>
+Pikasiivous
+</h3>
+
+<p>
+Tarjoamme nopeaa ja joustavaa
+siivousta myös kiireellisiin tilanteisiin.
+</p>
+
+</div>
+
+
+<div class="benefit reveal">
+
+<div class="benefit-number">
+05
+</div>
+
+<h3>
+Nykyaikaiset menetelmät
+</h3>
+
+<p>
+Käytämme moderneja siivousmenetelmiä
+puhtaan ja raikkaan lopputuloksen saavuttamiseksi.
+</p>
+
+</div>
+
+
+<div class="benefit reveal">
+
+<div class="benefit-number">
+06
+</div>
+
+<h3>
+Ammattitaitoinen henkilökunta
+</h3>
+
+<p>
+Kokenut ja ystävällinen tiimi huolehtii
+tiloistasi tarkasti ja ammattimaisesti.
+</p>
+
 </div>
 
 
@@ -1026,29 +1901,38 @@ JÄLKEEN
 </section>
 
 
-<!-- CTA -->
 
-<section class="cta">
+<!-- ==============================
+ CTA
+============================== -->
+
+<section class="cta reveal">
 
 <div class="container">
 
 <div class="cta-box">
 
+<div class="cta-content">
+
+<div class="cta-label">
+PYYDÄ TARJOUS
+</div>
+
 <h2>
-Valmis puhtaampaan
-<span>arkeen?</span>
+Tarvitsetko
+<span>siivousapua?</span>
 </h2>
 
 <p>
-Ota yhteyttä ja pyydä tarjous.
-Löydetään yhdessä sinulle sopiva siivousratkaisu.
+Kerro meille tarpeistasi. Suunnitellaan
+yhdessä juuri sinulle sopiva siivouspalvelu.
 </p>
 
-<a
-href="mailto:lumiclean.siivous@gmail.com"
-class="cta-button"
->
-Pyydä tarjous
+</div>
+
+
+<a href="yhteystiedot.html" class="cta-button">
+Ota yhteyttä
 </a>
 
 </div>
@@ -1058,9 +1942,12 @@ Pyydä tarjous
 </section>
 
 
-<!-- FOOTER -->
 
-<footer>
+<!-- ==============================
+ FOOTER
+============================== -->
+
+<footer class="footer">
 
 <div class="container footer-grid">
 
@@ -1069,12 +1956,13 @@ Pyydä tarjous
 
 <div class="footer-logo">
 LUMI
-<small>CLEAN</small>
+<span>CLEAN</span>
 </div>
 
-<p class="footer-text">
-Luotettavaa, huolellista ja joustavaa
-siivouspalvelua Porissa ja Satakunnan alueella.
+<p class="footer-description">
+Laadukasta, luotettavaa ja joustavaa
+siivouspalvelua Porissa ja koko
+Satakunnan alueella.
 </p>
 
 </div>
@@ -1144,68 +2032,62 @@ Siivouspalvelut Porissa ja Satakunnassa
 </footer>
 
 
-<!-- BEFORE / AFTER SCRIPT -->
+
+<!-- ==============================
+ ANIMATION SCRIPT
+============================== -->
 
 <script>
 
-const slider = document.getElementById("beforeAfter");
-const afterPhoto = document.getElementById("afterPhoto");
-const sliderLine = document.getElementById("sliderLine");
-const sliderHandle = document.getElementById("sliderHandle");
+document.addEventListener("DOMContentLoaded", function () {
 
-let isDragging = false;
+    const elements = document.querySelectorAll(".reveal");
 
+    const observer = new IntersectionObserver(
+        function (entries, observer) {
 
-function moveSlider(clientX) {
+            entries.forEach(function (entry) {
 
-    const rect = slider.getBoundingClientRect();
+                if (entry.isIntersecting) {
 
-    let position =
-        ((clientX - rect.left) / rect.width) * 100;
+                    entry.target.classList.add("visible");
 
-    position = Math.max(0, Math.min(100, position));
+                    observer.unobserve(entry.target);
 
-    afterPhoto.style.clipPath =
-        "inset(0 0 0 " + position + "%)";
+                }
 
-    sliderLine.style.left =
-        position + "%";
+            });
 
-    sliderHandle.style.left =
-        position + "%";
-}
+        },
+        {
+            threshold: 0.12
+        }
+    );
 
 
-slider.addEventListener("pointerdown", function(event) {
+    elements.forEach(function (element, index) {
 
-    isDragging = true;
+        /*
+         * Маленькая задержка для карточек,
+         * чтобы они появлялись не одновременно.
+         */
 
-    slider.setPointerCapture(event.pointerId);
+        if (
+            element.classList.contains("card") ||
+            element.classList.contains("benefit")
+        ) {
 
-    moveSlider(event.clientX);
+            const delay =
+                (index % 3) * 100;
 
-});
+            element.style.transitionDelay =
+                delay + "ms";
 
+        }
 
-slider.addEventListener("pointermove", function(event) {
+        observer.observe(element);
 
-    if (!isDragging) return;
-
-    moveSlider(event.clientX);
-
-});
-
-
-slider.addEventListener("pointerup", function() {
-
-    isDragging = false;
-
-});
-
-
-slider.addEventListener("pointercancel", function() {
-
-    isDragging = false;
+    });
 
 });
 
