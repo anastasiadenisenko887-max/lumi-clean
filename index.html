@@ -19,30 +19,19 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
           rel="stylesheet">
 
-
 <style>
-
-/* =========================================
-   LUMI CLEAN
-   GLOBAL
-========================================= */
 
 :root {
     --white: #ffffff;
     --light: #f3f8fa;
     --light-blue: #e6f2f6;
-
     --blue: #75b5ce;
     --blue-dark: #347b9b;
-
     --navy: #163c4e;
-
     --text: #253b45;
     --muted: #71818a;
-
     --border: #dce7eb;
 }
-
 
 * {
     box-sizing: border-box;
@@ -50,48 +39,36 @@
     padding: 0;
 }
 
-
 html {
     scroll-behavior: smooth;
 }
-
 
 body {
     font-family: "DM Sans", sans-serif;
     color: var(--text);
     background: var(--white);
     line-height: 1.6;
-
     overflow-x: hidden;
 }
-
 
 img {
     max-width: 100%;
     display: block;
 }
 
-
 a {
     color: inherit;
     text-decoration: none;
 }
 
-
 button {
     font-family: inherit;
 }
-
-
-/* =========================================
-   CONTAINER
-========================================= */
 
 .container {
     width: min(1120px, calc(100% - 36px));
     margin: 0 auto;
 }
-
 
 /* =========================================
    HEADER
@@ -101,14 +78,10 @@ button {
     position: absolute;
     top: 0;
     left: 0;
-
     width: 100%;
-
     z-index: 100;
-
     padding: 22px 0;
 }
-
 
 .header-inner {
     display: flex;
@@ -116,61 +89,40 @@ button {
     justify-content: space-between;
 }
 
-
-/* LOGO */
-
 .logo {
     display: flex;
     align-items: center;
     gap: 10px;
-
     color: white;
 }
-
 
 .logo-circle {
     width: 40px;
     height: 40px;
-
     border: 1px solid rgba(255,255,255,.8);
-
     border-radius: 50%;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-family: "Manrope";
     font-weight: 700;
-
     font-size: 16px;
 }
-
 
 .logo-name {
     font-family: "Manrope";
     font-weight: 800;
-
     font-size: 16px;
-
     letter-spacing: 2px;
 }
 
-
 .logo-sub {
     display: block;
-
     font-size: 7px;
-
     letter-spacing: 3px;
-
     margin-top: -1px;
-
     opacity: .75;
 }
-
-
-/* NAV */
 
 .nav {
     display: flex;
@@ -178,64 +130,42 @@ button {
     gap: 28px;
 }
 
-
 .nav a {
     color: rgba(255,255,255,.92);
-
     font-size: 12px;
     font-weight: 500;
-
     transition: .25s;
 }
-
 
 .nav a:hover {
     opacity: .65;
 }
 
-
 .nav-button {
     background: white;
-
     color: var(--navy) !important;
-
     padding: 11px 19px;
-
     border-radius: 50px;
-
     font-weight: 700 !important;
 }
 
-
-/* MOBILE MENU */
-
 .menu-button {
     display: none;
-
     width: 42px;
     height: 42px;
-
     border: 0;
-
     background: white;
-
     border-radius: 50%;
-
     cursor: pointer;
 }
 
-
 .menu-button span {
     display: block;
-
     width: 19px;
     height: 2px;
-
     background: var(--navy);
-
     margin: 4px auto;
 }
-
 
 /* =========================================
    HERO
@@ -243,17 +173,12 @@ button {
 
 .hero {
     position: relative;
-
     min-height: 720px;
-
     display: flex;
     align-items: center;
-
     color: white;
-
     overflow: hidden;
 }
-
 
 .hero-background {
     position: absolute;
@@ -264,8 +189,9 @@ button {
 
     background-size: cover;
     background-position: center;
-}
 
+    animation: heroZoom 12s ease-out both;
+}
 
 .hero-overlay {
     position: absolute;
@@ -280,217 +206,173 @@ button {
         );
 }
 
-
 .hero-content {
     position: relative;
-
     z-index: 2;
-
     padding-top: 55px;
 }
 
-
 .hero-text {
     max-width: 690px;
+    animation: fadeUp 1s ease-out both;
 }
-
 
 .hero-label {
     font-size: 10px;
-
     font-weight: 700;
-
     letter-spacing: 2px;
-
     color: rgba(255,255,255,.78);
-
     margin-bottom: 22px;
+    animation: fadeUp .8s ease-out .1s both;
 }
-
 
 .hero h1 {
     font-family: "Manrope";
-
     font-size: clamp(46px, 6vw, 76px);
-
     line-height: 1.03;
-
     letter-spacing: -3px;
-
     font-weight: 700;
-
     margin-bottom: 24px;
+    animation: fadeUp .9s ease-out .18s both;
 }
-
 
 .hero h1 span {
     display: block;
-
     color: #c6e8f1;
-
     font-weight: 500;
 }
 
-
 .hero-description {
     max-width: 570px;
-
     color: rgba(255,255,255,.84);
-
     font-size: 16px;
-
     line-height: 1.75;
-
     margin-bottom: 32px;
+    animation: fadeUp .9s ease-out .3s both;
 }
-
-
-/* HERO BUTTONS */
 
 .hero-buttons {
     display: flex;
-
     align-items: center;
-
     gap: 22px;
+    animation: fadeUp .9s ease-out .42s both;
 }
-
 
 .button {
     display: inline-flex;
-
     align-items: center;
-
     justify-content: center;
-
     gap: 18px;
-
     padding: 14px 22px;
-
     border-radius: 50px;
-
     font-size: 12px;
-
     font-weight: 700;
-
     transition: .3s;
 }
-
 
 .button:hover {
     transform: translateY(-3px);
 }
 
-
 .button-white {
     background: white;
-
     color: var(--navy);
 }
 
-
 .button-outline {
     color: white;
-
     border-bottom: 1px solid rgba(255,255,255,.55);
-
     border-radius: 0;
-
     padding: 8px 0;
 }
 
-
 /* =========================================
-   TRUST BAR
+   TRUST
 ========================================= */
 
 .trust {
     background: var(--navy);
-
     color: white;
 }
 
-
 .trust-grid {
     display: grid;
-
     grid-template-columns: repeat(4,1fr);
 }
 
-
 .trust-item {
     padding: 22px 20px;
-
     border-right: 1px solid rgba(255,255,255,.1);
-
     text-align: center;
+
+    opacity: 0;
+    transform: translateY(18px);
 }
 
+.trust-item.show {
+    animation: fadeUp .7s ease-out both;
+}
+
+.trust-item:nth-child(1).show {
+    animation-delay: .05s;
+}
+
+.trust-item:nth-child(2).show {
+    animation-delay: .12s;
+}
+
+.trust-item:nth-child(3).show {
+    animation-delay: .19s;
+}
+
+.trust-item:nth-child(4).show {
+    animation-delay: .26s;
+}
 
 .trust-item:last-child {
     border-right: 0;
 }
 
-
 .trust-number {
     color: #9fd2e2;
-
     font-family: "Manrope";
-
     font-weight: 700;
-
     font-size: 17px;
 }
 
-
 .trust-item p {
     color: rgba(255,255,255,.58);
-
     font-size: 10px;
-
     margin-top: 2px;
 }
 
-
 /* =========================================
-   GENERAL SECTION
+   GENERAL
 ========================================= */
 
 .section {
     padding: 105px 0;
 }
 
-
 .section-label {
     color: var(--blue-dark);
-
     font-size: 9px;
-
     font-weight: 700;
-
     letter-spacing: 2px;
-
     margin-bottom: 15px;
 }
 
-
 .section-title {
     font-family: "Manrope";
-
     font-size: clamp(38px,5vw,58px);
-
     line-height: 1.08;
-
     letter-spacing: -2.5px;
-
     font-weight: 600;
 }
-
 
 .section-title span {
     color: var(--blue-dark);
 }
-
 
 /* =========================================
    INTRO
@@ -500,43 +382,40 @@ button {
     background: white;
 }
 
-
 .intro-content {
     max-width: 760px;
-
     margin-left: auto;
+
+    opacity: 0;
+    transform: translateY(30px);
 }
 
+.intro-content.show {
+    animation: fadeUp .8s ease-out both;
+}
 
 .intro-text {
     color: var(--muted);
-
     font-size: 15px;
-
     line-height: 1.85;
-
     margin-top: 24px;
-
     max-width: 650px;
 }
 
-
 .text-link {
     display: inline-flex;
-
     margin-top: 22px;
-
     color: var(--blue-dark);
-
     font-size: 12px;
-
     font-weight: 700;
-
     border-bottom: 1px solid var(--blue);
-
     padding-bottom: 4px;
+    transition: .25s;
 }
 
+.text-link:hover {
+    transform: translateX(5px);
+}
 
 /* =========================================
    SERVICES
@@ -546,132 +425,108 @@ button {
     background: var(--light);
 }
 
-
 .services-header {
     display: flex;
-
     align-items: flex-end;
-
     justify-content: space-between;
-
     gap: 40px;
-
     margin-bottom: 45px;
 }
 
-
 .services-intro {
     color: var(--muted);
-
     max-width: 300px;
-
     font-size: 13px;
 }
 
-
-/* SERVICE GRID */
-
 .services-grid {
     display: grid;
-
     grid-template-columns: repeat(3,1fr);
-
     gap: 14px;
 }
 
-
 .service {
     background: white;
-
     border: 1px solid var(--border);
-
     border-radius: 17px;
-
     padding: 26px;
-
     min-height: 310px;
-
     position: relative;
 
-    transition: .3s;
+    opacity: 0;
+    transform: translateY(35px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
 }
 
+.service.show {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 .service:hover {
     transform: translateY(-5px);
-
     box-shadow:
         0 20px 50px rgba(30,80,100,.1);
-
     border-color: transparent;
 }
 
-
 .service-number {
     color: #9aaab1;
-
     font-size: 10px;
-
     font-weight: 700;
 }
-
 
 .service-icon {
     width: 46px;
     height: 46px;
-
     background: var(--light-blue);
-
     color: var(--blue-dark);
-
     border-radius: 13px;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     font-size: 19px;
-
     margin-top: 55px;
-
     margin-bottom: 17px;
+
+    transition: transform .3s ease;
 }
 
+.service:hover .service-icon {
+    transform: scale(1.08) rotate(-3deg);
+}
 
 .service h3 {
     font-family: "Manrope";
-
     font-size: 19px;
-
     line-height: 1.25;
-
     margin-bottom: 8px;
 }
 
-
 .service p {
     color: var(--muted);
-
     font-size: 12px;
-
     line-height: 1.65;
 }
 
-
 .service-link {
     position: absolute;
-
     bottom: 25px;
     right: 25px;
-
     color: var(--blue-dark);
-
     font-size: 11px;
-
     font-weight: 700;
+    transition: .25s;
 }
 
+.service-link:hover {
+    transform: translateX(4px);
+}
 
 /* =========================================
    WHY
@@ -681,21 +536,22 @@ button {
     background: white;
 }
 
-
 .why-grid {
     display: grid;
-
     grid-template-columns: .9fr 1.1fr;
-
     gap: 80px;
-
     align-items: center;
+
+    opacity: 0;
+    transform: translateY(30px);
 }
 
+.why-grid.show {
+    animation: fadeUp .9s ease-out both;
+}
 
 .why-image {
     min-height: 560px;
-
     border-radius: 20px;
 
     background-image:
@@ -707,96 +563,76 @@ button {
         url("https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1200&q=85");
 
     background-size: cover;
-
     background-position: center;
-
     position: relative;
+
+    transition: transform .5s ease;
 }
 
+.why-image:hover {
+    transform: scale(1.015);
+}
 
 .why-image-text {
     position: absolute;
-
     bottom: 25px;
     left: 25px;
-
     color: white;
 }
 
-
 .why-image-text small {
     display: block;
-
     font-size: 8px;
-
     letter-spacing: 2px;
-
     margin-bottom: 5px;
 }
 
-
 .why-image-text strong {
     font-family: "Manrope";
-
     font-size: 25px;
-
     line-height: 1.1;
 }
 
-
 .why-description {
     color: var(--muted);
-
     font-size: 14px;
-
     line-height: 1.8;
-
     margin: 22px 0 30px;
-
     max-width: 550px;
 }
-
 
 .advantages {
     border-top: 1px solid var(--border);
 }
 
-
 .advantage {
     display: grid;
-
     grid-template-columns: 35px 1fr;
-
     gap: 15px;
-
     padding: 17px 0;
-
     border-bottom: 1px solid var(--border);
+    transition: padding-left .25s ease;
 }
 
+.advantage:hover {
+    padding-left: 5px;
+}
 
 .advantage-number {
     color: var(--blue-dark);
-
     font-size: 10px;
-
     font-weight: 700;
 }
 
-
 .advantage h3 {
     font-size: 14px;
-
     margin-bottom: 2px;
 }
 
-
 .advantage p {
     color: var(--muted);
-
     font-size: 11px;
 }
-
 
 /* =========================================
    PROCESS
@@ -806,72 +642,69 @@ button {
     background: var(--light);
 }
 
-
 .process-heading {
     text-align: center;
-
     max-width: 650px;
-
     margin: 0 auto 55px;
+
+    opacity: 0;
+    transform: translateY(30px);
 }
 
+.process-heading.show {
+    animation: fadeUp .8s ease-out both;
+}
 
 .steps {
     display: grid;
-
     grid-template-columns: repeat(3,1fr);
+
+    opacity: 0;
+    transform: translateY(30px);
 }
 
+.steps.show {
+    animation: fadeUp .9s ease-out .1s both;
+}
 
 .step {
     padding: 20px 35px;
-
     border-right: 1px solid var(--border);
+    transition: transform .3s ease;
 }
 
+.step:hover {
+    transform: translateY(-4px);
+}
 
 .step:last-child {
     border-right: 0;
 }
 
-
 .step-number {
     font-family: "Manrope";
-
     font-size: 46px;
-
     color: var(--blue);
 }
 
-
 .step-line {
     width: 35px;
-
     height: 2px;
-
     background: var(--blue-dark);
-
     margin: 18px 0;
 }
 
-
 .step h3 {
     font-family: "Manrope";
-
     font-size: 18px;
-
     margin-bottom: 7px;
 }
 
-
 .step p {
     color: var(--muted);
-
     font-size: 12px;
-
     line-height: 1.7;
 }
-
 
 /* =========================================
    REVIEWS
@@ -881,85 +714,78 @@ button {
     background: white;
 }
 
-
 .reviews-header {
     display: flex;
-
     justify-content: space-between;
-
     align-items: flex-end;
-
     margin-bottom: 40px;
+
+    opacity: 0;
+    transform: translateY(30px);
 }
 
+.reviews-header.show {
+    animation: fadeUp .8s ease-out both;
+}
 
 .rating {
     text-align: right;
 }
 
-
 .stars {
     color: var(--blue-dark);
-
     letter-spacing: 3px;
-
     font-size: 12px;
 }
-
 
 .rating p {
     color: var(--muted);
-
     font-size: 10px;
-
     margin-top: 3px;
 }
 
-
 .review-grid {
     display: grid;
-
     grid-template-columns: repeat(3,1fr);
-
     gap: 14px;
+
+    opacity: 0;
+    transform: translateY(30px);
 }
 
+.review-grid.show {
+    animation: fadeUp .9s ease-out .1s both;
+}
 
 .review {
     background: var(--light);
-
     border-radius: 17px;
-
     padding: 25px;
+    transition: transform .3s ease, box-shadow .3s ease;
 }
 
+.review:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(30,80,100,.08);
+}
 
 .review-text {
     font-size: 13px;
-
     line-height: 1.75;
-
     min-height: 105px;
-
     margin-top: 16px;
 }
 
-
 .review-name {
     font-size: 12px;
-
     font-weight: 700;
-
     margin-top: 20px;
 }
 
-
 .review-location {
     color: var(--muted);
-
     font-size: 10px;
 }
-
 
 /* =========================================
    CTA
@@ -974,50 +800,41 @@ button {
         );
 
     color: white;
-
     padding: 90px 0;
 }
 
-
 .cta-inner {
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
     gap: 50px;
+
+    opacity: 0;
+    transform: translateY(30px);
 }
 
+.cta-inner.show {
+    animation: fadeUp .9s ease-out both;
+}
 
 .cta-title {
     font-family: "Manrope";
-
     font-size: clamp(40px,5vw,64px);
-
     line-height: 1.05;
-
     letter-spacing: -2.5px;
-
     max-width: 700px;
 }
-
 
 .cta-title span {
     color: #c8eaf3;
 }
 
-
 .cta-text {
     color: rgba(255,255,255,.78);
-
     font-size: 13px;
-
     max-width: 480px;
-
     margin-top: 17px;
 }
-
 
 /* =========================================
    FOOTER
@@ -1025,81 +842,92 @@ button {
 
 .footer {
     background: #123541;
-
     color: white;
-
     padding: 55px 0 22px;
 }
 
-
 .footer-grid {
     display: grid;
-
     grid-template-columns: 1.5fr 1fr 1fr;
-
     gap: 60px;
-
     padding-bottom: 45px;
 }
 
-
 .footer-description {
     color: rgba(255,255,255,.55);
-
     font-size: 11px;
-
     max-width: 300px;
-
     margin-top: 15px;
 }
 
-
 .footer-title {
     color: #a8d5e3;
-
     font-size: 9px;
-
     font-weight: 700;
-
     letter-spacing: 2px;
-
     margin-bottom: 14px;
 }
 
-
 .footer-links {
     display: flex;
-
     flex-direction: column;
-
     gap: 8px;
 }
-
 
 .footer-links a,
 .footer-links span {
     color: rgba(255,255,255,.6);
-
     font-size: 11px;
 }
 
+.footer-links a {
+    transition: .25s;
+}
+
+.footer-links a:hover {
+    color: white;
+    transform: translateX(3px);
+}
 
 .footer-bottom {
     border-top: 1px solid rgba(255,255,255,.1);
-
     padding-top: 18px;
-
     color: rgba(255,255,255,.35);
-
     font-size: 9px;
-
     display: flex;
-
     justify-content: space-between;
-
     gap: 20px;
 }
 
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes heroZoom {
+
+    from {
+        transform: scale(1.04);
+    }
+
+    to {
+        transform: scale(1);
+    }
+
+}
 
 /* =========================================
    MOBILE
@@ -1111,88 +939,69 @@ button {
         display: none;
     }
 
-
     .menu-button {
         display: block;
     }
-
 
     .hero {
         min-height: 680px;
     }
 
-
     .trust-grid {
         grid-template-columns: repeat(2,1fr);
     }
-
 
     .trust-item:nth-child(2) {
         border-right: 0;
     }
 
-
     .services-grid {
         grid-template-columns: repeat(2,1fr);
     }
 
-
     .why-grid {
         grid-template-columns: 1fr;
-
         gap: 45px;
     }
-
 
     .why-image {
         min-height: 450px;
     }
 
-
     .steps {
         grid-template-columns: 1fr;
     }
 
-
     .step {
         border-right: 0;
-
         border-bottom: 1px solid var(--border);
-
         padding: 25px 0;
     }
-
 
     .step:last-child {
         border-bottom: 0;
     }
 
-
     .review-grid {
         grid-template-columns: 1fr;
     }
-
 
     .review-text {
         min-height: auto;
     }
 
-
     .cta-inner {
         display: block;
     }
-
 
     .cta .button {
         margin-top: 28px;
     }
 
-
     .footer-grid {
         grid-template-columns: 1fr 1fr;
     }
 }
-
 
 /* =========================================
    SMALL PHONES
@@ -1204,181 +1013,133 @@ button {
         width: calc(100% - 30px);
     }
 
-
     .header {
         padding: 17px 0;
     }
-
 
     .logo-circle {
         width: 36px;
         height: 36px;
     }
 
-
     .logo-name {
         font-size: 15px;
     }
 
-
     .hero {
         min-height: 650px;
-
         align-items: center;
     }
-
 
     .hero-content {
         padding-top: 50px;
     }
 
-
     .hero-label {
         font-size: 8px;
-
         letter-spacing: 1.4px;
-
         margin-bottom: 16px;
     }
 
-
     .hero h1 {
         font-size: 46px;
-
         letter-spacing: -2.2px;
-
         line-height: 1.02;
-
         margin-bottom: 20px;
     }
 
-
     .hero-description {
         font-size: 14px;
-
         line-height: 1.65;
-
         max-width: 330px;
-
         margin-bottom: 27px;
     }
 
-
     .hero-buttons {
         flex-direction: column;
-
         align-items: flex-start;
-
         gap: 13px;
     }
 
-
     .button {
         font-size: 11px;
-
         padding: 13px 20px;
     }
-
 
     .section {
         padding: 75px 0;
     }
 
-
     .section-title {
         font-size: 39px;
-
         letter-spacing: -1.8px;
     }
-
 
     .intro-content {
         margin: 0;
     }
 
-
     .intro-text {
         font-size: 13px;
     }
 
-
     .services-header {
         display: block;
-
         margin-bottom: 32px;
     }
 
-
     .services-intro {
         margin-top: 17px;
-
         font-size: 12px;
     }
 
-
     .services-grid {
         grid-template-columns: 1fr;
-
         gap: 12px;
     }
 
-
     .service {
         min-height: 300px;
-
         padding: 23px;
     }
-
 
     .service-icon {
         margin-top: 45px;
     }
 
-
     .why-image {
         min-height: 400px;
     }
-
 
     .why-image-text strong {
         font-size: 22px;
     }
 
-
     .reviews-header {
         display: block;
     }
 
-
     .rating {
         text-align: left;
-
         margin-top: 18px;
     }
-
 
     .cta {
         padding: 70px 0;
     }
 
-
     .cta-title {
         font-size: 42px;
-
         letter-spacing: -2px;
     }
 
-
     .footer-grid {
         grid-template-columns: 1fr;
-
         gap: 35px;
     }
 
-
     .footer-bottom {
         flex-direction: column;
-
         gap: 7px;
     }
 
@@ -1388,22 +1149,13 @@ button {
 
 </head>
 
-
 <body>
-
-
-<!-- =========================================
-     HEADER
-========================================= -->
 
 <header class="header">
 
     <div class="container header-inner">
 
-
         <a href="index.html" class="logo">
-
-       
 
             <div>
                 <div class="logo-name">
@@ -1416,7 +1168,6 @@ button {
             </div>
 
         </a>
-
 
         <nav class="nav">
 
@@ -1443,7 +1194,6 @@ button {
 
         </nav>
 
-
         <button class="menu-button"
                 id="menuButton">
 
@@ -1453,187 +1203,108 @@ button {
 
         </button>
 
-
     </div>
 
 </header>
 
-
-
-<!-- =========================================
-     HERO
-========================================= -->
-
 <section class="hero">
-
 
     <div class="hero-background"></div>
 
-
     <div class="hero-overlay"></div>
-
 
     <div class="container hero-content">
 
-
         <div class="hero-text">
-
 
             <div class="hero-label">
                 SIIVOUSPALVELUT · PORI · SATAKUNTA
             </div>
 
-
             <h1>
-
                 Puhtaampi tila.
-
                 <span>
                     Parempi arki.
                 </span>
-
             </h1>
 
-
             <p class="hero-description">
-
                 Luotettavaa, huolellista ja joustavaa
                 siivouspalvelua koteihin, yrityksille
                 ja erilaisiin tiloihin.
-
             </p>
 
-
             <div class="hero-buttons">
-
 
                 <a href="yhteystiedot.html"
                    class="button button-white">
 
                     Pyydä tarjous
-
                     <span>↗</span>
 
                 </a>
-
 
                 <a href="palvelut.html"
                    class="button button-outline">
 
                     Tutustu palveluihin
-
                     <span>→</span>
 
                 </a>
 
-
             </div>
 
-
         </div>
-
 
     </div>
 
 </section>
-
-
-
-<!-- =========================================
-     TRUST
-========================================= -->
 
 <section class="trust">
 
     <div class="container trust-grid">
 
-
         <div class="trust-item">
-
-            <div class="trust-number">
-                01
-            </div>
-
-            <p>
-                Huolellinen työnjälki
-            </p>
-
+            <div class="trust-number">01</div>
+            <p>Huolellinen työnjälki</p>
         </div>
 
-
         <div class="trust-item">
-
-            <div class="trust-number">
-                02
-            </div>
-
-            <p>
-                Joustava palvelu
-            </p>
-
+            <div class="trust-number">02</div>
+            <p>Joustava palvelu</p>
         </div>
 
-
         <div class="trust-item">
-
-            <div class="trust-number">
-                03
-            </div>
-
-            <p>
-                Luotettava tiimi
-            </p>
-
+            <div class="trust-number">03</div>
+            <p>Luotettava tiimi</p>
         </div>
 
-
         <div class="trust-item">
-
-            <div class="trust-number">
-                04
-            </div>
-
-            <p>
-                Pori & Satakunta
-            </p>
-
+            <div class="trust-number">04</div>
+            <p>Pori & Satakunta</p>
         </div>
-
 
     </div>
 
 </section>
 
-
-
-<!-- =========================================
-     INTRO
-========================================= -->
-
 <section class="section intro">
 
     <div class="container">
 
-
         <div class="intro-content">
-
 
             <div class="section-label">
                 LUMI CLEAN
             </div>
 
-
             <h2 class="section-title">
-
                 Siivous, joka tekee
                 arjesta
                 <span>helpompaa.</span>
-
             </h2>
 
-
             <p class="intro-text">
-
                 Lumi Clean tarjoaa monipuolisia
                 siivouspalveluita Porissa ja Satakunnan
                 alueella. Palvelumme suunnitellaan
@@ -1641,41 +1312,28 @@ button {
                 säännöllinen koti- tai yrityssiivous,
                 kertaluonteinen siivous tai muu
                 puhdistuspalvelu.
-
             </p>
-
 
             <a href="meista.html"
                class="text-link">
 
                 Tutustu Lumi Cleaniin
                 →
-                
+
             </a>
 
-
         </div>
-
 
     </div>
 
 </section>
 
-
-
-<!-- =========================================
-     SERVICES
-========================================= -->
-
 <section class="section services"
          id="palvelut">
 
-
     <div class="container">
 
-
         <div class="services-header">
-
 
             <div>
 
@@ -1684,47 +1342,29 @@ button {
                 </div>
 
                 <h2 class="section-title">
-
                     Puhtautta juuri
                     <span>sinun tarpeisiisi.</span>
-
                 </h2>
 
             </div>
 
-
             <p class="services-intro">
-
                 Valitse sopiva palvelu tai ota meihin
                 yhteyttä, niin suunnitellaan yhdessä
                 juuri sinun tarpeisiisi sopiva ratkaisu.
-
             </p>
-
 
         </div>
 
-
-
         <div class="services-grid">
-
 
             <article class="service">
 
-                <div class="service-number">
-                    01
-                </div>
+                <div class="service-number">01</div>
 
+                <div class="service-icon">⌂</div>
 
-                <div class="service-icon">
-                    ⌂
-                </div>
-
-
-                <h3>
-                    Kotisiivous
-                </h3>
-
+                <h3>Kotisiivous</h3>
 
                 <p>
                     Raikas ja puhdas koti ilman,
@@ -1732,186 +1372,112 @@ button {
                     aikaasi siivoamiseen.
                 </p>
 
-
                 <a href="palvelut.html"
                    class="service-link">
-
                     Tutustu →
-
                 </a>
 
             </article>
 
-
-
             <article class="service">
 
-                <div class="service-number">
-                    02
-                </div>
+                <div class="service-number">02</div>
 
+                <div class="service-icon">□</div>
 
-                <div class="service-icon">
-                    □
-                </div>
-
-
-                <h3>
-                    Yrityssiivous
-                </h3>
-
+                <h3>Yrityssiivous</h3>
 
                 <p>
                     Siistit ja viihtyisät työtilat
                     yrityksille ja toimitiloihin.
                 </p>
 
-
                 <a href="palvelut.html"
                    class="service-link">
-
                     Tutustu →
-
                 </a>
 
             </article>
 
-
-
             <article class="service">
 
-                <div class="service-number">
-                    03
-                </div>
+                <div class="service-number">03</div>
 
+                <div class="service-icon">✧</div>
 
-                <div class="service-icon">
-                    ✧
-                </div>
-
-
-                <h3>
-                    Ikkunanpesu
-                </h3>
-
+                <h3>Ikkunanpesu</h3>
 
                 <p>
                     Kirkkaat ja puhtaat ikkunat
                     kotiin tai yrityksen tiloihin.
                 </p>
 
-
                 <a href="palvelut.html"
                    class="service-link">
-
                     Tutustu →
-
                 </a>
 
             </article>
 
-
-
             <article class="service">
 
-                <div class="service-number">
-                    04
-                </div>
+                <div class="service-number">04</div>
 
+                <div class="service-icon">○</div>
 
-                <div class="service-icon">
-                    ○
-                </div>
-
-
-                <h3>
-                    Tekstiilien puhdistus
-                </h3>
-
+                <h3>Tekstiilien puhdistus</h3>
 
                 <p>
                     Sohvien ja muiden tekstiilipintojen
                     perusteellinen puhdistus.
                 </p>
 
-
                 <a href="palvelut.html"
                    class="service-link">
-
                     Tutustu →
-
                 </a>
 
             </article>
 
-
-
             <article class="service">
 
-                <div class="service-number">
-                    05
-                </div>
+                <div class="service-number">05</div>
 
+                <div class="service-icon">◇</div>
 
-                <div class="service-icon">
-                    ◇
-                </div>
-
-
-                <h3>
-                    Auton sisätilat
-                </h3>
-
+                <h3>Auton sisätilat</h3>
 
                 <p>
                     Raikkaat ja siistit auton
                     sisätilat huolellisen puhdistuksen jälkeen.
                 </p>
 
-
                 <a href="palvelut.html"
                    class="service-link">
-
                     Tutustu →
-
                 </a>
 
             </article>
 
-
-
             <article class="service">
 
-                <div class="service-number">
-                    06
-                </div>
+                <div class="service-number">06</div>
 
+                <div class="service-icon">+</div>
 
-                <div class="service-icon">
-                    +
-                </div>
-
-
-                <h3>
-                    Kertaluonteinen siivous
-                </h3>
-
+                <h3>Kertaluonteinen siivous</h3>
 
                 <p>
                     Tarvitsetko siivousta ennen tai jälkeen
                     tapahtuman? Autamme mielellämme.
                 </p>
 
-
                 <a href="palvelut.html"
                    class="service-link">
-
                     Tutustu →
-
                 </a>
 
             </article>
-
 
         </div>
 
@@ -1919,17 +1485,9 @@ button {
 
 </section>
 
-
-
-<!-- =========================================
-     WHY LUMI CLEAN
-========================================= -->
-
 <section class="section why">
 
-
     <div class="container why-grid">
-
 
         <div class="why-image">
 
@@ -1948,37 +1506,25 @@ button {
 
         </div>
 
-
-
         <div>
-
 
             <div class="section-label">
                 MIKSI LUMI CLEAN?
             </div>
 
-
             <h2 class="section-title">
-
                 Puhdas tila alkaa
                 <span>hyvistä yksityiskohdista.</span>
-
             </h2>
 
-
             <p class="why-description">
-
                 Meille hyvä siivous tarkoittaa enemmän
                 kuin puhdasta pintaa. Se tarkoittaa
                 luotettavaa palvelua, huolellista työnjälkeä
                 ja asiakkaan toiveiden kuuntelemista.
-
             </p>
 
-
-
             <div class="advantages">
-
 
                 <div class="advantage">
 
@@ -1987,21 +1533,15 @@ button {
                     </div>
 
                     <div>
-
-                        <h3>
-                            Huolellisuus
-                        </h3>
+                        <h3>Huolellisuus</h3>
 
                         <p>
                             Kiinnitämme huomiota myös
                             pieniin yksityiskohtiin.
                         </p>
-
                     </div>
 
                 </div>
-
-
 
                 <div class="advantage">
 
@@ -2010,21 +1550,15 @@ button {
                     </div>
 
                     <div>
-
-                        <h3>
-                            Luotettavuus
-                        </h3>
+                        <h3>Luotettavuus</h3>
 
                         <p>
                             Pidämme kiinni sovituista
                             asioista ja aikatauluista.
                         </p>
-
                     </div>
 
                 </div>
-
-
 
                 <div class="advantage">
 
@@ -2033,21 +1567,15 @@ button {
                     </div>
 
                     <div>
-
-                        <h3>
-                            Joustavuus
-                        </h3>
+                        <h3>Joustavuus</h3>
 
                         <p>
                             Palvelu voidaan suunnitella
                             juuri sinun tarpeidesi mukaan.
                         </p>
-
                     </div>
 
                 </div>
-
-
 
                 <div class="advantage">
 
@@ -2056,42 +1584,27 @@ button {
                     </div>
 
                     <div>
-
-                        <h3>
-                            Paikallinen palvelu
-                        </h3>
+                        <h3>Paikallinen palvelu</h3>
 
                         <p>
                             Palvelemme Porissa ja
                             Satakunnan alueella.
                         </p>
-
                     </div>
 
                 </div>
 
-
             </div>
 
-
         </div>
-
 
     </div>
 
 </section>
 
-
-
-<!-- =========================================
-     PROCESS
-========================================= -->
-
 <section class="section process">
 
-
     <div class="container">
-
 
         <div class="process-heading">
 
@@ -2100,30 +1613,21 @@ button {
             </div>
 
             <h2 class="section-title">
-
                 Helppo tapa saada
                 <span>puhtaampi tila.</span>
-
             </h2>
 
         </div>
 
-
-
         <div class="steps">
-
 
             <div class="step">
 
-                <div class="step-number">
-                    01
-                </div>
+                <div class="step-number">01</div>
 
                 <div class="step-line"></div>
 
-                <h3>
-                    Ota yhteyttä
-                </h3>
+                <h3>Ota yhteyttä</h3>
 
                 <p>
                     Kerro meille, millaista
@@ -2132,19 +1636,13 @@ button {
 
             </div>
 
-
-
             <div class="step">
 
-                <div class="step-number">
-                    02
-                </div>
+                <div class="step-number">02</div>
 
                 <div class="step-line"></div>
 
-                <h3>
-                    Sovitaan yksityiskohdat
-                </h3>
+                <h3>Sovitaan yksityiskohdat</h3>
 
                 <p>
                     Käymme yhdessä läpi palvelun,
@@ -2153,19 +1651,13 @@ button {
 
             </div>
 
-
-
             <div class="step">
 
-                <div class="step-number">
-                    03
-                </div>
+                <div class="step-number">03</div>
 
                 <div class="step-line"></div>
 
-                <h3>
-                    Me hoidamme loput
-                </h3>
+                <h3>Me hoidamme loput</h3>
 
                 <p>
                     Sinä voit käyttää aikasi
@@ -2174,27 +1666,17 @@ button {
 
             </div>
 
-
         </div>
 
     </div>
 
 </section>
 
-
-
-<!-- =========================================
-     REVIEWS
-========================================= -->
-
 <section class="section reviews">
-
 
     <div class="container">
 
-
         <div class="reviews-header">
-
 
             <div>
 
@@ -2203,14 +1685,11 @@ button {
                 </div>
 
                 <h2 class="section-title">
-
                     Asiakkaidemme
                     <span>kokemuksia.</span>
-
                 </h2>
 
             </div>
-
 
             <div class="rating">
 
@@ -2224,13 +1703,9 @@ button {
 
             </div>
 
-
         </div>
 
-
-
         <div class="review-grid">
-
 
             <article class="review">
 
@@ -2239,11 +1714,9 @@ button {
                 </div>
 
                 <p class="review-text">
-
                     “Tiimi tuli juuri sovittuna aikana
                     ja teki työn nopeasti. Koti jäi
                     ihanan raikkaaksi ja siistiksi.”
-
                 </p>
 
                 <div class="review-name">
@@ -2256,8 +1729,6 @@ button {
 
             </article>
 
-
-
             <article class="review">
 
                 <div class="stars">
@@ -2265,10 +1736,8 @@ button {
                 </div>
 
                 <p class="review-text">
-
                     “Palvelu oli ystävällistä ja joustavaa.
                     Kaikki tehtiin huolellisesti.”
-
                 </p>
 
                 <div class="review-name">
@@ -2281,8 +1750,6 @@ button {
 
             </article>
 
-
-
             <article class="review">
 
                 <div class="stars">
@@ -2290,10 +1757,8 @@ button {
                 </div>
 
                 <p class="review-text">
-
                     “Aivan loistava tiimi! Kaikki jäljet
                     ja sotkut hävisivät.”
-
                 </p>
 
                 <div class="review-name">
@@ -2306,24 +1771,15 @@ button {
 
             </article>
 
-
         </div>
 
     </div>
 
 </section>
 
-
-
-<!-- =========================================
-     CTA
-========================================= -->
-
 <section class="cta">
 
-
     <div class="container cta-inner">
-
 
         <div>
 
@@ -2334,51 +1790,34 @@ button {
 
             </div>
 
-
             <h2 class="cta-title">
-
                 Anna meidän huolehtia
                 <span>puhtaudesta.</span>
-
             </h2>
 
-
             <p class="cta-text">
-
                 Kerro meille tarpeistasi.
                 Suunnitellaan yhdessä sopiva
                 siivouspalvelu.
-
             </p>
 
         </div>
-
 
         <a href="yhteystiedot.html"
            class="button button-white">
 
             Pyydä tarjous
-
             <span>↗</span>
 
         </a>
-
 
     </div>
 
 </section>
 
-
-
-<!-- =========================================
-     FOOTER
-========================================= -->
-
 <footer class="footer">
 
-
     <div class="container footer-grid">
-
 
         <div>
 
@@ -2403,18 +1842,13 @@ button {
 
             </a>
 
-
             <p class="footer-description">
-
                 Luotettavaa ja ammattitaitoista
                 siivouspalvelua Porissa ja
                 Satakunnan alueella.
-
             </p>
 
         </div>
-
-
 
         <div>
 
@@ -2444,8 +1878,6 @@ button {
 
         </div>
 
-
-
         <div>
 
             <div class="footer-title">
@@ -2470,10 +1902,7 @@ button {
 
         </div>
 
-
     </div>
-
-
 
     <div class="container footer-bottom">
 
@@ -2487,10 +1916,7 @@ button {
 
     </div>
 
-
 </footer>
-
-
 
 <script>
 
@@ -2503,7 +1929,6 @@ const menuButton =
 
 const nav =
     document.querySelector(".nav");
-
 
 menuButton.addEventListener("click", function () {
 
@@ -2542,25 +1967,59 @@ menuButton.addEventListener("click", function () {
 
 });
 
-
-/* CLOSE MENU AFTER CLICK */
-
 document.querySelectorAll(".nav a").forEach(link => {
 
     link.addEventListener("click", function () {
 
         if (window.innerWidth <= 850) {
-
             nav.style.display = "none";
-
         }
 
     });
 
 });
 
-</script>
 
+/* =========================================
+   SCROLL ANIMATIONS
+========================================= */
+
+const animatedElements =
+    document.querySelectorAll(
+        ".service, .intro-content, .why-grid, .process-heading, .steps, .reviews-header, .review-grid, .cta-inner, .trust-item"
+    );
+
+
+const observer =
+    new IntersectionObserver(
+        function(entries) {
+
+            entries.forEach(function(entry) {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("show");
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+
+animatedElements.forEach(function(element) {
+
+    observer.observe(element);
+
+});
+
+</script>
 
 </body>
 </html>
