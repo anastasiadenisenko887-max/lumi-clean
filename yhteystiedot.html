@@ -1,549 +1,1216 @@
-<!DOCTYPE html><html lang="fi">
+<!DOCTYPE html>
+<html lang="fi">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Yhteystiedot | Lumi Clean</title>
-<meta name="description" content="Ota yhteyttä Lumi Cleaniin. Pyydä tarjous siivouspalveluista Porissa ja Satakunnan alueella.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<meta name="description" content="Ota yhteyttä Lumi Cleaniin ja pyydä tarjous siivouspalveluista Porissa ja Satakunnan alueella.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-* {    margin: 0;    padding: 0;    box-sizing: border-box;}
-html {    scroll-behavior: smooth;}
-body {    font-family: "DM Sans", sans-serif;    color: #243b45;    background: #ffffff;    line-height: 1.6;}
-a {    text-decoration: none;    color: inherit;}
-.container {    width: min(1160px, calc(100% - 40px));    margin: auto;}
 
-/* =========================   HEADER========================= */
-.header {    position: absolute;    top: 0;    left: 0;    width: 100%;    z-index: 20;    padding: 24px 0;}
-.header-inner {    display: flex;    justify-content: space-between;    align-items: center;}
-.logo {    color: white;    font-family: "Manrope", sans-serif;    font-size: 19px;    font-weight: 800;    letter-spacing: 3px;}
-.logo span {    display: block;    font-size: 7px;    letter-spacing: 4px;    opacity: .7;    margin-top: -3px;}
-.nav {    display: flex;    align-items: center;    gap: 30px;}
-.nav a {    color: rgba(255,255,255,.9);    font-size: 12px;    font-weight: 500;}
-.nav a:hover {    opacity: .65;}
-.nav-button {    background: white;    color: #173d4f !important;    padding: 12px 20px;    border-radius: 50px;    font-weight: 700 !important;}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-/* =========================   HERO========================= */
-.hero {    min-height: 510px;
-    display: flex;    align-items: center;
-    position: relative;    overflow: hidden;
-    color: white;
-    background:        linear-gradient(            125deg,            #12394a 0%,            #21586d 55%,            #6baec2 100%        );}
-.hero::after {    content: "";
-    position: absolute;
-    width: 600px;    height: 600px;
-    right: -230px;    top: -230px;
-    border: 1px solid rgba(255,255,255,.09);
-    border-radius: 50%;}
-.hero-content {    position: relative;    z-index: 2;
-    padding-top: 55px;}
-.eyebrow {    color: rgba(255,255,255,.65);
-    font-size: 9px;    font-weight: 700;
-    letter-spacing: 2.5px;
-    margin-bottom: 20px;}
-.hero h1 {    font-family: "Manrope", sans-serif;
-    font-size: clamp(48px, 7vw, 76px);
-    line-height: 1;
-    letter-spacing: -3px;
-    font-weight: 600;}
-.hero h1 span {    color: #c8e9f1;}
-.hero-text {    max-width: 610px;
-    margin-top: 25px;
-    color: rgba(255,255,255,.72);
-    font-size: 14px;
-    line-height: 1.8;}
+html {
+    scroll-behavior: smooth;
+}
 
-/* =========================   CONTACTS========================= */
-.contact-section {    padding: 100px 0;}
-.contact-grid {    display: grid;
-    grid-template-columns: .8fr 1.2fr;
-    gap: 70px;}
-.section-label {    color: #347b9b;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 2.5px;}
-.contact-info h2 {    font-family: "Manrope", sans-serif;
-    font-size: clamp(35px, 4vw, 52px);
-    line-height: 1.08;
-    letter-spacing: -2px;
-    margin-top: 14px;
-    color: #183b4b;}
-.contact-info h2 span {    color: #347b9b;}
-.contact-info > p {    color: #71828a;
-    font-size: 13px;
-    line-height: 1.8;
-    margin-top: 18px;
-    max-width: 480px;}
-.contact-items {    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin-top: 35px;}
-.contact-item {    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 17px;
-    background: #f6fafb;
-    border: 1px solid #dce8eb;
-    border-radius: 15px;}
-.contact-icon {    width: 43px;    height: 43px;
-    flex-shrink: 0;
-    display: flex;    align-items: center;    justify-content: center;
-    border-radius: 12px;
-    background: #e4f2f6;
-    color: #347b9b;
-    font-weight: 700;}
-.contact-item small {    display: block;
-    color: #8a999f;
-    font-size: 8px;
-    font-weight: 700;
-    letter-spacing: 1.3px;}
-.contact-item strong {    display: block;
-    color: #173d4f;
-    font-size: 13px;
-    margin-top: 2px;}
+body {
+    font-family: "DM Sans", sans-serif;
+    color: #193b4a;
+    background: #ffffff;
+}
 
-/* =========================   FORM========================= */
-.contact-form {    padding: 35px;
-    background: #f7fafb;
-    border: 1px solid #dce7eb;
-    border-radius: 22px;}
-.contact-form h3 {    font-family: "Manrope", sans-serif;
-    font-size: 23px;
-    margin-bottom: 7px;}
-.form-intro {    color: #71828a;
-    font-size: 11px;
-    margin-bottom: 25px;}
-.form-row {    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 13px;}
-.form-group {    margin-bottom: 14px;}
-.form-group label {    display: block;
-    color: #64767e;
-    font-size: 9px;
-    font-weight: 700;
-    margin-bottom: 6px;}
-.form-group input,.form-group textarea,.form-group select {    width: 100%;
-    padding: 13px 14px;
-    border: 1px solid #d8e4e8;
-    border-radius: 11px;
-    background: white;
-    color: #243b45;
-    font-family: "DM Sans", sans-serif;
-    font-size: 12px;
-    outline: none;}
-.form-group input:focus,.form-group textarea:focus,.form-group select:focus {    border-color: #6aa8bd;}
-.form-group textarea {    min-height: 120px;
-    resize: vertical;}
-.submit-button {    width: 100%;
-    border: none;
-    padding: 15px;
-    border-radius: 50px;
-    background: #173d4f;
-    color: white;
-    font-family: "DM Sans", sans-serif;
-    font-size: 12px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: .25s;}
-.submit-button:hover {    background: #285c71;
-    transform: translateY(-2px);}
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
-/* =========================   BEFORE / AFTER========================= */
-.before-after-section {    padding: 0 0 105px;}
-.before-after-heading {    text-align: center;
-    max-width: 650px;
-    margin: 0 auto 40px;}
-.before-after-heading h2 {    font-family: "Manrope", sans-serif;
-    font-size: clamp(35px, 5vw, 55px);
-    line-height: 1.05;
-    letter-spacing: -2px;
-    margin-top: 12px;}
-.before-after-heading h2 span {    color: #347b9b;}
-.before-after-heading p {    color: #71828a;
-    font-size: 13px;
-    line-height: 1.8;
-    margin-top: 15px;}
+.container {
+    width: min(1160px, calc(100% - 40px));
+    margin: auto;
+}
 
-/* MAIN SLIDER */
-.before-after {    position: relative;
-    width: 100%;
-    max-width: 950px;
-    height: 540px;
-    margin: auto;
-    overflow: hidden;
-    border-radius: 24px;
-    background: #ddd;
-    box-shadow: 0 25px 70px rgba(25,65,80,.13);
-    touch-action: none;}
 
-/* BOTH IMAGES */
-.before-after img {    position: absolute;
-    inset: 0;
-    width: 100%;    height: 100%;
-    object-fit: cover;
-    user-select: none;
-    pointer-events: none;}
+/* =========================
+   HEADER
+========================= */
 
-/* AFTER IMAGE */
-.after-image {    clip-path: inset(0 0 0 50%);}
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 20;
+    padding: 24px 0;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: #ffffff;
+    font-family: "Manrope", sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.logo small {
+    display: block;
+    margin-top: -4px;
+    font-size: 7px;
+    letter-spacing: 4px;
+    opacity: .7;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    color: rgba(255,255,255,.85);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+.nav-cta {
+    padding: 12px 20px;
+    border-radius: 50px;
+    background: #ffffff;
+    color: #173d4f !important;
+    font-weight: 700 !important;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 85% 30%,
+            rgba(146,211,226,.35),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #123847,
+            #1d5368 58%,
+            #579aae
+        );
+
+    color: white;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 520px;
+    height: 520px;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 50%;
+    right: -180px;
+    top: -150px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding-top: 50px;
+    max-width: 720px;
+}
+
+.eyebrow {
+    margin-bottom: 18px;
+    color: #b7dfe9;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.hero h1 {
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(48px, 7vw, 78px);
+    line-height: .98;
+    letter-spacing: -4px;
+    font-weight: 600;
+}
+
+.hero h1 span {
+    color: #bde7f0;
+}
+
+.hero p {
+    max-width: 590px;
+    margin-top: 25px;
+    color: rgba(255,255,255,.7);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contacts {
+    padding: 100px 0;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: .9fr 1.1fr;
+    gap: 70px;
+    align-items: start;
+}
+
+.label {
+    color: #3d88a2;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.contact-info h2 {
+    margin-top: 12px;
+    font-family: "Manrope", sans-serif;
+    color: #193d4d;
+    font-size: clamp(38px, 5vw, 58px);
+    line-height: 1.02;
+    letter-spacing: -3px;
+}
+
+.contact-info h2 span {
+    color: #438da5;
+}
+
+.contact-info > p {
+    max-width: 480px;
+    margin-top: 20px;
+    color: #71838b;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.contact-cards {
+    display: grid;
+    gap: 12px;
+    margin-top: 35px;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 17px;
+    border: 1px solid #dce9ed;
+    border-radius: 16px;
+    background: #f7fafb;
+    transition: .25s;
+}
+
+.contact-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(30,80,95,.08);
+}
+
+.contact-icon {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 13px;
+    background: #e3f2f6;
+    color: #347b9b;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.contact-card small {
+    display: block;
+    color: #8a999f;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.contact-card strong {
+    display: block;
+    margin-top: 2px;
+    color: #193d4d;
+    font-size: 13px;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-box {
+    padding: 38px;
+    border: 1px solid #dce8ec;
+    border-radius: 24px;
+    background: #f7fafb;
+}
+
+.form-box h3 {
+    font-family: "Manrope", sans-serif;
+    font-size: 27px;
+    color: #193d4d;
+}
+
+.form-box > p {
+    margin-top: 7px;
+    margin-bottom: 27px;
+    color: #7a8b92;
+    font-size: 11px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 13px;
+}
+
+.field {
+    margin-bottom: 15px;
+}
+
+.field label {
+    display: block;
+    margin-bottom: 6px;
+    color: #61747d;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.field input,
+.field select,
+.field textarea {
+    width: 100%;
+    border: 1px solid #d6e3e7;
+    border-radius: 11px;
+    padding: 13px 14px;
+    background: white;
+    color: #193d4d;
+    font-family: "DM Sans", sans-serif;
+    font-size: 12px;
+    outline: none;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+    border-color: #5d9eb3;
+}
+
+.field textarea {
+    min-height: 115px;
+    resize: vertical;
+}
+
+.submit {
+    width: 100%;
+    margin-top: 3px;
+    border: none;
+    border-radius: 50px;
+    padding: 15px;
+    background: #173d4f;
+    color: white;
+    font-family: "DM Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.submit:hover {
+    background: #286178;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   BEFORE / AFTER
+========================= */
+
+.before-after-section {
+    padding: 20px 0 110px;
+}
+
+.before-heading {
+    max-width: 650px;
+    margin: 0 auto 38px;
+    text-align: center;
+}
+
+.before-heading h2 {
+    margin-top: 12px;
+    font-family: "Manrope", sans-serif;
+    color: #193d4d;
+    font-size: clamp(38px, 5vw, 58px);
+    line-height: 1;
+    letter-spacing: -3px;
+}
+
+.before-heading h2 span {
+    color: #438da5;
+}
+
+.before-heading p {
+    margin-top: 15px;
+    color: #71838b;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* IMAGE AREA */
+
+.before-after {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: 560px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 25px;
+    background: #dce7ea;
+    box-shadow: 0 25px 70px rgba(24,64,78,.14);
+    touch-action: none;
+    user-select: none;
+}
+
+.before-after img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.before-photo {
+    z-index: 1;
+}
+
+.after-photo {
+    z-index: 2;
+    clip-path: inset(0 0 0 50%);
+}
+
 
 /* LABELS */
-.image-label {    position: absolute;
-    top: 20px;
-    padding: 8px 13px;
-    border-radius: 50px;
-    background: rgba(20,45,55,.82);
-    color: white;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 1.2px;
-    z-index: 5;}
-.before-label {    left: 20px;}
-.after-label {    right: 20px;}
 
-/* SLIDER LINE */
-.slider-line {    position: absolute;
-    top: 0;    bottom: 0;
-    left: 50%;
-    width: 3px;
-    background: white;
-    transform: translateX(-50%);
-    z-index: 10;
-    box-shadow: 0 0 10px rgba(0,0,0,.2);
-    pointer-events: none;}
+.photo-label {
+    position: absolute;
+    top: 20px;
+    z-index: 8;
+    padding: 8px 14px;
+    border-radius: 50px;
+    background: rgba(18,48,59,.82);
+    color: white;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
 
-/* SLIDER HANDLE */
-.slider-handle {    position: absolute;
-    top: 50%;    left: 50%;
-    width: 54px;    height: 54px;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    background: white;
-    box-shadow: 0 5px 20px rgba(0,0,0,.2);
-    z-index: 11;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #347b9b;
-    font-size: 18px;
-    font-weight: 700;
-    cursor: ew-resize;
-    user-select: none;}
+.before-label {
+    left: 20px;
+}
 
-/* =========================   CTA========================= */
-.cta {    padding: 0 0 100px;}
-.cta-box {    padding: 60px;
-    background: #163c4e;
-    border-radius: 24px;
-    color: white;
-    text-align: center;}
-.cta-box h2 {    font-family: "Manrope", sans-serif;
-    font-size: clamp(34px, 5vw, 52px);
-    line-height: 1.05;
-    letter-spacing: -2px;}
-.cta-box h2 span {    color: #a9d9e7;}
-.cta-box p {    color: rgba(255,255,255,.62);
-    font-size: 13px;
-    margin: 15px auto 25px;
-    max-width: 570px;}
-.cta-button {    display: inline-block;
-    padding: 14px 24px;
-    background: white;
-    color: #173d4f;
-    border-radius: 50px;
-    font-size: 11px;
-    font-weight: 700;}
+.after-label {
+    right: 20px;
+}
 
-/* =========================   FOOTER========================= */
-.footer {    background: #123541;
-    color: white;
-    padding: 50px 0 20px;}
-.footer-grid {    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
-    gap: 50px;
-    padding-bottom: 40px;}
-.footer-logo {    font-family: "Manrope";
-    font-size: 19px;
-    font-weight: 800;
-    letter-spacing: 3px;}
-.footer-logo span {    display: block;
-    font-size: 7px;
-    letter-spacing: 4px;
-    opacity: .7;}
-.footer-description {    color: rgba(255,255,255,.5);
-    font-size: 11px;
-    max-width: 310px;
-    margin-top: 15px;}
-.footer-title {    color: #a8d5e3;
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 14px;}
-.footer-links {    display: flex;
-    flex-direction: column;
-    gap: 8px;}
-.footer-links a,.footer-links span {    color: rgba(255,255,255,.58);
-    font-size: 11px;}
-.footer-bottom {    border-top: 1px solid rgba(255,255,255,.1);
-    padding-top: 18px;
-    display: flex;
-    justify-content: space-between;
-    color: rgba(255,255,255,.3);
-    font-size: 9px;}
 
-/* =========================   MOBILE========================= */
+/* LINE */
+
+.slider-line {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    background: white;
+    transform: translateX(-50%);
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+
+
+/* HANDLE */
+
+.slider-handle {
+    position: absolute;
+    z-index: 12;
+    top: 50%;
+    left: 50%;
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: white;
+    color: #347b9b;
+    font-size: 19px;
+    font-weight: 700;
+    box-shadow: 0 6px 25px rgba(0,0,0,.2);
+    cursor: ew-resize;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+    padding-bottom: 100px;
+}
+
+.cta-box {
+    padding: 65px 40px;
+    border-radius: 25px;
+    background: linear-gradient(135deg,#173d4f,#285f74);
+    color: white;
+    text-align: center;
+}
+
+.cta-box h2 {
+    font-family: "Manrope", sans-serif;
+    font-size: clamp(35px,5vw,55px);
+    line-height: 1;
+    letter-spacing: -3px;
+}
+
+.cta-box h2 span {
+    color: #bce6ef;
+}
+
+.cta-box p {
+    max-width: 570px;
+    margin: 17px auto 27px;
+    color: rgba(255,255,255,.65);
+    font-size: 13px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 14px 25px;
+    border-radius: 50px;
+    background: white;
+    color: #173d4f;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 50px 0 20px;
+    background: #123541;
+    color: white;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 50px;
+    padding-bottom: 40px;
+}
+
+.footer-logo {
+    font-family: "Manrope";
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.footer-logo small {
+    display: block;
+    font-size: 7px;
+    letter-spacing: 4px;
+    opacity: .6;
+}
+
+.footer-text {
+    max-width: 310px;
+    margin-top: 14px;
+    color: rgba(255,255,255,.5);
+    font-size: 11px;
+}
+
+.footer-title {
+    margin-bottom: 14px;
+    color: #a9d9e5;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-links a,
+.footer-links span {
+    color: rgba(255,255,255,.55);
+    font-size: 11px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255,255,255,.1);
+    color: rgba(255,255,255,.3);
+    font-size: 9px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
 @media(max-width: 800px) {
-    .nav {        display: none;    }
-    .contact-grid {        grid-template-columns: 1fr;
-        gap: 50px;    }
-    .before-after {        height: 430px;    }
-    .footer-grid {        grid-template-columns: 1fr 1fr;    }
+
+    nav {
+        display: none;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .before-after {
+        height: 450px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
-@media(max-width: 550px) {
-    .container {        width: calc(100% - 30px);    }
-    .hero {        min-height: 530px;    }
-    .hero h1 {        font-size: 47px;
-        letter-spacing: -2.5px;    }
-    .contact-section {        padding: 75px 0;    }
-    .contact-form {        padding: 25px;    }
-    .form-row {        grid-template-columns: 1fr;    }
-    .before-after-section {        padding-bottom: 75px;    }
-    .before-after {        height: 330px;
-        border-radius: 18px;    }
-    .slider-handle {        width: 46px;        height: 46px;    }
-    .image-label {        top: 12px;
-        padding: 7px 10px;
-        font-size: 8px;    }
-    .before-label {        left: 12px;    }
-    .after-label {        right: 12px;    }
-    .cta-box {        padding: 40px 25px;    }
-    .footer-grid {        grid-template-columns: 1fr;    }
-    .footer-bottom {        flex-direction: column;
-        gap: 8px;    }
+
+@media(max-width: 560px) {
+
+    .container {
+        width: calc(100% - 30px);
+    }
+
+    .hero {
+        min-height: 520px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .contacts {
+        padding: 75px 0;
+    }
+
+    .form-box {
+        padding: 25px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .before-after {
+        height: 340px;
+        border-radius: 18px;
+    }
+
+    .slider-handle {
+        width: 48px;
+        height: 48px;
+    }
+
+    .photo-label {
+        top: 12px;
+    }
+
+    .before-label {
+        left: 12px;
+    }
+
+    .after-label {
+        right: 12px;
+    }
+
+    .cta-box {
+        padding: 45px 23px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+    }
 }
+
 </style>
 </head>
 
+
 <body>
 
+
 <!-- HEADER -->
-<header class="header">
+
+<header>
+
 <div class="container header-inner">
-<a href="index.html" class="logo">LUMI<span>CLEAN</span></a>
-<nav class="nav">
+
+<a href="index.html" class="logo">
+LUMI
+<small>CLEAN</small>
+</a>
+
+<nav>
+
 <a href="index.html">Etusivu</a>
+
 <a href="palvelut.html">Palvelut</a>
+
 <a href="meista.html">Meistä</a>
+
 <a href="yhteystiedot.html">Yhteystiedot</a>
-<a href="yhteystiedot.html" class="nav-button">Pyydä tarjous</a>
+
+<a href="#contact-form" class="nav-cta">
+Pyydä tarjous
+</a>
+
 </nav>
+
 </div>
+
 </header>
 
 
 <!-- HERO -->
+
 <section class="hero">
+
 <div class="container hero-content">
-<div class="eyebrow">LUMI CLEAN · YHTEYSTIEDOT</div>
-<h1>Ota yhteyttä<br><span>helposti.</span></h1>
-<p class="hero-text">Kerro meille, millaista siivouspalvelua tarvitset.Suunnitellaan yhdessä juuri sinulle sopiva ratkaisuja pyydä tarjous ilman sitoumuksia.</p>
+
+<div class="eyebrow">
+LUMI CLEAN · YHTEYSTIEDOT
 </div>
+
+<h1>
+Ota yhteyttä.
+<br>
+<span>Tehdään arjestasi puhtaampi.</span>
+</h1>
+
+<p>
+Tarvitsetko kotisiivousta, toimiston siivousta tai
+perusteellisempaa puhdistusta? Ota yhteyttä ja
+pyydä tarjous helposti ilman sitoumuksia.
+</p>
+
+</div>
+
 </section>
 
 
 <!-- CONTACTS -->
-<section class="contact-section">
+
+<section class="contacts" id="contact-form">
+
 <div class="container contact-grid">
 
+
 <div class="contact-info">
-<div class="section-label">YHTEYSTIEDOT</div>
-<h2>Olemme täällä<span>sinua varten.</span></h2>
-<p>Ota meihin yhteyttä puhelimitse tai sähköpostilla.Voit myös lähettää tarjouspyynnön lomakkeella.Palvelemme Porissa ja koko Satakunnan alueella.</p>
 
-<div class="contact-items">
+<div class="label">
+YHTEYSTIEDOT
+</div>
 
-<a href="tel:+358466322804" class="contact-item">
-<div class="contact-icon"> </div>
+<h2>
+Olemme täällä
+<span>sinua varten.</span>
+</h2>
+
+<p>
+Palvelemme Porissa ja Satakunnan alueella.
+Ota yhteyttä ja kerro meille, millaista
+siivouspalvelua tarvitset.
+</p>
+
+
+<div class="contact-cards">
+
+
+<a class="contact-card" href="tel:+358466322804">
+
+<div class="contact-icon">
+☎
+</div>
+
 <div>
+
 <small>PUHELIN</small>
-<strong>+358 46 632 2804</strong>
+
+<strong>
++358 46 632 2804
+</strong>
+
 </div>
+
 </a>
 
-<a href="mailto:lumiclean.siivous@gmail.com" class="contact-item">
-<div class="contact-icon">@</div>
+
+<a class="contact-card" href="mailto:lumiclean.siivous@gmail.com">
+
+<div class="contact-icon">
+@
+</div>
+
 <div>
+
 <small>SÄHKÖPOSTI</small>
-<strong>lumiclean.siivous@gmail.com</strong>
+
+<strong>
+lumiclean.siivous@gmail.com
+</strong>
+
 </div>
+
 </a>
 
-<div class="contact-item">
-<div class="contact-icon">⌖</div>
-<div>
-<small>PALVELEMME</small>
-<strong>Pori · Satakunta</strong>
+
+<div class="contact-card">
+
+<div class="contact-icon">
+⌖
 </div>
+
+<div>
+
+<small>ALUE</small>
+
+<strong>
+Pori · Satakunta
+</strong>
+
 </div>
 
 </div>
+
+
+</div>
+
 </div>
 
 
 <!-- FORM -->
-<div class="contact-form">
-<h3>Pyydä tarjous</h3>
-<p class="form-intro">Kerro lyhyesti, mitä tarvitset. Palaamme asiaan mahdollisimman pian.</p>
+
+<div class="form-box">
+
+<h3>
+Pyydä tarjous
+</h3>
+
+<p>
+Kerro meille hieman tarpeistasi, niin voimme
+arvioida sopivan palvelun.
+</p>
+
 
 <form action="mailto:lumiclean.siivous@gmail.com" method="post" enctype="text/plain">
 
+
 <div class="form-row">
-<div class="form-group">
-<label>Nimi</label>
-<inputtype="text"name="Nimi"placeholder="Nimesi"required>
+
+<div class="field">
+
+<label>NIMI</label>
+
+<input
+type="text"
+name="Nimi"
+placeholder="Nimesi"
+required
+>
+
 </div>
 
-<div class="form-group">
-<label>Puhelin</label>
-<inputtype="tel"name="Puhelin"placeholder="+358...">
-</div>
+
+<div class="field">
+
+<label>PUHELIN</label>
+
+<input
+type="tel"
+name="Puhelin"
+placeholder="+358..."
+>
+
 </div>
 
-<div class="form-group">
-<label>Sähköposti</label>
-<inputtype="email"name="Sähköposti"placeholder="sahkoposti@email.com"required>
 </div>
 
-<div class="form-group">
-<label>Palvelu</label>
+
+<div class="field">
+
+<label>SÄHKÖPOSTI</label>
+
+<input
+type="email"
+name="Sähköposti"
+placeholder="sahkoposti@email.com"
+required
+>
+
+</div>
+
+
+<div class="field">
+
+<label>PALVELU</label>
+
 <select name="Palvelu">
-<option value="">Valitse palvelu</option>
+
+<option value="">
+Valitse palvelu
+</option>
+
 <option>Kotisiivous</option>
 <option>Toimiston siivous</option>
 <option>Ikkunoiden pesu</option>
-<option>Tekstiilien siivous</option>
+<option>Sohvien ja mattojen siivous</option>
 <option>Auton sisätilojen siivous</option>
-<option>Muutto- tai perusteellinen siivous</option>
+<option>Muutto- ja perusteellinen siivous</option>
 <option>Muu</option>
+
 </select>
+
 </div>
 
-<div class="form-group">
-<label>Viesti</label>
-<textareaname="Viesti"placeholder="Kerro esimerkiksi tilan koko, siivouksen tarve ja toivottu ajankohta..."></textarea>
+
+<div class="field">
+
+<label>VIESTI</label>
+
+<textarea
+name="Viesti"
+placeholder="Kerro esimerkiksi tilan koko, siivouksen tarve ja toivottu ajankohta..."
+></textarea>
+
 </div>
 
-<buttontype="submit"class="submit-button">Lähetä tarjouspyyntö</button>
+
+<button class="submit" type="submit">
+LÄHETÄ TARJOUSPYYNTÖ
+</button>
 
 </form>
+
 </div>
+
 </div>
+
 </section>
 
 
 <!-- BEFORE / AFTER -->
+
 <section class="before-after-section">
+
 <div class="container">
-<div class="before-after-heading">
-<div class="section-label">ESIMERKKI LOPPUTULOKSESTA</div>
-<h2>Näe ero<span>itse.</span></h2>
-<p>Siirrä kuvan keskellä olevaa palkkia ja näe,miten siisti ja raikas tila voi näyttää.</p>
+
+
+<div class="before-heading">
+
+<div class="label">
+PUHTAUS NÄKYY
 </div>
+
+<h2>
+Näe ero <span>itse.</span>
+</h2>
+
+<p>
+Siirrä palkkia ja näe esimerkki siitä,
+miten siisti ja raikas tila voi näyttää.
+</p>
+
+</div>
+
 
 <div class="before-after" id="beforeAfter">
-<imgsrc="before.jpg"alt="Tila ennen siivousta"class="before-image">
-<imgsrc="after.jpg"alt="Puhdas tila siivouksen jälkeen"class="after-image"id="afterImage">
 
-<div class="image-label before-label">ENNEN</div>
-<div class="image-label after-label">JÄLKEEN</div>
+
+<!-- PHOTO 1 -->
+
+<img
+class="before-photo"
+src="https://images.pexels.com/photos/6195274/pexels-photo-6195274.jpeg?auto=compress&cs=tinysrgb&w=1600"
+alt="Siivous ennen"
+>
+
+
+<!-- PHOTO 2 -->
+
+<img
+class="after-photo"
+id="afterPhoto"
+src="https://images.pexels.com/photos/36729566/pexels-photo-36729566.jpeg?auto=compress&cs=tinysrgb&w=1600"
+alt="Siivottu koti"
+>
+
+
+<div class="photo-label before-label">
+ENNEN
+</div>
+
+<div class="photo-label after-label">
+JÄLKEEN
+</div>
+
 
 <div class="slider-line" id="sliderLine"></div>
-<div class="slider-handle" id="sliderHandle">↔</div>
+
+<div class="slider-handle" id="sliderHandle">
+↔
 </div>
+
+
 </div>
+
+</div>
+
 </section>
 
 
 <!-- CTA -->
+
 <section class="cta">
+
 <div class="container">
+
 <div class="cta-box">
-<h2>Valmis nauttimaan<span>puhtaammasta arjesta?</span></h2>
-<p>Ota yhteyttä ja pyydä tarjous.Löydetään yhdessä juuri sinun tarpeisiisi sopiva siivouspalvelu.</p>
-<a href="tel:+358466322804" class="cta-button">Soita meille</a>
+
+<h2>
+Valmis puhtaampaan
+<span>arkeen?</span>
+</h2>
+
+<p>
+Ota yhteyttä ja pyydä tarjous.
+Löydetään yhdessä sinulle sopiva siivousratkaisu.
+</p>
+
+<a
+href="mailto:lumiclean.siivous@gmail.com"
+class="cta-button"
+>
+Pyydä tarjous
+</a>
+
 </div>
+
 </div>
+
 </section>
 
 
 <!-- FOOTER -->
-<footer class="footer">
+
+<footer>
+
 <div class="container footer-grid">
 
-<div>
-<div class="footer-logo">LUMI<span>CLEAN</span></div>
-<p class="footer-description">Laadukasta, luotettavaa ja joustavaasiivouspalvelua Porissa ja kokoSatakunnan alueella.</p>
-</div>
 
 <div>
-<div class="footer-title">SIVUSTO</div>
+
+<div class="footer-logo">
+LUMI
+<small>CLEAN</small>
+</div>
+
+<p class="footer-text">
+Luotettavaa, huolellista ja joustavaa
+siivouspalvelua Porissa ja Satakunnan alueella.
+</p>
+
+</div>
+
+
+<div>
+
+<div class="footer-title">
+SIVUSTO
+</div>
+
 <div class="footer-links">
+
 <a href="index.html">Etusivu</a>
+
 <a href="palvelut.html">Palvelut</a>
+
 <a href="meista.html">Meistä</a>
+
 <a href="yhteystiedot.html">Yhteystiedot</a>
+
 </div>
+
 </div>
+
 
 <div>
-<div class="footer-title">YHTEYS</div>
-<div class="footer-links">
-<a href="tel:+358466322804">+358 46 632 2804</a>
-<a href="mailto:lumiclean.siivous@gmail.com">lumiclean.siivous@gmail.com</a>
-<span>Pori · Satakunta</span>
+
+<div class="footer-title">
+YHTEYS
 </div>
+
+<div class="footer-links">
+
+<a href="tel:+358466322804">
++358 46 632 2804
+</a>
+
+<a href="mailto:lumiclean.siivous@gmail.com">
+lumiclean.siivous@gmail.com
+</a>
+
+<span>
+Pori · Satakunta
+</span>
+
 </div>
 
 </div>
+
+
+</div>
+
 
 <div class="container footer-bottom">
-<span>© 2026 Lumi Clean</span>
-<span>Siivouspalvelut Porissa ja Satakunnassa</span>
+
+<span>
+© 2026 Lumi Clean
+</span>
+
+<span>
+Siivouspalvelut Porissa ja Satakunnassa
+</span>
+
 </div>
+
 </footer>
 
 
 <!-- BEFORE / AFTER SCRIPT -->
+
 <script>
-const slider = document.getElementById("beforeAfter");const afterImage = document.getElementById("afterImage");const sliderLine = document.getElementById("sliderLine");const sliderHandle = document.getElementById("sliderHandle");
-let dragging = false;
+
+const slider = document.getElementById("beforeAfter");
+const afterPhoto = document.getElementById("afterPhoto");
+const sliderLine = document.getElementById("sliderLine");
+const sliderHandle = document.getElementById("sliderHandle");
+
+let isDragging = false;
+
+
 function moveSlider(clientX) {
-    const rect = slider.getBoundingClientRect();
-    let position = ((clientX - rect.left) / rect.width) * 100;
-    position = Math.max(0, Math.min(100, position));
-    afterImage.style.clipPath =        `inset(0 0 0 ${position}%)`;
-    sliderLine.style.left = position + "%";
-    sliderHandle.style.left = position + "%";}
+
+    const rect = slider.getBoundingClientRect();
+
+    let position =
+        ((clientX - rect.left) / rect.width) * 100;
+
+    position = Math.max(0, Math.min(100, position));
+
+    afterPhoto.style.clipPath =
+        "inset(0 0 0 " + position + "%)";
+
+    sliderLine.style.left =
+        position + "%";
+
+    sliderHandle.style.left =
+        position + "%";
+}
+
 
 slider.addEventListener("pointerdown", function(event) {
-    dragging = true;
-    slider.setPointerCapture(event.pointerId);
-    moveSlider(event.clientX);
+
+    isDragging = true;
+
+    slider.setPointerCapture(event.pointerId);
+
+    moveSlider(event.clientX);
+
 });
+
 
 slider.addEventListener("pointermove", function(event) {
-    if (!dragging) return;
-    moveSlider(event.clientX);
+
+    if (!isDragging) return;
+
+    moveSlider(event.clientX);
+
 });
+
 
 slider.addEventListener("pointerup", function() {
-    dragging = false;
+
+    isDragging = false;
+
 });
+
 
 slider.addEventListener("pointercancel", function() {
-    dragging = false;
+
+    isDragging = false;
+
 });
+
 </script>
 
-</body></html>
+
+</body>
+</html>
