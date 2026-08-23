@@ -36,6 +36,7 @@ body {
  color: #243b45;
  background: #ffffff;
  line-height: 1.6;
+ overflow-x: hidden;
 }
 
 a {
@@ -55,6 +56,80 @@ img {
 
 
 /* ==============================
+ ANIMATIONS
+============================== */
+
+@keyframes heroText {
+
+ 0% {
+  opacity: 0;
+  transform: translateY(35px);
+ }
+
+ 100% {
+  opacity: 1;
+  transform: translateY(0);
+ }
+
+}
+
+
+@keyframes heroFade {
+
+ 0% {
+  opacity: 0;
+ }
+
+ 100% {
+  opacity: 1;
+ }
+
+}
+
+
+@keyframes circleMove {
+
+ 0%, 100% {
+  transform: translate(0, 0) rotate(0deg);
+ }
+
+ 50% {
+  transform: translate(-20px, 18px) rotate(5deg);
+ }
+
+}
+
+
+@keyframes circleMoveSmall {
+
+ 0%, 100% {
+  transform: translate(0, 0);
+ }
+
+ 50% {
+  transform: translate(15px, -15px);
+ }
+
+}
+
+
+/* ELEMENTS THAT APPEAR ON SCROLL */
+
+.reveal {
+ opacity: 0;
+ transform: translateY(35px);
+ transition:
+  opacity .8s ease,
+  transform .8s ease;
+}
+
+.reveal.visible {
+ opacity: 1;
+ transform: translateY(0);
+}
+
+
+/* ==============================
  HEADER
 ============================== */
 
@@ -65,6 +140,8 @@ img {
  width: 100%;
  z-index: 50;
  padding: 24px 0;
+
+ animation: heroFade 1s ease forwards;
 }
 
 .header-inner {
@@ -152,6 +229,8 @@ img {
 
  right: -210px;
  top: -210px;
+
+ animation: circleMove 8s ease-in-out infinite;
 }
 
 .hero::after {
@@ -167,6 +246,8 @@ img {
 
  right: 90px;
  bottom: -180px;
+
+ animation: circleMoveSmall 7s ease-in-out infinite;
 }
 
 .hero-content {
@@ -183,6 +264,9 @@ img {
  color: rgba(255,255,255,.65);
 
  margin-bottom: 20px;
+
+ opacity: 0;
+ animation: heroText .8s ease .15s forwards;
 }
 
 .hero h1 {
@@ -196,6 +280,9 @@ img {
  font-weight: 600;
 
  max-width: 850px;
+
+ opacity: 0;
+ animation: heroText .9s ease .3s forwards;
 }
 
 .hero h1 span {
@@ -212,6 +299,9 @@ img {
  font-size: 15px;
 
  line-height: 1.8;
+
+ opacity: 0;
+ animation: heroText .9s ease .5s forwards;
 }
 
 
@@ -293,6 +383,14 @@ img {
  border: 1px solid #d9ebef;
 
  border-radius: 18px;
+
+ transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.price-message-box:hover {
+ transform: translateY(-4px);
+
+ box-shadow: 0 15px 40px rgba(30,80,100,.08);
 }
 
 .price-message-left {
@@ -433,6 +531,14 @@ img {
  color: #347b9b;
 
  font-size: 21px;
+
+ transition:
+ transform .35s ease,
+ background .35s ease;
+}
+
+.card:hover .card-icon {
+ transform: rotate(5deg) scale(1.06);
 }
 
 
@@ -563,82 +669,121 @@ img {
  margin-top: 8px;
 }
 
-<!-- REGULAR CLEANING DISCOUNT -->
 
-<section style="padding: 0 0 80px;">
+/* ==============================
+ REGULAR CLEANING DISCOUNT
+============================== */
 
-    <div style="
-        width: min(1160px, calc(100% - 40px));
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        gap: 24px;
-        padding: 30px 34px;
-        background: linear-gradient(135deg, #fff1f3, #ffe4e8);
-        border: 1px solid #f5cbd2;
-        border-radius: 22px;
-        box-shadow: 0 12px 35px rgba(180,70,90,0.07);
-    ">
+.discount-section {
+ padding: 0 0 80px;
+}
 
-        <div style="
-            width: 58px;
-            height: 58px;
-            min-width: 58px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 18px;
-            background: #c95768;
-            color: white;
-            font-family: Manrope, sans-serif;
-            font-size: 23px;
-            font-weight: 700;
-        ">
-            %
-        </div>
+.discount-box {
 
-        <div>
+ width: min(1160px, calc(100% - 40px));
+ margin: 0 auto;
 
-            <div style="
-                color: #b94b5d;
-                font-size: 8px;
-                font-weight: 700;
-                letter-spacing: 2px;
-                margin-bottom: 5px;
-            ">
-                ERIKOSETU
-            </div>
+ display: flex;
+ align-items: center;
 
-            <h2 style="
-                margin: 0 0 7px;
-                color: #3d2730;
-                font-family: Manrope, sans-serif;
-                font-size: 22px;
-                line-height: 1.2;
-                font-weight: 700;
-            ">
-                Säästä säännöllisillä siivouksilla
-            </h2>
+ gap: 24px;
 
-            <p style="
-                margin: 0;
-                color: #765d64;
-                font-family: 'DM Sans', sans-serif;
-                font-size: 12px;
-                line-height: 1.7;
-            ">
-                Kun tilaat siivouksen vähintään 3 kertaa
-                pitkäaikaisella sopimuksella, saat
-                <strong style="color: #b94b5d;">
-                    alennusta siivouspalveluista.
-                </strong>
-            </p>
+ padding: 30px 34px;
 
-        </div>
+ background: linear-gradient(135deg, #fff1f3, #ffe4e8);
 
-    </div>
+ border: 1px solid #f5cbd2;
 
-</section>
+ border-radius: 22px;
+
+ box-shadow: 0 12px 35px rgba(180,70,90,0.07);
+
+ transition:
+ transform .35s ease,
+ box-shadow .35s ease;
+}
+
+.discount-box:hover {
+ transform: translateY(-5px);
+
+ box-shadow: 0 20px 45px rgba(180,70,90,0.11);
+}
+
+.discount-icon {
+
+ width: 58px;
+ height: 58px;
+
+ min-width: 58px;
+
+ display: flex;
+ align-items: center;
+ justify-content: center;
+
+ border-radius: 18px;
+
+ background: #c95768;
+
+ color: white;
+
+ font-family: "Manrope", sans-serif;
+
+ font-size: 23px;
+
+ font-weight: 700;
+
+ transition: transform .35s ease;
+}
+
+.discount-box:hover .discount-icon {
+ transform: rotate(-8deg) scale(1.08);
+}
+
+.discount-label {
+
+ color: #b94b5d;
+
+ font-size: 8px;
+
+ font-weight: 700;
+
+ letter-spacing: 2px;
+
+ margin-bottom: 5px;
+}
+
+.discount-box h2 {
+
+ margin: 0 0 7px;
+
+ color: #3d2730;
+
+ font-family: "Manrope", sans-serif;
+
+ font-size: 22px;
+
+ line-height: 1.2;
+
+ font-weight: 700;
+}
+
+.discount-box p {
+
+ margin: 0;
+
+ color: #765d64;
+
+ font-family: "DM Sans", sans-serif;
+
+ font-size: 12px;
+
+ line-height: 1.7;
+}
+
+.discount-box p strong {
+ color: #b94b5d;
+}
+
 
 /* ==============================
  BENEFITS
@@ -692,6 +837,16 @@ img {
  border: 1px solid #dce7eb;
 
  border-radius: 18px;
+
+ transition:
+ transform .35s ease,
+ box-shadow .35s ease;
+}
+
+.benefit:hover {
+ transform: translateY(-5px);
+
+ box-shadow: 0 18px 45px rgba(30,80,100,.08);
 }
 
 .benefit-number {
@@ -767,6 +922,8 @@ img {
 
  right: -130px;
  top: -130px;
+
+ animation: circleMove 8s ease-in-out infinite;
 }
 
 .cta-content {
@@ -840,6 +997,7 @@ img {
 
 .cta-button:hover {
  transform: translateY(-3px);
+ box-shadow: 0 12px 25px rgba(0,0,0,.12);
 }
 
 
@@ -1047,6 +1205,21 @@ img {
  bottom: 25px;
  }
 
+ .discount-section {
+ padding-bottom: 55px;
+ }
+
+ .discount-box {
+ width: calc(100% - 30px);
+ padding: 25px;
+ flex-direction: column;
+ align-items: flex-start;
+ }
+
+ .discount-box h2 {
+ font-size: 20px;
+ }
+
  .benefits {
  padding: 75px 0;
  }
@@ -1074,6 +1247,24 @@ img {
 
  .footer-bottom {
  flex-direction: column;
+ }
+
+}
+
+
+/* ==============================
+ REDUCED MOTION
+============================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+ *,
+ *::before,
+ *::after {
+  animation-duration: .01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: .01ms !important;
+  scroll-behavior: auto !important;
  }
 
 }
@@ -1155,7 +1346,7 @@ erilaisiin tiloihin Porissa ja koko Satakunnan alueella.
  INTRO
 ============================== -->
 
-<section class="intro">
+<section class="intro reveal">
 
 <div class="container intro-grid">
 
@@ -1194,7 +1385,7 @@ huolellisesti ja ammattitaitoisesti.
  PRICE MESSAGE
 ============================== -->
 
-<section class="price-message">
+<section class="price-message reveal">
 
 <div class="container">
 
@@ -1245,7 +1436,7 @@ LAATUA · JOUSTAVUUTTA · EDULLISUUTTA
 
 <!-- 01 -->
 
-<article class="card">
+<article class="card reveal">
 
 <div class="card-number">
 01
@@ -1270,7 +1461,6 @@ käyttää tehokkaita ja turvallisia
 siivousmenetelmiä.
 </p>
 
-
 <div class="price-area">
 
 <div class="price-label">
@@ -1290,7 +1480,7 @@ HINTA ALKAEN
 
 <!-- 02 -->
 
-<article class="card">
+<article class="card reveal">
 
 <div class="card-number">
 02
@@ -1314,7 +1504,6 @@ Joustavat aikataulumme varmistavat,
 että siivous ei häiritse työpäivääsi.
 </p>
 
-
 <div class="price-area">
 
 <div class="price-label">
@@ -1334,7 +1523,7 @@ HINTA ALKAEN
 
 <!-- 03 -->
 
-<article class="card">
+<article class="card reveal">
 
 <div class="card-number">
 03
@@ -1357,7 +1546,6 @@ kirkkaan ja raikkaan lopputuloksen,
 joka antaa kodille tai toimistolle
 uuden ilmeen.
 </p>
-
 
 <div class="price-area">
 
@@ -1391,7 +1579,7 @@ Hinta määräytyy ikkunan koon mukaan.
 
 <!-- 04 -->
 
-<article class="card">
+<article class="card reveal">
 
 <div class="card-number">
 04
@@ -1413,7 +1601,6 @@ jotka auttavat poistamaan lian, pölyn
 ja tahrat. Lopputuloksena tekstiilit
 ovat raikkaat ja hyvin hoidetut.
 </p>
-
 
 <div class="price-area">
 
@@ -1447,7 +1634,7 @@ Hinta määräytyy koon ja kunnon mukaan.
 
 <!-- 05 -->
 
-<article class="card">
+<article class="card reveal">
 
 <div class="card-number">
 05
@@ -1469,7 +1656,6 @@ jätämme auton sisätilat raikkaiksi
 ja miellyttäviksi. Hinta määräytyy
 auton koon ja likaisuuden mukaan.
 </p>
-
 
 <div class="price-area">
 
@@ -1493,7 +1679,7 @@ Hinta riippuu auton koosta ja kunnosta.
 
 <!-- 06 -->
 
-<article class="card">
+<article class="card reveal">
 
 <div class="card-number">
 06
@@ -1514,7 +1700,6 @@ siivoukseen ja perusteelliseen
 siivoukseen. Palvelu on joustava
 ja räätälöitävissä tarpeidesi mukaan.
 </p>
-
 
 <div class="price-area">
 
@@ -1541,6 +1726,42 @@ HINTA ALKAEN
 
 
 <!-- ==============================
+ DISCOUNT
+============================== -->
+
+<section class="discount-section reveal">
+
+<div class="discount-box">
+
+<div class="discount-icon">
+%
+</div>
+
+<div>
+
+<div class="discount-label">
+ERIKOSETU
+</div>
+
+<h2>
+Säästä säännöllisillä siivouksilla
+</h2>
+
+<p>
+Kun tilaat siivouksen vähintään 3 kertaa
+pitkäaikaisella sopimuksella, saat
+<strong>alennusta siivouspalveluista.</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ==============================
  BENEFITS
 ============================== -->
 
@@ -1548,7 +1769,7 @@ HINTA ALKAEN
 
 <div class="container">
 
-<div class="benefits-heading">
+<div class="benefits-heading reveal">
 
 <div class="section-label">
 MIKSI LUMI CLEAN?
@@ -1565,7 +1786,7 @@ Hyvä palvelu näkyy
 <div class="benefits-grid">
 
 
-<div class="benefit">
+<div class="benefit reveal">
 
 <div class="benefit-number">
 01
@@ -1583,7 +1804,7 @@ työn tehokkaasti ilman turhia viivästyksiä.
 </div>
 
 
-<div class="benefit">
+<div class="benefit reveal">
 
 <div class="benefit-number">
 02
@@ -1601,7 +1822,7 @@ apua tai haluat varata siivouksen.
 </div>
 
 
-<div class="benefit">
+<div class="benefit reveal">
 
 <div class="benefit-number">
 03
@@ -1619,7 +1840,7 @@ Satakunnan alueella.
 </div>
 
 
-<div class="benefit">
+<div class="benefit reveal">
 
 <div class="benefit-number">
 04
@@ -1637,7 +1858,7 @@ siivousta myös kiireellisiin tilanteisiin.
 </div>
 
 
-<div class="benefit">
+<div class="benefit reveal">
 
 <div class="benefit-number">
 05
@@ -1655,7 +1876,7 @@ puhtaan ja raikkaan lopputuloksen saavuttamiseksi.
 </div>
 
 
-<div class="benefit">
+<div class="benefit reveal">
 
 <div class="benefit-number">
 06
@@ -1685,7 +1906,7 @@ tiloistasi tarkasti ja ammattimaisesti.
  CTA
 ============================== -->
 
-<section class="cta">
+<section class="cta reveal">
 
 <div class="container">
 
@@ -1809,6 +2030,68 @@ Siivouspalvelut Porissa ja Satakunnassa
 </div>
 
 </footer>
+
+
+
+<!-- ==============================
+ ANIMATION SCRIPT
+============================== -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const elements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+        function (entries, observer) {
+
+            entries.forEach(function (entry) {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("visible");
+
+                    observer.unobserve(entry.target);
+
+                }
+
+            });
+
+        },
+        {
+            threshold: 0.12
+        }
+    );
+
+
+    elements.forEach(function (element, index) {
+
+        /*
+         * Маленькая задержка для карточек,
+         * чтобы они появлялись не одновременно.
+         */
+
+        if (
+            element.classList.contains("card") ||
+            element.classList.contains("benefit")
+        ) {
+
+            const delay =
+                (index % 3) * 100;
+
+            element.style.transitionDelay =
+                delay + "ms";
+
+        }
+
+        observer.observe(element);
+
+    });
+
+});
+
+</script>
 
 
 </body>
